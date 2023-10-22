@@ -23,7 +23,7 @@ async function WelcomeWidget() {
     return (
         <div className=' relative justify-center items-center flex  p-4 text-5xl'>
             <div className='welcome-text'>
-                {greeting} {session && <span>Logged in as {session.user?.name}</span>}
+                {greeting} {session && <span> {session.user?.name}</span>}
 
             </div>
         </div>

@@ -9,15 +9,9 @@ export default async function Home() {
   const session = await getServerAuthSession();
 
   return (
-      <main className="flex bg-cover min-h-screen bg-center flex-col items-center justify-center text-white bg-gradient-to-b from-[#2e026d] to-[#15162c]">
+      <main className="flex bg-cover max-w-screen min-h-screen bg-center flex-col items-center justify-center text-white bg-gradient-to-b from-[#2e026d] to-[#15162c]" style={{ backgroundImage: "url('/porsche.jpg')" }}>
         {session ? (
-            <><h1>H!</h1>
-                <Link
-                    href="/api/auth/signout"
-                    className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
-                >
-                   Sign Out
-                </Link>
+            <>
                 <Dashboard/>
             </>
 
