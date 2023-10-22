@@ -1,23 +1,9 @@
-import { useState, useEffect } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import {getServerAuthSession} from "~/server/auth";
 
-function WelcomeWidget() {
-    const [user, setUser] = useState<any>(null);
-    // @ts-ignore
-    const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+async function WelcomeWidget() {
 
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const user = await supabase.auth.getUser();
-                setUser(user);
-            } catch (error) {
-                console.error(error);
-            }
-        }
+    const session = await getServerAuthSession();
 
-        fetchData();
-    }, []);
 
     const now = new Date();
     const hour = now.getHours();
@@ -31,16 +17,14 @@ function WelcomeWidget() {
         greeting = 'Good evening';
     }
 
-    let name = 'Test';
 
-    if (user?.email) {
-        name = user.email.split('@')[0].replace('.', ' ');
-    }
+
 
     return (
         <div className=' relative justify-center items-center flex  p-4 text-5xl'>
             <div className='welcome-text'>
-                {greeting}, {name}
+                {greeting} {session && <span>Logged in as {session.user?.name}</span>}
+
             </div>
         </div>
     );
