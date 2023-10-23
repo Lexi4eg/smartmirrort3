@@ -53,11 +53,9 @@ const ClockWidget: React.FC = () => {
     }
 
     return (
-        <div className="flex items-center justify-center ">
-            <div className="flex items-center justify-center ">
-                <div className="relative w-96 h-96 p-4">
-                    <div className="absolute top-0 left-0 border p-4 rounded-3xl w-full h-full">
-                        <svg viewBox="0 0 100 100">
+        <div className="flex items-center w-full h-full justify-center ">
+                    <div className="absolute top-0 left-0 flex p-4 rounded-3xl justify-center items-center w-full h-full">
+                        <svg viewBox="0 0 100 100 " className={"border rounded-2xl"}>
                             <circle cx="50" cy="50" r="2" fill="white" />
                             {hourLines}
                             {minuteLines}
@@ -73,8 +71,7 @@ const ClockWidget: React.FC = () => {
                             <text x="25" y="53" textAnchor="middle" fill="white" fontSize="10">9</text>
                         </svg>
                     </div>
-                </div>
-            </div>
+
         </div>
     );
 };
