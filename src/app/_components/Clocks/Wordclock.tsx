@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 import { Roboto } from "next/font/google";
 
@@ -10,105 +10,154 @@ const black_Ops_One = Roboto({
 
 const Wordclock = () => {
     const [currentTime, setCurrentTime] = useState(new Date());
+    const [timestring, setTimestring] = useState<string>("");
     const [highlightedIndexes, setHighlightedIndexes] = useState<number[]>([]);
+    function timeString(h: number, m: number, settings = { round: false }) {
+        var ret = "ESIST";
+        h %= 12;
+        if (h == 0) h = 12;
+        var hourNames = [
+            "EINS",
+            "ZWEI",
+            "DREI",
+            "VIER",
+            "FÜNF",
+            "SECHS",
+            "SIEBEN",
+            "ACHT",
+            "NEUN",
+            "ZEHN",
+            "ELF",
+            "ZWÖLF",
+        ];
+        switch (
+        (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
+            ) {
+            case 0:
+                ret += (h == 1 ? "EIN" : hourNames[h - 1]) + "UHR";
+                break;
+            case 5:
+                ret += "FÜNFNACH" + hourNames[h - 1];
+                break;
+            case 10:
+                ret += "ZEHNNACH" + hourNames[h - 1];
+                break;
+            case 15:
+                ret += "VIERTELNACH" + hourNames[h - 1];
+                break;
+            case 20:
+                ret += "ZWANZIGNACH" + hourNames[h - 1];
+                break;
+            case 25:
+                ret += "FÜNFVORHALB" + hourNames[h % 12];
+                break;
+            case 30:
+                ret += "HALB" + hourNames[h % 12];
+                break;
+            case 35:
+                ret += "FÜNFNACHHALB" + hourNames[h % 12];
+                break;
+            case 40:
+                ret += "ZWANZIGVOR" + hourNames[h % 12];
+                break;
+            case 45:
+                ret += "VIERTELVOR" + hourNames[h % 12];
+                break;
+            case 50:
+                ret += "ZEHNVOR" + hourNames[h % 12];
+                break;
+            case 55:
+                ret += "FÜNFVOR" + hourNames[h % 12];
+                break;
+        }
+
+        setTimestring(ret);
+        return ret;
+    }
 
     useEffect(() => {
-        const timer = setInterval(() => {
+        const intervalId = setInterval(() => {
             setCurrentTime(new Date());
+            console.log(currentTime.getMinutes() % 5 )
+
         }, 1000);
 
-        return () => clearInterval(timer);
+        return () => clearInterval(intervalId);
     }, []);
 
     useEffect(() => {
-        const hours = currentTime.getHours();
-        const minutes = currentTime.getMinutes();
-
-        const indexes: number[] = [];
-
-        // Map the current time to the appropriate indexes in the clock array
-        if (hours === 0 || hours === 12) {
-            indexes.push(9, 10);
-        } else if (hours === 1 || hours === 13) {
-            indexes.push(5, 6, 10);
-        } else if (hours === 2 || hours === 14) {
-            indexes.push(0, 1, 2, 3);
-        } else if (hours === 3 || hours === 15) {
-            indexes.push(2, 3, 4, 5);
-        } else if (hours === 4 || hours === 16) {
-            indexes.push(1, 2, 3, 4);
-        } else if (hours === 5 || hours === 17) {
-            indexes.push(0, 1, 2, 3, 4);
-        } else if (hours === 6 || hours === 18) {
-            indexes.push(0, 1, 2, 3, 4, 5);
-        } else if (hours === 7 || hours === 19) {
-            indexes.push(0, 1, 2, 3, 4, 5, 6);
-        } else if (hours === 8 || hours === 20) {
-            indexes.push(0, 1, 2, 3, 4, 5, 6, 7);
-        } else if (hours === 9 || hours === 21) {
-            indexes.push(0, 1, 2, 3, 4, 5, 6, 7, 8);
-        } else if (hours === 10 || hours === 22) {
-            indexes.push(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-        } else if (hours === 11 || hours === 23) {
-            indexes.push(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        }
-
-        if (minutes >= 5 && minutes < 10) {
-            indexes.push(1, 0);
-        } else if (minutes >= 10 && minutes < 15) {
-            indexes.push(3, 2, 1);
-        } else if (minutes >= 15 && minutes < 20) {
-            indexes.push(4, 3, 2, 1);
-        } else if (minutes >= 20 && minutes < 25) {
-            indexes.push(6, 5, 4, 3);
-        } else if (minutes >= 25 && minutes < 30) {
-            indexes.push(7, 6, 5, 4, 3);
-        } else if (minutes >= 30 && minutes < 35) {
-            indexes.push(9, 8, 7, 6, 5);
-        } else if (minutes >= 35 && minutes < 40) {
-            indexes.push(10, 9, 8, 7, 6, 5);
-        } else if (minutes >= 40 && minutes < 45) {
-            indexes.push(8, 7, 6, 5, 4);
-        } else if (minutes >= 45 && minutes < 50) {
-            indexes.push(5, 4, 3, 2);
-        } else if (minutes >= 50 && minutes < 55) {
-            indexes.push(3, 2, 1);
-        } else if (minutes >= 55) {
-            indexes.push(1, 0);
-        }
-
-        setHighlightedIndexes(indexes);
+        setTimestring(timeString(currentTime.getHours(), currentTime.getMinutes()));
     }, [currentTime]);
 
+
+
+    useEffect(() => {
+        let x = 0;
+        let highlighted = [];
+        for (let i = 0; i < clock.length; i++) {
+            // @ts-ignore
+            for (let j = 0; j < clock[i].length; j++) {
+                // @ts-ignore
+                if (timestring[x] === clock[i][j]) {
+                    // @ts-ignore
+                    highlighted.push(i * clock[i].length + j);
+                    x++;
+                }
+            }
+        }
+        setHighlightedIndexes(highlighted);
+    }, [timestring]);
+
     const clock = [
-        ["E", "S", "K", "I", "S", "T", "A", "F", "Ü", "N", "F"],
-        ["Z", "E", "H", "N", "Z", "W", "A", "N", "Z", "I", "G"],
-        ["D", "R", "E", "I", "V", "I", "E", "R", "T", "E", "L"],
-        ["V", "O", "R", "F", "U", "N", "K", "N", "A", "C", "H"],
-        ["H", "A", "L", "B", "A", "E", "L", "F", "Ü", "N", "F"],
-        ["E", "I", "N", "S", "X", "A", "M", "Z", "W", "E", "I"],
-        ["D", "R", "E", "I", "P", "M", "J", "V", "I", "E", "R"],
-        ["S", "E", "C", "H", "S", "N", "L", "A", "C", "H", "T"],
-        ["S", "I", "E", "B", "E", "N", "Z", "W", "Ö", "L", "F"],
-        ["Z", "E", "H", "N", "E", "U", "N", "K", "U", "H", "R"],
+        ["E", "S", "M", "I", "S", "T", "E", "F", "Ü", "N", "F"],
+        ["X", "E", "H", "N", "Z", "W", "A", "N", "Z", "I", "G"],
+        ["X", "I", "E", "R", "T", "E", "L", "X", "V", "O", "R"],
+        ["N", "A", "C", "H", "V", "X", "R", "H", "A", "L", "B"],
+        ["E", "I", "N", "X", "I", "N", "K", "Z", "W", "X", "I"],
+        ["D", "R", "E", "I", "E", "A", "N", "V", "I", "E", "R"],
+        ["F", "Ü", "N", "F", "N", "I", "S", "E", "C", "H", "S"],
+        ["S", "I", "E", "B", "E", "N", "I", "A", "C", "H", "T"],
+        ["N", "E", "U", "N", "Z", "E", "H", "N", "E", "L", "F"],
+        ["Z", "W", "Ö", "L", "F", "K", "A", "B", "U", "H", "R"],
     ];
 
     return (
-        <div className={"w-full h-full justify-center items-center flex-col"}>
-            <div className={"flex flex-col h-full justify-evenly"}>
-                {clock.map((row, rowIndex) => (
-                    <div className={"flex flex-row justify-evenly"} key={rowIndex}>
-                        {row.map((char, charIndex) => (
-                            <Words
-                                key={charIndex}
-                                char={char}
-                                highlighted={highlightedIndexes.includes(
-                                    rowIndex * row.length + charIndex
-                                )}
-                            />
-                        ))}
-                    </div>
-                ))}
+        <div className={"w-full h-full flex flex-col items-center justify-center"}>
+            <div className="flex w-full flex-row justify-between">
+                <div className={`  ${currentTime.getMinutes() % 5 == 1 || currentTime.getMinutes() % 5 == 2|| currentTime.getMinutes() % 5 ==3 || currentTime.getMinutes() % 5 ==4 ? "text-white" : "text-opacity-0 text-red-600" }`}>
+                    ⬤
+                </div>
+                <div className={`  ${currentTime.getMinutes() % 5 == 2|| currentTime.getMinutes() % 5 ==3 || currentTime.getMinutes() % 5 ==4 ? "text-white" : "text-opacity-0 text-red-600" }`}>
+                    ⬤
+                </div>
+            </div>
+
+
+
+            <div className={"w-full h-full px-5 justify-center text-slate-700 items-center flex-col"}>
+                <div className={"flex flex-col h-full justify-evenly"}>
+                    {clock.map((row, rowIndex) => (
+                        <div className={"flex flex-row justify-evenly"} key={rowIndex}>
+                            {row.map((char, charIndex) => (
+                                <Words
+                                    key={charIndex}
+                                    char={char}
+                                    highlighted={highlightedIndexes.includes(
+                                        rowIndex * row.length + charIndex
+                                    )}
+                                />
+                            ))}
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className="flex w-full flex-row justify-between">
+                <div className={` ${currentTime.getMinutes() % 5 ==3 || currentTime.getMinutes() % 5 ==4 ? "text-white" : "text-opacity-0 text-red-600" }`}>
+                    ⬤
+                </div>
+                <div className={` ${currentTime.getMinutes() % 5 == 4 ? "text-white" : "text-opacity-0 text-red-600" }`}>
+                    ⬤
+                </div>
             </div>
         </div>
     );
@@ -123,7 +172,7 @@ function Words(props: Props) {
     return (
         <div
             className={`flex-1 flex justify-center items-center text-center ${
-                props.highlighted ? "bg-yellow-300" : ""
+                props.highlighted ? "text-white" : ""
             }`}
         >
             <div className={black_Ops_One.className}>{props.char}</div>
