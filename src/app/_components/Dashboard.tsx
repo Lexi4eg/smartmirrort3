@@ -7,6 +7,7 @@ import Weather from "~/app/_components/Weather";
 import WeatherWidget from "~/app/_components/Weather";
 import Link from "next/link";
 import Clock2 from "~/app/_components/Clock2";
+import NasaWidget from "~/app/_components/NasaWidget";
 
 export default  function Dashboard () {
     return (
@@ -24,19 +25,21 @@ export default  function Dashboard () {
                 <div className='col-span-2 row-span-3  rounded-xl ' style={{ backdropFilter: "blur(10px)" }}>
                     <IPWidget/>
                 </div>
-                <div className='col-span-2 row-span-1 rounded-xl ' style={{ backdropFilter: "blur(10px)" }}>
-
+                <div className='col-span-1 row-span-1 rounded-xl flex justify-center items-center' style={{ backdropFilter: "blur(10px)" }}>
                         <Link
                             href="/api/auth/signout"
                             className="rounded-full bg-white/10 px-10 py-3  font-semibold no-underline transition hover:bg-white/20"
                         >
-                            Sign in
+                            Sign Out
                         </Link>
 
                 </div>
 
                 <div className='col-span-2 row-span-2 ' style={{ backdropFilter: "blur(10px)" }}>
                     <Clock2 time={4} />
+                </div>
+                <div className='col-span-2 row-span-2 ' style={{ backdropFilter: "blur(10px)" }}>
+                    <NasaWidget />
                 </div>
             </div>
         </div>
