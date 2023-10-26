@@ -21,10 +21,13 @@ async function WelcomeWidget() {
 
 
     return (
-        <div className=' relative justify-center items-center flex  p-4 text-5xl'>
-            <div className='welcome-text'>
-                {greeting} {session && <span> {session.user?.name}</span>}
+        <div className=' relative w-full h-full justify-center items-center flex flex-col text-center  p-4 text-5xl'>
+            <div className="">
+                <div className='welcome-text'>
+                    {greeting}
 
+                </div>
+                <div className={"text-6xl"}>{session && <span> {session.user?.name}</span>}</div>
             </div>
         </div>
     );

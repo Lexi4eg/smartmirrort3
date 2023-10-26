@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 
@@ -7,7 +8,6 @@ const ClockWidget: React.FC = () => {
 
     const animate = () => {
         setTime(new Date());
-        requestRef.current = requestAnimationFrame(animate);
     };
 
     useEffect(() => {
@@ -54,23 +54,23 @@ const ClockWidget: React.FC = () => {
 
     return (
         <div className="flex items-center w-full h-full justify-center ">
-                    <div className="absolute top-0 left-0 flex p-4 rounded-3xl justify-center items-center w-full h-full">
-                        <svg viewBox="0 0 100 100 " className={"border rounded-2xl"}>
-                            <circle cx="50" cy="50" r="2" fill="white" />
-                            {hourLines}
-                            {minuteLines}
+            <div className="absolute top-0 left-0 flex p-4 rounded-3xl justify-center items-center w-full h-full">
+                <svg viewBox="0 0 100 100 " className={"border rounded-2xl"}>
+                    <circle cx="50" cy="50" r="2" fill="white" />
+                    {hourLines}
+                    {minuteLines}
 
-                            <line x1="50" y1="40" x2="50" y2="20" stroke="white" strokeWidth="3" strokeLinecap="round" transform={`rotate(${hourAngle}, 50, 50)`} />
-                            <line x1="50" y1="40" x2="50" y2="5" stroke="white" strokeWidth="2" strokeLinecap="round" transform={`rotate(${minuteAngle}, 50, 50)`} />
-                            <line x1="50" y1="50" x2="50" y2="20" stroke="white" strokeWidth="1" strokeLinecap="round" transform={`rotate(${hourAngle}, 50, 50)`} />
-                            <line x1="50" y1="50" x2="50" y2="20" stroke="white" strokeWidth="1" strokeLinecap="round" transform={`rotate(${minuteAngle}, 50, 50)`} />
-                            <line x1="50" y1="55" x2="50" y2="5" stroke="orange" strokeWidth="1" strokeLinecap="round" transform={`rotate(${secondAngle}, 50, 50)`} />
-                            <text x="50" y="25" textAnchor="middle" fill="white" fontSize="10">12</text>
-                            <text x="50" y="80" textAnchor="middle" fill="white" fontSize="10">6</text>
-                            <text x="75" y="53" textAnchor="middle" fill="white" fontSize="10">3</text>
-                            <text x="25" y="53" textAnchor="middle" fill="white" fontSize="10">9</text>
-                        </svg>
-                    </div>
+                    <line x1="50" y1="40" x2="50" y2="20" stroke="white" strokeWidth="3" strokeLinecap="round" transform={`rotate(${hourAngle}, 50, 50)`} />
+                    <line x1="50" y1="40" x2="50" y2="5" stroke="white" strokeWidth="2" strokeLinecap="round" transform={`rotate(${minuteAngle}, 50, 50)`} />
+                    <line x1="50" y1="50" x2="50" y2="20" stroke="white" strokeWidth="1" strokeLinecap="round" transform={`rotate(${hourAngle}, 50, 50)`} />
+                    <line x1="50" y1="50" x2="50" y2="20" stroke="white" strokeWidth="1" strokeLinecap="round" transform={`rotate(${minuteAngle}, 50, 50)`} />
+                    <line x1="50" y1="55" x2="50" y2="5" stroke="orange" strokeWidth="1" strokeLinecap="round" transform={`rotate(${secondAngle}, 50, 50)`} />
+                    <text x="50" y="25" textAnchor="middle" fill="white" fontSize="10">12</text>
+                    <text x="50" y="80" textAnchor="middle" fill="white" fontSize="10">6</text>
+                    <text x="75" y="53" textAnchor="middle" fill="white" fontSize="10">3</text>
+                    <text x="25" y="53" textAnchor="middle" fill="white" fontSize="10">9</text>
+                </svg>
+            </div>
 
         </div>
     );
