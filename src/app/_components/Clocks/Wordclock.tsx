@@ -98,13 +98,14 @@ const Wordclock = () => {
             // @ts-ignore
             for (let j = 0; j < clock[i].length; j++) {
                 // @ts-ignore
-                if (timestring[x] === clock[i][j]) {
+                if (timestring[x] === clock[i][j] &&(timestring[x+1] === clock[i][j+1] || timestring[x-1] === clock[i][j-1])) {
                     // @ts-ignore
                     highlighted.push(i * clock[i].length + j);
                     x++;
                 }
             }
         }
+        console.log(highlighted);
         setHighlightedIndexes(highlighted);
     }, [timestring]);
 
@@ -151,7 +152,7 @@ const Wordclock = () => {
                     ))}
                 </div>
             </div>
-            <div className="flex w-full flex-row justify-between text-md">
+            <div className="flex w-full flex-row justify-between">
                 <div className={` ${currentTime.getMinutes() % 5 ==3 || currentTime.getMinutes() % 5 ==4 ? "text-white" : "text-opacity-0 text-red-600" }`}>
                     ⬤
                 </div>
