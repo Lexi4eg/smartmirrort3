@@ -122,8 +122,8 @@ const Wordclock = () => {
     ];
 
     return (
-        <div className={"w-full h-full flex flex-col items-center justify-center"}>
-            <div className="flex w-full flex-row justify-between">
+        <div className={"w-full h-full flex flex-col items-center  justify-center p-3"}>
+            <div className="flex w-full flex-row justify-between text-md">
                 <div className={`  ${currentTime.getMinutes() % 5 == 1 || currentTime.getMinutes() % 5 == 2|| currentTime.getMinutes() % 5 ==3 || currentTime.getMinutes() % 5 ==4 ? "text-white" : "text-opacity-0 text-red-600" }`}>
                     ⬤
                 </div>
@@ -151,7 +151,7 @@ const Wordclock = () => {
                     ))}
                 </div>
             </div>
-            <div className="flex w-full flex-row justify-between">
+            <div className="flex w-full flex-row justify-between text-md">
                 <div className={` ${currentTime.getMinutes() % 5 ==3 || currentTime.getMinutes() % 5 ==4 ? "text-white" : "text-opacity-0 text-red-600" }`}>
                     ⬤
                 </div>
