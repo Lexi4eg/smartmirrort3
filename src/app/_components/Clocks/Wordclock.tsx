@@ -13,10 +13,10 @@ const Wordclock = () => {
     const [timestring, setTimestring] = useState<string>("");
     const [highlightedIndexes, setHighlightedIndexes] = useState<number[]>([]);
     function timeString(h: number, m: number, settings = { round: false }) {
-        var ret = "ESIST";
+        let ret = "ESIST";
         h %= 12;
         if (h == 0) h = 12;
-        var hourNames = [
+        let hourNames = [
             "EINS",
             "ZWEI",
             "DREI",

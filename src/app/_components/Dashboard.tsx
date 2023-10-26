@@ -10,6 +10,8 @@ import Clock2 from "~/app/_components/Clocks/Clock2";
 import NasaWidget from "~/app/_components/NasaWidget";
 import DailyQuoteWidget from "~/app/_components/DailyQuoteWidget";
 import Wordclock from "~/app/_components/Clocks/Wordclock";
+// @ts-ignore
+import Clocks from "~/app/_components/MillionClock/Clock";
 
 export default  function Dashboard () {
     return (
@@ -43,6 +45,10 @@ export default  function Dashboard () {
 
                 <div className='col-span-2 row-span-2 ' style={{ backdropFilter: "blur(10px)" }}>
                     <Clock2 time={4} />
+                </div>
+
+                <div className='col-span-3 row-span-3 ' style={{ backdropFilter: "blur(10px)" }}>
+                    <Clocks position={400} />
                 </div>
                 <div className='col-span-2 row-span-2 ' style={{ backdropFilter: "blur(10px)" }}>
                     <NasaWidget />
