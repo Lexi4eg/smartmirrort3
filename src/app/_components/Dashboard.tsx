@@ -11,7 +11,7 @@ import NasaWidget from "~/app/_components/NasaWidget";
 import DailyQuoteWidget from "~/app/_components/DailyQuoteWidget";
 import Wordclock from "~/app/_components/Clocks/Wordclock";
 // @ts-ignore
-import Clocks from "~/app/_components/MillionClock/Clock";
+import Clocks from "~/app/_components/MillionClock/Clocks";
 
 export default  function Dashboard () {
     return (
@@ -48,7 +48,7 @@ export default  function Dashboard () {
                 </div>
 
                 <div className='col-span-3 row-span-3 ' style={{ backdropFilter: "blur(10px)" }}>
-                    <Clocks position={400} />
+                    <Clocks   />
                 </div>
                 <div className='col-span-2 row-span-2 ' style={{ backdropFilter: "blur(10px)" }}>
                     <NasaWidget />
