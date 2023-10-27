@@ -1,20 +1,54 @@
 import React from 'react';
 
 interface ClockProps {
-    hour: number;
-    minute: number;
+    input : string;
 }
 
 function Clock(props: ClockProps) {
-    const minuteRotation = props.minute * 6;
-    const hourRotation = props.hour * 30 + props.minute * 0.5;
+    // program the hour so that there are 90 degrees steps from 1 to 4
+    let input = ConvertStringToHourMinute(props.input) as number[];
+
+    const hourRotation = input && input.length >= 1 ? input[0] : 0;
+    const minuteRotation =  input && input.length >= 2 ? input[1] : 0;
+
+
+    function ConvertStringToHourMinute (input: string){
+        if(input ==="─"){
+            return [0, 180];
+        }
+        if(input ==="│"){
+            return [90, 270];
+        }
+        if(input ==="┌"){
+            return [0, 90];
+        }
+        if(input ==="┐"){
+            return [90, 180];
+        }
+        if(input ==="└"){
+            return [0, 270];
+        }
+        if(input ==="┘"){
+            return [180, 270];
+
+        }
+
+    }
+
 
     return (
-        <div className="relative w-7 h-7">
-            <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
-                <div className="relative w-full h-full bg-white rounded-full shadow">
-                    <div className="absolute h-1 w-3 bg-black rounded-full transform -translate-x-1/2 -translate-y-1/2" style={{ transform: `rotate(${minuteRotation}deg)` }} />
-                    <div className="absolute h-2 w-2 bg-black rounded-full transform -translate-x-1/2 -translate-y-1/2" style={{ transform: `rotate(${hourRotation}deg)` }} />
+        <div className="flex justify-center bg-white  rounded-full  p-1 group ">
+            <div className="relative flex items-center justify-end w-10 h-10  rounded-full shadow-sm  overflow-hidden  ">
+                <div className="absolute w-1/2 h-1 bg-black rounded-full origin-left " style={{ transform: `rotateZ(${hourRotation}deg)` }} >
+                    <div className="w-2/3 h-2/3  bg-black rounded-full" />
+                </div>
+
+                <div className="absolute w-1/2 h-1 bg-black rounded-full origin-left" style={{ transform: ` rotateZ(${minuteRotation}deg)` }}>
+                    <div className="w-2/3 h-full  bg-black rounded-full" />
+                </div>
+
+                <div className="absolute flex justify-center flex-1 w-full">
+                    <div className="w-1 h-1  bg-black rounded-full" />
                 </div>
             </div>
         </div>

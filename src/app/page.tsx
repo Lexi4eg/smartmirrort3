@@ -4,6 +4,7 @@ import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
 import Dashboard from "~/app/_components/Dashboard";
 import {signOut} from "next-auth/react";
+import Dashboard2 from "~/app/_components/Dashboard2";
 
 export default async function Home() {
   const session = await getServerAuthSession();
@@ -12,7 +13,7 @@ export default async function Home() {
       <main className="flex bg-cover max-w-screen min-h-screen bg-center flex-col items-center justify-center text-white bg-gradient-to-b from-[#2e026d] to-[#15162c]" style={{ backgroundImage: "url('/porsche.jpg')" }}>
         {session ? (
             <>
-                <Dashboard/>
+                <Dashboard2/>
             </>
 
         ) : (
