@@ -35,7 +35,7 @@ const Wordclock = () => {
         (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
             ) {
             case 0:
-                ret += (h == 1 ? "EIN" : hourNames[h - 1]) + "UHR";
+                ret += (h == 1 ? "EIN " : hourNames[h - 1]);
                 break;
             case 5:
                 ret += "FÜNF NACH " + hourNames[h - 1];
@@ -103,10 +103,6 @@ const Wordclock = () => {
 
         console.log(words);
 
-        for (let i = 0; i < words.length; i++) {
-            let word = words[i];
-
-
 
             for (let i = 0; i < words.length; i++) {
                 let word = words[i];
@@ -140,7 +136,7 @@ const Wordclock = () => {
                         }
                     }
                 }
-            }
+
 
 
 
@@ -153,10 +149,10 @@ const Wordclock = () => {
 
     const clock = [
         ["E", "S", "M", "I", "S", "T", "E", "F", "Ü", "N", "F"],
-        ["X", "E", "H", "N", "Z", "W", "A", "N", "Z", "I", "G"],
+        ["Z", "E", "H", "N", "Z", "W", "A", "N", "Z", "I", "G"],
         ["V", "I", "E", "R", "T", "E", "L", "X", "V", "O", "R"],
         ["N", "A", "C", "H", "V", "X", "R", "H", "A", "L", "B"],
-        ["E", "I", "N", "X", "I", "N", "K", "Z", "W", "E", "I"],
+        ["E", "I", "N", "S", "I", "N", "K", "Z", "W", "E", "I"],
         ["D", "R", "E", "I", "E", "A", "N", "V", "I", "E", "R"],
         ["F", "Ü", "N", "F", "N", "I", "S", "E", "C", "H", "S"],
         ["S", "I", "E", "B", "E", "N", "I", "A", "C", "H", "T"],
