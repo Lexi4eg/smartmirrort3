@@ -14,13 +14,14 @@ import Wordclock from "~/app/_components/Clocks/Wordclock";
 import Clocks from "~/app/_components/MillionClock/Clocks";
 
 export default  function Dashboard2 () {
+
     return (
         <div>
             <div className='grid grid-cols-10 grid-rows-6 gap-4 h-screen w-screen'>
 
 
                 <div className='col-span-10 row-span-6 ' style={{ backdropFilter: "blur(10px)" }}>
-                    <Clocks   />
+                    <Clocks  ></Clocks>
                 </div>
 
             </div>

@@ -68,22 +68,19 @@ function Clocks() {
             ["│└─┘│"],
             ["└───┘"]],
 
-        [["┌───┐"],
+            [["┌───┐"],
             ["│┌─┐│"],
             ["│└─┘│"],
             ["└──┐│"],
             ["┌──┘│"],
             ["└───┘"]],
     ];
-    let grid: string[][] = [];
 
-    for (let i: number = 0; i < 14; i++) {
-        let row: string[] = [];
-        for (let j: number = 0; j < 36; j++) {
-            row.push(" ");
-        }
-        grid.push(row);
-    }
+
+    console.log(numbers[0][5][0][4])
+    const rows = 12;
+    const columns = 24;
+    let grid: string[][] = new Array(rows).fill([]).map(() => new Array(columns).fill('│'));
 
 
 
@@ -94,39 +91,68 @@ function Clocks() {
         const m2: number = minute % 10;
 
         // get the number from numbers and write it to the grid
-        const number: string[][] = numbers[h] as string [][];
-        const number2: string[][] = numbers[h2] as string [][];
-        const number3: string[][] = numbers[m] as string [][];
-        const number4: string[][] = numbers[m2] as string [][];
+        const number: string[][] = numbers[h] as string[][];
+        const number2: string[][] = numbers[h2] as string[][];
+        const number3: string[][] = numbers[m] as string[][];
+        const number4: string[][] = numbers[m2] as string[][];
+
+
 
         // write the number to the grid
-        for (let i: number = 9; i <= 12; i++) {
-            for (let j: number = 3; j <= 10; j++) {
-                // @ts-ignore
-                grid[i][j]  = number[i - 9][j - 3] ;
+        for (let i: number = 3; i <= 8; i++) {
+            for (let j: number = 1; j <= 5; j++) {
+                if (grid[i] !== undefined && grid[i][j] !== undefined) {
+                    // @ts-ignore
+                    grid[i][j] = number[i - 3][0][j - 1];
+                    //console.log("i:"+ i + "j" + j + "num" +number[i - 9][0][j - 3])
+                   // console.log("i: " + i+ "j" + j)
+                    //console.log(grid[i][j])
+
+
+                }
             }
         }
 
         for (let i: number = 13; i <= 16; i++) {
             for (let j: number = 3; j <= 10; j++) {
-                grid[i][j] = number2[i - 13][j - 3];
+                if (grid[i] !== undefined && grid[i][j] !== undefined) {
+                    // @ts-ignore
+                    grid[i][j] = number2[i - 13][0][j - 3];
+                }
             }
         }
 
         for (let i: number = 19; i <= 22; i++) {
             for (let j: number = 3; j <= 10; j++) {
-                grid[i][j] = number3[i - 19][j - 3];
+                if (grid[i] !== undefined && grid[i][j] !== undefined) {
+                    // @ts-ignore
+                    grid[i][j] = number3[i - 19][0][j - 3];
+                }
             }
         }
 
         for (let i: number = 23; i <= 26; i++) {
             for (let j: number = 3; j <= 10; j++) {
-                grid[i][j] = number4[i - 23][j - 3];
+                if (grid[i] !== undefined && grid[i][j] !== undefined) {
+                    // @ts-ignore
+                    grid[i][j] = number4[i - 23][0][j - 3];
+                }
+            }
+        }
+        for (let i: number = 0; i < 14; i++) {
+            for (let j: number = 0; j < 36; j++) {
+                //console.log(grid[i][j])
             }
         }
     }
 
     AutoGrid(12, 4);
+
+
+
+
+
+
 
 
     return (
