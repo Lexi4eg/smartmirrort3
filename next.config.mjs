@@ -7,6 +7,7 @@ await import("./src/env.mjs");
 
 /** @type {import("next").NextConfig} */
 const config = {
+
     images: {
         domains: ['openweathermap.org', 'apod.nasa.gov'],
 
