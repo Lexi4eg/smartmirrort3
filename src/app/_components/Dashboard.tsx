@@ -11,16 +11,14 @@ import NasaWidget from "~/app/_components/NasaWidget";
 import DailyQuoteWidget from "~/app/_components/DailyQuoteWidget";
 import Wordclock from "~/app/_components/Clocks/Wordclock";
 // @ts-ignore
-import Clocks from "~/app/_components/MillionClock/Clocks";
+import MillionClock from "~/app/_components/MillionClock/MillionClock";
 
 export default  function Dashboard () {
     return (
         <div>
             <div className='grid grid-cols-10 grid-rows-6 gap-4 h-screen w-screen'>
 
-              <div className='col-span-4 row-span-3 rounded-xl  ' style={{ backdropFilter: "blur(10px)" }}>
-                  <WeatherWidget/>
-              </div>
+
               <div className='col-span-2 row-span-2 rounded-xl  ' style={{ backdropFilter: "blur(10px)" }}>
                   <WelcomeWidget/>
               </div>
@@ -47,18 +45,17 @@ export default  function Dashboard () {
                     <Clock2 time={4} />
                 </div>
 
-                <div className='col-span-3 row-span-3 ' style={{ backdropFilter: "blur(10px)" }}>
-                    <Clocks   />
+                <div className='col-span-4 row-span-3 ' style={{ backdropFilter: "blur(10px)" }}>
+                    <MillionClock   />
                 </div>
-                <div className='col-span-2 row-span-2 ' style={{ backdropFilter: "blur(10px)" }}>
-                    <NasaWidget />
-                </div>
+
                 <div className='col-span-2 row-span-2 ' style={{ backdropFilter: "blur(10px)" }}>
                   <DailyQuoteWidget />
                 </div>
                 <div className='col-span-3 row-span-3 ' style={{ backdropFilter: "blur(10px)" }}>
                     <Wordclock />
                 </div>
+
             </div>
         </div>
     );

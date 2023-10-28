@@ -11,7 +11,7 @@ import NasaWidget from "~/app/_components/NasaWidget";
 import DailyQuoteWidget from "~/app/_components/DailyQuoteWidget";
 import Wordclock from "~/app/_components/Clocks/Wordclock";
 // @ts-ignore
-import Clocks from "~/app/_components/MillionClock/Clocks";
+import Clocks from "~/app/_components/MillionClock/MillionClock";
 
 export default  function Dashboard2 () {
 

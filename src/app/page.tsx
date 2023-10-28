@@ -13,7 +13,7 @@ export default async function Home() {
       <main className="flex bg-cover max-w-screen min-h-screen bg-center flex-col items-center justify-center text-white bg-gradient-to-b from-[#2e026d] to-[#15162c]" style={{ backgroundImage: "url('/porsche.jpg')" }}>
         {session ? (
             <>
-                <Dashboard2/>
+                <Dashboard/>
             </>
 
         ) : (

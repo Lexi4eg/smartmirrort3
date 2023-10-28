@@ -2,14 +2,14 @@
 import React, {useEffect, useState} from 'react';
 import Clock from "~/app/_components/MillionClock/Clock";
 
-function Clocks() {
+function MillionClock() {
 
 
 
     const rows = 12;
     const columns = 24;
     const [grid, setGrid] = useState<string[][]>(
-        new Array(rows).fill([]).map(() => new Array(columns).fill("│"))
+        new Array(rows).fill([]).map(() => new Array(columns).fill("─"))
     );
 
     useEffect(() => {
@@ -130,6 +130,7 @@ function Clocks() {
         for (let i: number = 3; i <= 8; i++) {
             for (let j: number = 1; j <= 5; j++) {
                 if (newGrid[i] !== undefined) {
+                    // @ts-ignore
                     newGrid[i][j] = number[i - 3][0][j - 1];
                 }
             }
@@ -182,11 +183,7 @@ function Clocks() {
                 }
             }
         }
-        for (let i: number = 0; i < 14; i++) {
-            for (let j: number = 0; j < 36; j++) {
-                //console.log(grid[i][j])
-            }
-        }
+
 
         return newGrid;
     }
@@ -194,11 +191,11 @@ function Clocks() {
 
 
     return (
-        <div className="flex flex-col bg-white justify-center items-center w-full h-full">
+        <div className="flex flex-col bg-white rounded-xl justify-center items-center w-full h-full">
             {grid.map((row, rowIndex: number) => (
                 <div className="flex flex-row w-full h-full justify-evenly" key={rowIndex}>
                     {row.map((column, columnIndex: number) => (
-                        <div className="flex flex-col justify-center items-center w-full h-full" key={`${rowIndex}-${columnIndex}`}>
+                        <div className="flex flex-col justify-center items-center " key={`${rowIndex}-${columnIndex}`}>
                             <Clock input={grid[rowIndex][columnIndex]} />
                         </div>
                     ))}
@@ -209,4 +206,4 @@ function Clocks() {
 }
 
 
-export default Clocks;
+export default MillionClock
