@@ -39,30 +39,30 @@ function Clock(props: ClockProps) {
     }
 
     return (
-        <div className={`flex justify-center w-full h-full rounded-full p-1 group ${props.style === "nightmode" ? "text-red-500" : ""}`}>
+        <div className={`flex justify-center w-full h-full rounded-full p-1 group ${props.style === "nightmode" ? "text-nightmode" : ""}`}>
             <div className="relative flex items-center justify-end w-4 h-4 rounded-full shadow-sm overflow-hidden ">
                 <div
-                    className="absolute w-1/2 h-1 bg-white rounded-full origin-left"
+                    className={`absolute w-1/2 h-1  rounded-full origin-left ${props.style === "nightmode" ? "bg-nightmode" : "bg-white"}`}
                     style={{
                         transform: `rotateZ(${hourRotation}deg)`,
                         transition: 'transform 0.5s ease-in-out',
                     }}
                 >
-                    <div className="w-2/3 h-2/3 bg-white rounded-full" />
+                    <div className={`w-2/3 h-2/3  rounded-full ${props.style === "nightmode" ? "bg-nightmode" : "bg-white"}`} />
                 </div>
 
                 <div
-                    className="absolute w-1/2 h-1 bg-white rounded-full origin-left"
+                    className={`absolute w-1/2 h-1  rounded-full origin-left ${props.style === "nightmode" ? "bg-nightmode" : "bg-white"}`}
                     style={{
                         transform: `rotateZ(${minuteRotation}deg)`,
                         transition: 'transform 0.5s ease-in-out',
                     }}
                 >
-                    <div className="w-2/3 h-full bg-white rounded-full" />
+                    <div className={`w-2/3 h-full  rounded-full ${props.style === "nightmode" ? "bg-nightmode" : "bg-white"}`} />
                 </div>
 
                 <div className="absolute flex justify-center flex-1 w-full">
-                    <div className="w-1 h-1 bg-black rounded-full" />
+                    <div className={`w-1 h-1 bg-black rounded-full ${props.style === "nightmode" ? "bg-nightmode" : "bg-white"}`} />
                 </div>
             </div>
         </div>

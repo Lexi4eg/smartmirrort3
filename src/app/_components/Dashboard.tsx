@@ -13,17 +13,14 @@ import Wordclock from "~/app/_components/Clocks/Wordclock";
 import MillionClock from "~/app/_components/MillionClock/MillionClock";
 import {getServerAuthSession} from "~/server/auth";
 
-
-export default  async function Dashboard() {
+interface Props {
+    style?: string;
+}
+export default  async function Dashboard(props: Props) {
 
     const now = new Date();
     const session = await getServerAuthSession();
-    let nightmode = "daymode";
-
-
-    if(now.getHours() >= 17 || now.getHours() <= 6){
-        nightmode = "nightmode";
-    }
+    let nightmode = props.style ?? "daymode";
 
     return (
         <div>
@@ -35,7 +32,7 @@ export default  async function Dashboard() {
                 </div>
                 <div className='col-span-2 row-span-2 rounded-xl  flex items-center justify-center  '
                      style={{backdropFilter: "blur(10px)"}}>
-                    <ClockWidget time={now.getTime()}/>
+                    <ClockWidget time={now.getTime()} style={nightmode}/>
                 </div>
 
                 <div className='col-span-1 row-span-1  rounded-xl ' style={{backdropFilter: "blur(10px)"}}>
@@ -44,28 +41,28 @@ export default  async function Dashboard() {
 
 
                 <div className='col-span-2 row-span-2 ' style={{backdropFilter: "blur(10px)"}}>
-                    <Clock2 time={4}/>
+                    <Clock2 time={4} style={nightmode}/>
                 </div>
 
                 <div className='col-span-4 row-span-2 ' style={{backdropFilter: "blur(10px)"}}>
-                    <MillionClock/>
+                    <MillionClock style={nightmode}/>
                 </div>
 
                 <div className='col-span-3 row-span-2 ' style={{backdropFilter: "blur(10px)"}}>
-                    <DailyQuoteWidget/>
+                    <DailyQuoteWidget style={nightmode}/>
                 </div>
                 <div className='col-span-1 row-span-1 rounded-xl flex justify-center items-center'
                      style={{backdropFilter: "blur(10px)"}}>
                     <Link
                         href="/api/auth/signout"
-                        className="rounded-full bg-white/10 px-5 py-3  font-semibold no-underline transition hover:bg-white/20"
+                        className={`rounded-full bg-white/10 px-5 py-3  font-semibold no-underline transition hover:bg-white/20 ${nightmode === "nightmode" ? "text-nightmode" : ""}`}
                     >
                         Sign Out
                     </Link>
 
                 </div>
                 <div className='col-span-4 row-span-3 ' style={{backdropFilter: "blur(10px)"}}>
-                    <Wordclock time={now.getTime()}/>
+                    <Wordclock time={now.getTime()} style={nightmode}/>
                 </div>
 
             </div>

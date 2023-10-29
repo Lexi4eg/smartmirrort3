@@ -12,6 +12,7 @@ const black_Ops_One = Roboto({
 
 interface Props {
     time : number;
+    style?: string;
 }
 
 const Wordclock = (props: Props) => {
@@ -169,17 +170,17 @@ const Wordclock = (props: Props) => {
     return (
         <div className={"w-full h-full flex flex-col items-center  justify-center p-3"}>
             <div className="flex w-full flex-row justify-between text-md">
-                <div className={`  ${currentTime.getMinutes() % 5 == 1 || currentTime.getMinutes() % 5 == 2|| currentTime.getMinutes() % 5 ==3 || currentTime.getMinutes() % 5 ==4 ? "text-white" : "text-opacity-0 text-red-600" }`}>
+                <div className={`  ${currentTime.getMinutes() % 5 == 1 || currentTime.getMinutes() % 5 == 2|| currentTime.getMinutes() % 5 ==3 || currentTime.getMinutes() % 5 == 4 ? "" : "text-opacity-0"} ${props.style === "nightmode" ? "text-nightmode" : "text-white"}`}>
                     ⬤
                 </div>
-                <div className={`  ${currentTime.getMinutes() % 5 == 2|| currentTime.getMinutes() % 5 ==3 || currentTime.getMinutes() % 5 ==4 ? "text-white" : "text-opacity-0 text-red-600" }`}>
+                <div className={`  ${currentTime.getMinutes() % 5 == 2|| currentTime.getMinutes() % 5 ==3 || currentTime.getMinutes() % 5 == 4 ? "" : "text-opacity-0"} ${props.style === "nightmode" ? "text-nightmode" : "text-white"}`}>
                     ⬤
                 </div>
             </div>
 
 
 
-            <div className={"w-full h-full px-5 justify-center text-slate-700 items-center flex-col"}>
+            <div className={`w-full h-full px-5 justify-center  items-center flex-col ${props.style === "nightmode" ? "text-red-950" : "text-slate-700"}`}>
                 <div className={"flex flex-col h-full justify-evenly"}>
                     {clock.map((row, rowIndex) => (
                         <div className={"flex flex-row justify-evenly"} key={rowIndex}>
@@ -187,6 +188,7 @@ const Wordclock = (props: Props) => {
                                 <Words
                                     key={charIndex}
                                     char={char}
+                                    style={props.style}
                                     highlighted={highlightedIndexes.includes(
                                         rowIndex * row.length + charIndex
                                     )}
@@ -197,10 +199,10 @@ const Wordclock = (props: Props) => {
                 </div>
             </div>
             <div className="flex w-full flex-row justify-between">
-                <div className={` ${currentTime.getMinutes() % 5 ==3 || currentTime.getMinutes() % 5 ==4 ? "text-white" : "text-opacity-0 text-red-600" }`}>
+                <div className={` ${currentTime.getMinutes() % 5 == 3 || currentTime.getMinutes() % 5 == 4 ? "" : "text-opacity-0"} ${props.style === "nightmode" ? "text-nightmode" : "text-white"}`}>
                     ⬤
                 </div>
-                <div className={` ${currentTime.getMinutes() % 5 == 4 ? "text-white" : "text-opacity-0 text-red-600" }`}>
+                <div className={` ${currentTime.getMinutes() % 5 == 4 ? "" : "text-opacity-0"} ${props.style === "nightmode" ? "text-nightmode" : "text-white"}`}>
                     ⬤
                 </div>
             </div>
@@ -211,14 +213,23 @@ const Wordclock = (props: Props) => {
 interface WordProps {
     char: string;
     highlighted: boolean;
+    style?: string;
 }
 
 function Words(props: WordProps) {
+
     return (
         <div
             className={`flex-1 flex justify-center items-center text-center ${
-                props.highlighted ? "text-white" : ""
-            }`}
+                props.highlighted && props.style === "nightmode" ? "text-nightmode text-lg font-extrabold" : ""
+            } ${
+                props.highlighted && props.style !== "nightmode" ? "text-white" : ""
+                } ${
+                !props.highlighted && props.style === "nightmode" ? "text-red-950" : ""
+            }  ${
+                !props.highlighted && props.style !== "nightmode" ? "text-slate-700" : ""
+            } `
+            }
         >
             <div className={black_Ops_One.className}>{props.char}</div>
         </div>

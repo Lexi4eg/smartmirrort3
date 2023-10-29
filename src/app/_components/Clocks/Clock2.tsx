@@ -7,10 +7,11 @@ const Time = dynamic(() => import('./time'), { ssr: false })
 
 type Props = {
     time: number
+    style?: string
 }
 
-export  const Clock2 = ({ time: initial }: Props) => {
-    const [time, setTime] = useState(new Date(initial))
+export  const Clock2 = (props: Props) => {
+    const [time, setTime] = useState(new Date(props.time))
 
     const [weekDay, setWeekDay] = useState<string>()
     const [time2, setTime2] = useState<string>()
@@ -27,7 +28,7 @@ export  const Clock2 = ({ time: initial }: Props) => {
     }, [])
 
     return (
-        <div className="text-7xl w-full h-full flex justify-center items-center flex-col">
+        <div className={`text-7xl w-full h-full flex justify-center items-center flex-col ${props.style === "nightmode" ? "text-nightmode" : ""}`}>
             <div className="text-6xl py-2">{weekDay}</div>
             <div className="text-2xl">{time2}</div>
             <Time time={time} />
