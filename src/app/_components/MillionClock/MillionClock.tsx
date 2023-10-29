@@ -3,7 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import Clock from "~/app/_components/MillionClock/Clock";
 
-function MillionClock() {
+
+interface Props {
+    style?: string;
+}
+function MillionClock(props: Props) {
     const rows = 12;
     const columns = 24;
     const [grid, setGrid] = useState<string[][]>(
@@ -16,8 +20,8 @@ function MillionClock() {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            const hh = new Date().getHours();
-            const mm = new Date().getMinutes();
+            const hh = new Date().getMinutes();
+            const mm = new Date().getSeconds();
             const newGrid = AutoGrid(hh, mm, grid);
 
 
@@ -195,12 +199,12 @@ function MillionClock() {
     }
 
     return (
-        <div className="flex flex-col rounded-xl justify-center items-center w-full h-full">
+        <div className="flex flex-col p-10  rounded-xl justify-center items-center w-full h-full">
             {grid.map((row, rowIndex: number) => (
-                <div className="flex flex-row bg-white  justify-evenly" key={rowIndex}>
+                <div className="flex flex-row  justify-evenly" key={rowIndex}>
                     {row.map((column, columnIndex: number) => (
-                        <div className="flex flex-col justify-center items-center " key={`${rowIndex}-${columnIndex}`}>
-                            <Clock input={grid[rowIndex][columnIndex]} minutedegree={waveGrid[rowIndex][columnIndex][0]} hourdegree={waveGrid[rowIndex][columnIndex][1]} mavemode={false} />
+                        <div className="flex flex-col  justify-center items-center " key={`${rowIndex}-${columnIndex}`}>
+                            <Clock input={grid[rowIndex][columnIndex]} minutedegree={waveGrid[rowIndex][columnIndex][0]} hourdegree={waveGrid[rowIndex][columnIndex][1]} mavemode={false} style = {props.style}/>
                         </div>
                     ))}
                 </div>

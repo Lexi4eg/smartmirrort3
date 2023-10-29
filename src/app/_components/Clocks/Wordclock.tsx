@@ -9,8 +9,13 @@ const black_Ops_One = Roboto({
     subsets: ["latin"],
 });
 
-const Wordclock = () => {
-    const [currentTime, setCurrentTime] = useState(new Date());
+
+interface Props {
+    time : number;
+}
+
+const Wordclock = (props: Props) => {
+    const [currentTime, setCurrentTime] = useState(new Date(props.time));
     const [timestring, setTimestring] = useState<string>("");
     const [highlightedIndexes, setHighlightedIndexes] = useState<number[]>([]);
     function timeString(h: number, m: number, settings = { round: false }) {
@@ -98,51 +103,52 @@ const Wordclock = () => {
     useEffect(() => {
         let x = 0;
         let highlighted = [];
+        let lastHighlightedIndex = -1;
 
         let words = timestring.split(" ");
 
-        console.log(words);
+        for (let i = 0; i < words.length; i++) {
+            let word = words[i];
+            // @ts-ignore
+            let wordLength = word.length;
+            let highlightedWord = false;
 
-
-            for (let i = 0; i < words.length; i++) {
-                let word = words[i];
+            for (let j = 0; j < clock.length; j++) {
+                let k = 0;
                 // @ts-ignore
-                let wordLength = word.length;
-                let highlightedWord = false;
-
-                for (let j = 0; j < clock.length; j++) {
+                while (k < clock[j].length) {
                     // @ts-ignore
-                    for (let k = 0; k < clock[j].length; k++) {
+                    let index = clock[j].indexOf(word[0], k);
+                    // @ts-ignore
+                    if (index === -1 || index + wordLength > clock[j].length) {
+                        break;
+                    }
+                    let flag = false;
+                    for (let p = 0; p < wordLength; p++) {
                         // @ts-ignore
-                        if (clock[j][k] == word[0] && clock[j][k + wordLength - 1] == word[wordLength - 1]) {
-                            let flag = false;
-
-                            for (let p = 0; p < wordLength; p++) {
-                                // @ts-ignore
-                                if (clock[j][k + p] != word[p]) {
-                                    flag = true;
-                                    break;
-                                }
-                            }
-
-                            if (!flag && !highlightedWord) {
-                                for (let l = 0; l < wordLength; l++) {
-                                    // @ts-ignore
-                                    highlighted.push(j * clock[j].length + k + l);
-                                }
-
-                                highlightedWord = true;
-                            }
+                        if (clock[j][index + p] !== word[p]) {
+                            flag = true;
+                            break;
                         }
                     }
+                    // @ts-ignore
+                    if (!flag && !highlightedWord && (lastHighlightedIndex === -1 || j * clock[j].length + index > lastHighlightedIndex)) {
+                        for (let l = 0; l < wordLength; l++) {
+                            // @ts-ignore
+                            highlighted.push(j * clock[j].length + index + l);
+                        }
+                        highlightedWord = true;
+                        // @ts-ignore
+                        lastHighlightedIndex = j * clock[j].length + index + wordLength - 1;
+                        k = index + wordLength;
+                    } else {
+                        k = index + 1;
+                    }
                 }
-
-
-
+            }
 
             x++;
         }
-        console.log(highlighted);
 
         setHighlightedIndexes(highlighted);
     }, [timestring]);
@@ -202,12 +208,12 @@ const Wordclock = () => {
     );
 };
 
-interface Props {
+interface WordProps {
     char: string;
     highlighted: boolean;
 }
 
-function Words(props: Props) {
+function Words(props: WordProps) {
     return (
         <div
             className={`flex-1 flex justify-center items-center text-center ${

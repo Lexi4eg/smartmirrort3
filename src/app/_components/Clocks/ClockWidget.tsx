@@ -1,9 +1,14 @@
 
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
+import Clock from "~/app/_components/MillionClock/Clock";
 
-const ClockWidget: React.FC = () => {
-    const [time, setTime] = useState<Date>(new Date());
+
+interface ClockProps {
+    time: number;
+}
+const ClockWidget = (props: ClockProps) => {
+    const [time, setTime] = useState<Date>(new Date(props.time));
     const requestRef = useRef<number>();
 
     const animate = () => {
@@ -53,9 +58,9 @@ const ClockWidget: React.FC = () => {
     }
 
     return (
-        <div className="flex items-center w-full h-full justify-center ">
-            <div className="absolute top-0 left-0 flex p-4 rounded-3xl justify-center items-center w-full h-full">
-                <svg viewBox="0 0 100 100 " className={"border rounded-2xl"}>
+        <div key="clock-widget" className="flex items-center w-full h-full justify-center">
+            <div className="absolute top-0 left-0 flex 2xl:p-10 rounded-3xl justify-center items-center w-full h-full max-w-full max-h-full">
+                <svg viewBox="0 0 100 100" className={"border rounded-2xl"}>
                     <circle cx="50" cy="50" r="2" fill="white" />
                     {hourLines}
                     {minuteLines}
@@ -71,7 +76,6 @@ const ClockWidget: React.FC = () => {
                     <text x="25" y="53" textAnchor="middle" fill="white" fontSize="10">9</text>
                 </svg>
             </div>
-
         </div>
     );
 };
