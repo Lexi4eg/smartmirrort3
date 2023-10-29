@@ -41,7 +41,7 @@ const Wordclock = (props: Props) => {
         (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
             ) {
             case 0:
-                ret += (h == 1 ? "EIN " : hourNames[h - 1]);
+                ret += (h == 1 ? "EIN UHR" : hourNames[h - 1]);
                 break;
             case 5:
                 ret += "FÜNF NACH " + hourNames[h - 1];
@@ -81,7 +81,7 @@ const Wordclock = (props: Props) => {
         }
 
         setTimestring(ret);
-        ret += " UHR";
+
         return ret;
     }
 

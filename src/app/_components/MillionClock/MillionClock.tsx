@@ -20,8 +20,8 @@ function MillionClock(props: Props) {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            const hh = new Date().getMinutes();
-            const mm = new Date().getSeconds();
+            const hh = new Date().getHours();
+            const mm = new Date().getMinutes();
             const newGrid = AutoGrid(hh, mm, grid);
 
 

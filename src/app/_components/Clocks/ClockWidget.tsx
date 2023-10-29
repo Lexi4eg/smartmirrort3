@@ -60,7 +60,7 @@ const ClockWidget = (props: ClockProps) => {
 
     return (
         <div key="clock-widget" className="flex items-center w-full h-full justify-center">
-            <div className="absolute top-0 left-0 flex 2xl:p-10 rounded-3xl justify-center items-center w-full h-full max-w-full max-h-full">
+            <div className="absolute top-0 left-0 flex 2xl:p-2 rounded-3xl justify-center items-center w-full h-full max-w-full max-h-full">
                 <svg viewBox="0 0 100 100" className={`border rounded-2xl ${props.style === "nightmode" ? "text-nightmode border-nightmode" : ""}`}>
                     <circle cx="50" cy="50" r="2" fill={props.style === "nightmode" ? "red" : "white"} />
                     {hourLines}
