@@ -48,7 +48,7 @@ export default async function Home() {
       <main className="flex bg-cover max-w-screen min-h-screen bg-center flex-col items-center justify-center text-white bg-gradient-to-b from-[#2e026d] to-[#15162c]" style={{ backgroundImage: nightmode === "nightmode" ? "none" : "url('/porsche.jpg')", backgroundColor: nightmode === "nightmode" ? "black" : "" }}>
           {session ? (
             <>
-                <Dashboard style = {nightmode} widgets={widgets}/>
+                <Dashboard style = {nightmode} />
             </>
 
         ) : (
