@@ -1,7 +1,7 @@
 
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import Clock from "~/app/_components/MillionClock/Clock";
+import Clock from "~/app/_components/Clocks/MillionClock/Clock";
 
 
 interface ClockProps {

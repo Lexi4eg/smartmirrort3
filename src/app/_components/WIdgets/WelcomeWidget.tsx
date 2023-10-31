@@ -5,14 +5,14 @@ import {useEffect, useState} from "react";
 interface Props {
     style?: string;
     username: string;
+    time : number;
 }
 
  function WelcomeWidget(props: Props) {
     const [greeting, setGreeting] = useState("");
+    const [now , setNow] = useState(new Date(props.time));
+    const [hour, setHour] = useState<number>(now.getHours());
 
-
-    const now = new Date();
-    const hour = now.getHours();
 
 
 
@@ -31,7 +31,7 @@ interface Props {
 
     return (
         <div
-            className={`relative w-full h-full justify-center items-center flex flex-col text-center p-4 text-5xl ${ props.style ? "text-nightmode" : "text-white"
+            className={`relative w-full h-full justify-center items-center flex flex-col text-center p-4 text-5xl ${ props.style == "nightmode" ? "text-nightmode" : "text-white"
             }`}
         >
             <div className="">

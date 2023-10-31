@@ -1,11 +1,11 @@
 import React from 'react';
 
 interface ClockProps {
-    input: string;
-    minutedegree: number;
-    hourdegree: number;
-    mavemode: boolean;
-    style?: string;
+    input: string | undefined;
+    minutedegree: number | undefined;
+    hourdegree: number | undefined;
+    mavemode: boolean | undefined;
+    style?: string | undefined;
 }
 
 function Clock(props: ClockProps) {

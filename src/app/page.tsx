@@ -1,15 +1,46 @@
 import Link from "next/link";
-import { CreatePost } from "~/app/_components/create-post";
 import { getServerAuthSession } from "~/server/auth";
-import { api } from "~/trpc/server";
-import Dashboard from "~/app/_components/Dashboard";
-import {signOut} from "next-auth/react";
-import Dashboard2 from "~/app/_components/Dashboard2";
+import Dashboard from "~/app/_components/Dashboard/Dashboard";
+import Dashboard2 from "~/app/_components/Dashboard/Dashboard2";
 
+const widgets =
+[
+    {
+        "type": "Clock2",
+        "colSpan": 2,
+        "rowSpan": 2
+    },
+    {
+        "type": "MillionClock",
+        "colSpan": 4,
+        "rowSpan": 2
+    },
+    {
+        "type": "DailyQuoteWidget",
+        "colSpan": 3,
+        "rowSpan": 2
+    },
+    {
+        "type": "Wordclock",
+        "colSpan": 4,
+        "rowSpan": 3
+    },
+    {
+        "type": "NasaWidget",
+        "colSpan": 4,
+        "rowSpan": 3
+    },
+    {
+        "type": "WeatherWidget",
+        "colSpan": 4,
+        "rowSpan": 2
+    }
+
+]
 export default async function Home() {
   const session = await getServerAuthSession();
   const now = new Date();
-  let nightmode = "daymode";
+  let nightmode = "nightmode";
     if(now.getHours() >= 18 || now.getHours() <= 6){
         nightmode = "nightmode";
     }
@@ -17,7 +48,7 @@ export default async function Home() {
       <main className="flex bg-cover max-w-screen min-h-screen bg-center flex-col items-center justify-center text-white bg-gradient-to-b from-[#2e026d] to-[#15162c]" style={{ backgroundImage: nightmode === "nightmode" ? "none" : "url('/porsche.jpg')", backgroundColor: nightmode === "nightmode" ? "black" : "" }}>
           {session ? (
             <>
-                <Dashboard style = {nightmode}/>
+                <Dashboard style = {nightmode} widgets={widgets}/>
             </>
 
         ) : (

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import spinner from '../../../../../../../WebstormProjects/SmartMirrowUi/smartmirrowui/public/spinner.gif';
+import spinner from '../../../../../../../../WebstormProjects/SmartMirrowUi/smartmirrowui/public/spinner.gif';
 
 const Spinner = () => {
     return (

@@ -20,7 +20,11 @@ interface WeatherData {
     };
 }
 
-const WeatherWidget = () => {
+interface Props {
+    style?: string;
+}
+
+const WeatherWidget = ({style =""}: Props) => {
     const [weather, setWeather] = useState<WeatherData | null>(null);
 
     const fetchWeather = () => {
@@ -32,14 +36,14 @@ const WeatherWidget = () => {
     };
 
     return (
-        <div className="flex items-center justify-center">
+        <div className={`flex items-center justify-center  ${style === "nightmode" ? "text-nightmode" : "text-white"}`}>
             <div className="flex flex-col items-center justify-center p-4 rounded-md">
                 <button onClick={fetchWeather} className="mb-2">
                     Refresh
                 </button>
                 {weather ? (
                     <>
-                        <div className="flex flex-row border border-white rounded-2xl p-3">
+                        <div className={`flex flex-row border  rounded-2xl p-3  ${style === "nightmode" ? "border-nightmode" : "border-white"}`}>
                             <div className="flex flex-col justify-between">
                                 <div className="flex  items-center justify-center p-2">
 

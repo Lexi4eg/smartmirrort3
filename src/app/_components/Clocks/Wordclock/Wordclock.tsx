@@ -88,7 +88,6 @@ const Wordclock = (props: Props) => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentTime(new Date());
-            console.log(currentTime.getMinutes() % 5 )
 
         }, 1000);
 
@@ -221,7 +220,7 @@ function Words(props: WordProps) {
     return (
         <div
             className={`flex-1 flex justify-center items-center text-center ${
-                props.highlighted && props.style === "nightmode" ? "text-nightmode text-lg font-extrabold" : ""
+                props.highlighted && props.style === "nightmode" ? "text-nightmode text-xl font-extrabold" : ""
             } ${
                 props.highlighted && props.style !== "nightmode" ? "text-white" : ""
                 } ${

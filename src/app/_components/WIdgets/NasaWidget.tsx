@@ -13,7 +13,12 @@ interface Props {
     title: string;
     url: string;
 }
-const NasaWidget = () => {
+
+
+interface NasaWidgetProps {
+    style?: string;
+}
+const NasaWidget = ({style = ""}: NasaWidgetProps) => {
     const [nasaData, setNasaData] = useState<Props>();
 
     const fetchNasaData = async () => {
@@ -26,7 +31,7 @@ const NasaWidget = () => {
     };
 
     return (
-        <div className={"flex justify-center items-center flex-col"}>
+        <div className={`flex justify-center items-center flex-col ${style === "nightmode" ? "text-nightmode" : "text-white"}`}>
             <button onClick={fetchNasaData} className={"text-center  w-full"}>Fetch Nasa Data</button>
             {nasaData && (
                 <>

@@ -1,12 +1,13 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import Clock from "~/app/_components/MillionClock/Clock";
+import Clock from "~/app/_components/Clocks/MillionClock/Clock";
 
 
 interface Props {
-    style?: string;
+    style: string;
 }
+
 function MillionClock(props: Props) {
     const rows = 12;
     const columns = 24;
@@ -158,6 +159,7 @@ function MillionClock(props: Props) {
         for (let i: number = 3; i <= 8; i++) {
             for (let j: number = 1; j <= 5; j++) {
                 if (newGrid[i] !== undefined) {
+                    // @ts-ignore
                     newGrid[i][j] = number[i - 3][0][j - 1];
                 }
             }
@@ -166,6 +168,7 @@ function MillionClock(props: Props) {
         for (let i: number = 3; i <= 8; i++) {
             for (let j: number = 11; j <= 12; j++) {
                 if (newGrid[i] !== undefined) {
+                    // @ts-ignore
                     newGrid[i][j] = numbers[10][i - 3][0][j - 11];
                 }
             }
@@ -174,6 +177,7 @@ function MillionClock(props: Props) {
         for (let i: number = 3; i <= 8; i++) {
             for (let j: number = 6; j <= 10; j++) {
                 if (newGrid[i] !== undefined) {
+                    // @ts-ignore
                     newGrid[i][j] = number2[i - 3][0][j - 6];
                 }
             }
@@ -182,6 +186,7 @@ function MillionClock(props: Props) {
         for (let i: number = 3; i <= 8; i++) {
             for (let j: number = 13; j <= 17; j++) {
                 if (newGrid[i] !== undefined) {
+                    // @ts-ignore
                     newGrid[i][j] = number3[i - 3][0][j - 13];
                 }
             }
@@ -190,6 +195,7 @@ function MillionClock(props: Props) {
         for (let i: number = 3; i <= 8; i++) {
             for (let j: number = 18; j <= 22; j++) {
                 if (newGrid[i] !== undefined) {
+                    // @ts-ignore
                     newGrid[i][j] = number4[i - 3][0][j - 18];
                 }
             }
@@ -204,7 +210,7 @@ function MillionClock(props: Props) {
                 <div className="flex flex-row  justify-evenly" key={rowIndex}>
                     {row.map((column, columnIndex: number) => (
                         <div className="flex flex-col  justify-center items-center " key={`${rowIndex}-${columnIndex}`}>
-                            <Clock input={grid[rowIndex][columnIndex]} minutedegree={waveGrid[rowIndex][columnIndex][0]} hourdegree={waveGrid[rowIndex][columnIndex][1]} mavemode={false} style = {props.style}/>
+                            <Clock input={grid[rowIndex][columnIndex]} minutedegree={waveGrid[rowIndex][columnIndex][0]} hourdegree={waveGrid[rowIndex][columnIndex][1]} mavemode={false} style={props.style}></Clock>
                         </div>
                     ))}
                 </div>
