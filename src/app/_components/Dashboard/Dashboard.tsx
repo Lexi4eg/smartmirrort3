@@ -11,7 +11,7 @@ import DailyQuoteWidget from "~/app/_components/WIdgets/DailyQuoteWidget";
 import Wordclock from "~/app/_components/Clocks/Wordclock/Wordclock";
 import WelcomeWidget from "~/app/_components/WIdgets/WelcomeWidget";
 import MillionClock from "~/app/_components/Clocks/MillionClock/MillionClock";
-import TickTackToe from "~/app/_components/games/TickTacToe";
+import TickTackToe from "~/app/_components/games/TickTackToe/TickTacToe";
 
 interface Props {
     style?: string;
@@ -59,10 +59,11 @@ export default  async function Dashboard(props: Props) {
                 <div className='col-span-4 row-span-3 ' style={{backdropFilter: "blur(10px)"}}>
                     <Wordclock time={now.getTime()} style={nightmode}/>
                 </div>
-                <div className='col-span-4 row-span-3 ' style={{backdropFilter: "blur(10px)"}}>
+                <div className='col-span-4 row-span-3 p-10  ' style={{backdropFilter: "blur(10px)"}}>
                     <TickTackToe style={nightmode}/>
 
                 </div>
+
             </div>
         </div>
     );

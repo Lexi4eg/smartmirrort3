@@ -40,7 +40,7 @@ const widgets =
 export default async function Home() {
   const session = await getServerAuthSession();
   const now = new Date();
-  let nightmode = "nightmode";
+  let nightmode = "daymode";
     if(now.getHours() >= 18 || now.getHours() <= 6){
         nightmode = "nightmode";
     }
