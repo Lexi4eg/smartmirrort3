@@ -30,6 +30,7 @@ export default function RootLayout({
   );
 }
 
+
 // @ts-ignore
 export const dynamic  =  {
   async headers() {

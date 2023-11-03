@@ -7,6 +7,9 @@ await import("./src/env.mjs");
 
 /** @type {import("next").NextConfig} */
 const config = {
+    experimental : {
+        serverActions : true
+    },
     publicRuntimeConfig: {
         myEnvVar: process.env.MY_ENV_VAR
     },

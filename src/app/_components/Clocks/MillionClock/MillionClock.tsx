@@ -210,8 +210,13 @@ function MillionClock(props: Props) {
                 <div className="flex flex-row  justify-evenly" key={rowIndex}>
                     {row.map((column, columnIndex: number) => (
                         <div className="flex flex-col  justify-center items-center " key={`${rowIndex}-${columnIndex}`}>
-                            <Clock input={grid[rowIndex][columnIndex]} minutedegree={waveGrid[rowIndex][columnIndex][0]} hourdegree={waveGrid[rowIndex][columnIndex][1]} mavemode={false} style={props.style}></Clock>
-                        </div>
+                            <Clock
+                                input={grid && grid[rowIndex] && grid[rowIndex][columnIndex] ? grid[rowIndex][columnIndex] : [""][2]}
+                                minutedegree={waveGrid && waveGrid[rowIndex] && waveGrid[rowIndex][columnIndex] && waveGrid[rowIndex][columnIndex][0] ? waveGrid[rowIndex][columnIndex][0] : 0}
+                                hourdegree={waveGrid && waveGrid[rowIndex] && waveGrid[rowIndex][columnIndex] && waveGrid[rowIndex][columnIndex][1] ? waveGrid[rowIndex][columnIndex][1] : 0}
+                                mavemode={false}
+                                style={props.style}
+                            />                        </div>
                     ))}
                 </div>
             ))}

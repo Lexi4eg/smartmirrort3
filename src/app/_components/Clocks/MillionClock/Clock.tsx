@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ClockProps {
-    input: string | undefined;
+    input: string | undefined | number;
     minutedegree: number | undefined;
     hourdegree: number | undefined;
     mavemode: boolean | undefined;
@@ -12,12 +12,13 @@ function Clock(props: ClockProps) {
     // program the hour so that there are 90 degrees steps from 1 to 4
     let input = ConvertStringToHourMinute(props.input) as number[];
     if(props.mavemode){
+        // @ts-ignore
         input = [props.hourdegree, props.minutedegree];
     }
     const hourRotation = input && input.length >= 1 ? input[0] : 0;
     const minuteRotation = input && input.length >= 2 ? input[1] : 0;
 
-    function ConvertStringToHourMinute(input: string) {
+    function ConvertStringToHourMinute(input: string | number | undefined) {
         if (input === '─') {
             return [0, 180];
         }
