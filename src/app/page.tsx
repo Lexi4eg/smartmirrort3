@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getServerAuthSession } from "~/server/auth";
 import Dashboard from "~/app/_components/Dashboard/Dashboard";
 import Dashboard2 from "~/app/_components/Dashboard/Dashboard2";
+import AuthenticationPage from "~/app/authform/userauthpage";
 
 const widgets =
 [
@@ -52,15 +53,9 @@ export default async function Home() {
             </>
 
         ) : (
-            <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-              <p className="text-2xl text-white">Please log in to access the dashboard.</p>
-              <Link
-                  href="/api/auth/signin"
-                  className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
-              >
-                Sign in
-              </Link>
-            </div>
+
+                <AuthenticationPage />
+
         )}
       </main>
   );

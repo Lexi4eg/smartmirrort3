@@ -12,7 +12,6 @@ import Wordclock from "~/app/_components/Clocks/Wordclock/Wordclock";
 import WelcomeWidget from "~/app/_components/WIdgets/WelcomeWidget";
 import MillionClock from "~/app/_components/Clocks/MillionClock/MillionClock";
 import TickTackToe from "~/app/_components/games/TickTackToe/TickTacToe";
-import UploadImage from "~/app/_components/uploadImage";
 
 interface Props {
     style?: string;
@@ -64,7 +63,6 @@ export default  async function Dashboard(props: Props) {
                     <TickTackToe style={nightmode}/>
 
                 </div>
-
 
             </div>
         </div>
