@@ -8,7 +8,7 @@ interface ClockProps {
     style?: string | undefined;
 }
 
-function Clock(props: ClockProps) {
+function SingleClock(props: ClockProps) {
     // program the hour so that there are 90 degrees steps from 1 to 4
     let input = ConvertStringToHourMinute(props.input) as number[];
     if(props.mavemode){
@@ -70,4 +70,4 @@ function Clock(props: ClockProps) {
     );
 }
 
-export default Clock;
+export default SingleClock;

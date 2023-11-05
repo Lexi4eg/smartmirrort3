@@ -1,8 +1,8 @@
 import React from 'react';
-import Clocks from "~/app/_components/Clocks/MillionClock/MillionClock";
-import MillionClock from "~/app/_components/Clocks/MillionClock/MillionClock";
-import Clock2 from "~/app/_components/Clocks/Clock2";
-import DailyQuoteWidget from "~/app/_components/WIdgets/DailyQuoteWidget";
+import Clocks from "../../../components/Clocks/MillionClock/MillionClock";
+import MillionClock from "../../../components/Clocks/MillionClock/MillionClock";
+import Clock2 from "../../../components/Clocks/Clock2";
+import DailyQuoteWidget from "../../../components/WIdgets/DailyQuoteWidget";
 
 interface Props {
     style?: string;

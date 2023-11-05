@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import Clock from "~/app/_components/Clocks/MillionClock/Clock";
+import SingleClock from "./SingleClock";
 
 
 interface Props {
@@ -138,8 +138,8 @@ function MillionClock(props: Props) {
     }
 
     function AutoGrid(
-        hour: number = 0,
-        minute: number = 0,
+        hour = 0,
+        minute = 0,
         grid: string[][]
     ): string[][] {
         const h: number = Math.floor(hour / 10);
@@ -204,16 +204,17 @@ function MillionClock(props: Props) {
         return newGrid;
     }
 
+    // @ts-ignore
     return (
         <div className="flex flex-col p-10  rounded-xl justify-center items-center w-full h-full">
             {grid.map((row, rowIndex: number) => (
                 <div className="flex flex-row  justify-evenly" key={rowIndex}>
                     {row.map((column, columnIndex: number) => (
                         <div className="flex flex-col  justify-center items-center " key={`${rowIndex}-${columnIndex}`}>
-                            <Clock
-                                input={grid && grid[rowIndex] && grid[rowIndex][columnIndex] ? grid[rowIndex][columnIndex] : [""][2]}
-                                minutedegree={waveGrid && waveGrid[rowIndex] && waveGrid[rowIndex][columnIndex] && waveGrid[rowIndex][columnIndex][0] ? waveGrid[rowIndex][columnIndex][0] : 0}
-                                hourdegree={waveGrid && waveGrid[rowIndex] && waveGrid[rowIndex][columnIndex] && waveGrid[rowIndex][columnIndex][1] ? waveGrid[rowIndex][columnIndex][1] : 0}
+                            <SingleClock
+                                input={grid?.[rowIndex]?.[columnIndex] ? grid[rowIndex][columnIndex] : [""][2]}
+                                minutedegree={waveGrid?.[rowIndex]?.[columnIndex]?.[0] ? waveGrid[rowIndex][columnIndex][0] : 0}
+                                hourdegree={waveGrid?.[rowIndex]?.[columnIndex]?.[1] ? waveGrid[rowIndex][columnIndex][1] : 0}
                                 mavemode={false}
                                 style={props.style}
                             />                        </div>

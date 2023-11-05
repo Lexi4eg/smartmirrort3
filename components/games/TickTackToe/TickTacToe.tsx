@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import Board from "~/app/_components/games/TickTackToe/Board";
+import Board from "./Board";
 
 interface Props {
     style?: string;

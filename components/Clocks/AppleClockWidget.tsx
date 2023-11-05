@@ -1,14 +1,14 @@
 
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import Clock from "~/app/_components/Clocks/MillionClock/Clock";
+import SingleClock from "./MillionClock/SingleClock";
 
 
 interface ClockProps {
     time: number;
     style?: string;
 }
-const ClockWidget = (props: ClockProps) => {
+const AppleClockWidget = (props: ClockProps) => {
     const [time, setTime] = useState<Date>(new Date(props.time));
     const requestRef = useRef<number>();
 
@@ -81,4 +81,4 @@ const ClockWidget = (props: ClockProps) => {
     );
 };
 
-export default ClockWidget;
+export default AppleClockWidget;

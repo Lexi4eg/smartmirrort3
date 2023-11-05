@@ -1,43 +1,9 @@
-import Link from "next/link";
 import { getServerAuthSession } from "~/server/auth";
-import Dashboard from "~/app/_components/Dashboard/Dashboard";
-import Dashboard2 from "~/app/_components/Dashboard/Dashboard2";
-import AuthenticationPage from "~/app/authform/userauthpage";
+import Dashboard from "./(dashboards)/Dashboard";
+import AuthenticationPage from "../../components/authform/userauthpage";
 
-const widgets =
-[
-    {
-        "type": "Clock2",
-        "colSpan": 2,
-        "rowSpan": 2
-    },
-    {
-        "type": "MillionClock",
-        "colSpan": 4,
-        "rowSpan": 2
-    },
-    {
-        "type": "DailyQuoteWidget",
-        "colSpan": 3,
-        "rowSpan": 2
-    },
-    {
-        "type": "Wordclock",
-        "colSpan": 4,
-        "rowSpan": 3
-    },
-    {
-        "type": "NasaWidget",
-        "colSpan": 4,
-        "rowSpan": 3
-    },
-    {
-        "type": "WeatherWidget",
-        "colSpan": 4,
-        "rowSpan": 2
-    }
 
-]
+
 export default async function Home() {
   const session = await getServerAuthSession();
   const now = new Date();
