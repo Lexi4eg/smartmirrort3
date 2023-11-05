@@ -1,6 +1,6 @@
 import { getServerAuthSession } from "~/server/auth";
 import Dashboard from "./(dashboards)/Dashboard";
-import AuthenticationPage from "../../components/authform/userauthpage";
+import AuthenticationPage from "../../components/authform/authpage";
 
 
 
@@ -12,10 +12,13 @@ export default async function Home() {
         nightmode = "nightmode";
     }
   return (
-      <main className="flex bg-cover max-w-screen min-h-screen bg-center flex-col items-center justify-center text-white bg-gradient-to-b from-[#2e026d] to-[#15162c]" style={{ backgroundImage: nightmode === "nightmode" ? "none" : "url('/porsche.jpg')", backgroundColor: nightmode === "nightmode" ? "black" : "" }}>
+      <>
           {session ? (
             <>
-                <Dashboard style = {nightmode} />
+            <div className="flex bg-cover max-w-screen min-h-screen bg-center flex-col items-center justify-center text-white bg-gradient-to-b from-[#2e026d] to-[#15162c]" style={{ backgroundImage: nightmode === "nightmode" ? "none" : "url('/porsche.jpg')", backgroundColor: nightmode === "nightmode" ? "black" : "" }}>
+
+            <Dashboard style = {nightmode} />
+            </div>
             </>
 
         ) : (
@@ -23,7 +26,7 @@ export default async function Home() {
                 <AuthenticationPage />
 
         )}
-      </main>
+      </>
   );
 }
 
