@@ -1,17 +1,17 @@
 
-import AppleClockWidget from "../../../components/Clocks/AppleClockWidget";
+import ClockWidget from "~/app/_components/Clocks/ClockWidget";
 
 import Link from "next/link";
-import Clock2 from "../../../components/Clocks/Clock2";
+import Clock2 from "~/app/_components/Clocks/Clock2";
 
 
 
 import {getServerAuthSession} from "~/server/auth";
-import DailyQuoteWidget from "../../../components/WIdgets/DailyQuoteWidget";
-import Wordclock from "../../../components/Clocks/Wordclock/Wordclock";
-import WelcomeWidget from "../../../components/WIdgets/WelcomeWidget";
-import MillionClock from "../../../components/Clocks/MillionClock/MillionClock";
-import TickTackToe from "../../../components/games/TickTackToe/TickTacToe";
+import DailyQuoteWidget from "~/app/_components/WIdgets/DailyQuoteWidget";
+import Wordclock from "~/app/_components/Clocks/Wordclock/Wordclock";
+import WelcomeWidget from "~/app/_components/WIdgets/WelcomeWidget";
+import MillionClock from "~/app/_components/Clocks/MillionClock/MillionClock";
+import TickTackToe from "~/app/_components/games/TickTackToe/TickTacToe";
 
 interface Props {
     style?: string;
@@ -20,7 +20,7 @@ export default  async function Dashboard(props: Props) {
 
     const now = new Date();
     const session = await getServerAuthSession();
-    const nightmode = props.style ?? "daymode";
+    let nightmode = props.style ?? "daymode";
 
     return (
         <div>
@@ -32,7 +32,7 @@ export default  async function Dashboard(props: Props) {
                 </div>
                 <div className='col-span-2 row-span-2 rounded-xl  flex items-center justify-center  '
                      style={{backdropFilter: "blur(10px)"}}>
-                    <AppleClockWidget time={now.getTime()} style={nightmode}/>
+                    <ClockWidget time={now.getTime()} style={nightmode}/>
                 </div>
 
                 <div className='col-span-2 row-span-2 ' style={{backdropFilter: "blur(10px)"}}>
