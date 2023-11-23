@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Small change">
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Auth Page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/authform/authpage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/authform/authpage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +87,7 @@
       <workItem from="1700142956023" duration="153000" />
       <workItem from="1700143113620" duration="2275000" />
       <workItem from="1700396108298" duration="581000" />
-      <workItem from="1700744406945" duration="1977000" />
+      <workItem from="1700744406945" duration="2344000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -154,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700396456967</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="New Auth Page">
+      <option name="closed" value="true" />
+      <created>1700746404387</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700746404387</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +185,7 @@
     <MESSAGE value="New File Structure" />
     <MESSAGE value="New Loading UI" />
     <MESSAGE value="Small change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small change" />
+    <MESSAGE value="New Auth Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Auth Page" />
   </component>
 </project>
