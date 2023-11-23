@@ -61,7 +61,6 @@ export default  async function Dashboard(props: Props) {
                 </div>
                 <div className='col-span-4 row-span-3 p-10  ' style={{backdropFilter: "blur(10px)"}}>
                     <TickTackToe style={nightmode}/>
-
                 </div>
 
             </div>
