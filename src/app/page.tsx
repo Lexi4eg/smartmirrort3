@@ -1,14 +1,12 @@
 import { getServerAuthSession } from "~/server/auth";
 import Dashboard from "./(dashboards)/Dashboard";
 import AuthenticationPage from "../../components/authform/authpage";
-import Dashboard2 from "~/app/(dashboards)/Dashboard2";
 
 
 
 export default async function Home() {
   const session = await getServerAuthSession();
   const now = new Date();
-  let test = 2;
   let nightmode = "daymode";
     if(now.getHours() >= 18 || now.getHours() <= 6){
         nightmode = "nightmode";
@@ -32,4 +30,3 @@ export default async function Home() {
       </>
   );
 }
-

@@ -1,15 +1,14 @@
-
-import Image from "next/image";
-
+import Link from "next/link";
 export default function AuthenticationPage (){
     return(
-        <div className={"w-full flex flex-row min-w-screen min-h-screen h-full "}>
-            <div className={"w-full h-screen bg-blue-950"}>
-
-            </div>
-
-            <div className={"w-1/2 h-full flex items-center justify-center bg-white"}>
-                <h1 className={"text-black"}>Auth Page</h1>
+        <div className={"w-full min-w-screen flex flex-row min-h-screen h-full "}>
+            <div className={"w-screen justify-center items-center flex h-screen"}>
+                <Link
+                    href="/api/auth/signin"
+                    className="rounded-full p-10 border border-black  w-full px-10 py-3 "
+                >
+                    Sign In
+                </Link>
             </div>
         </div>
     )
