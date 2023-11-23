@@ -167,8 +167,8 @@ const Wordclock = (props: Props) => {
     ];
 
     return (
-        <div className={"w-full h-full flex flex-col items-center  justify-center p-3"}>
-            <div className="flex w-full flex-row justify-between text-md">
+        <div className={"w-full h-full flex flex-col p-3"}>
+            <div className="flex w-full h-full flex-row justify-between text-md">
                 <div className={`  ${currentTime.getMinutes() % 5 == 1 || currentTime.getMinutes() % 5 == 2|| currentTime.getMinutes() % 5 ==3 || currentTime.getMinutes() % 5 == 4 ? "" : "text-opacity-0"} ${props.style === "nightmode" ? "text-nightmode" : "text-white"}`}>
                     ⬤
                 </div>
@@ -177,27 +177,24 @@ const Wordclock = (props: Props) => {
                 </div>
             </div>
 
-
-
-            <div className={`w-full h-full px-5 justify-center  items-center flex-col ${props.style === "nightmode" ? "text-red-950" : "text-slate-700"}`}>
-                <div className={"flex flex-col h-full justify-evenly"}>
-                    {clock.map((row, rowIndex) => (
-                        <div className={"flex flex-row justify-evenly"} key={rowIndex}>
-                            {row.map((char, charIndex) => (
-                                <Words
-                                    key={charIndex}
-                                    char={char}
-                                    style={props.style}
-                                    highlighted={highlightedIndexes.includes(
-                                        rowIndex * row.length + charIndex
-                                    )}
-                                />
-                            ))}
-                        </div>
-                    ))}
-                </div>
+            <div className={`flex flex-col px-5 ${props.style === "nightmode" ? "text-red-950" : "text-slate-700"}`}>
+                {clock.map((row, rowIndex) => (
+                    <div className={"flex"} key={rowIndex}>
+                        {row.map((char, charIndex) => (
+                            <Words
+                                key={charIndex}
+                                char={char}
+                                style={props.style}
+                                highlighted={highlightedIndexes.includes(
+                                    rowIndex * row.length + charIndex
+                                )}
+                            />
+                        ))}
+                    </div>
+                ))}
             </div>
-            <div className="flex w-full flex-row justify-between">
+
+            <div className="flex w-full h-full  flex-row justify-between">
                 <div className={` ${currentTime.getMinutes() % 5 == 3 || currentTime.getMinutes() % 5 == 4 ? "" : "text-opacity-0"} ${props.style === "nightmode" ? "text-nightmode" : "text-white"}`}>
                     ⬤
                 </div>
@@ -207,7 +204,7 @@ const Wordclock = (props: Props) => {
             </div>
         </div>
     );
-};
+}
 
 interface WordProps {
     char: string;
@@ -219,7 +216,7 @@ function Words(props: WordProps) {
 
     return (
         <div
-            className={`flex-1 flex justify-center items-center text-center ${
+            className={`flex-1 flex justify-center w-full max-h-fit items-center text-center ${
                 props.highlighted && props.style === "nightmode" ? "text-nightmode text-xl font-extrabold" : ""
             } ${
                 props.highlighted && props.style !== "nightmode" ? "text-white" : ""
