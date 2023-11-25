@@ -1,14 +1,14 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import SingleClock from "./SingleClock";
+import SingleClockFull from "./SingleClockFull";
 
 
 interface Props {
     style: string;
 }
 
-function MillionClock(props: Props) {
+function MillionClockFull(props: Props) {
     const rows = 12;
     const columns = 24;
     const [grid, setGrid] = useState<string[][]>(
@@ -21,8 +21,8 @@ function MillionClock(props: Props) {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            const hh = new Date().getHours();
-            const mm = new Date().getMinutes();
+            const hh = new Date().getMinutes();
+            const mm = new Date().getSeconds();
             const newGrid = AutoGrid(hh, mm, grid);
 
 
@@ -206,12 +206,12 @@ function MillionClock(props: Props) {
 
     // @ts-ignore
     return (
-        <div className="flex flex-col p-10 sm:p-5 md:p-10 lg:p-20 xl:p-40 rounded-xl justify-center items-center w-full h-full">
+        <div className="flex flex-col w-screen h-screen  p-10 rounded-xl justify-center items-center">
             {grid.map((row, rowIndex: number) => (
-                <div className="flex flex-row  justify-evenly" key={rowIndex}>
+                <div className="flex flex-row w-full h-full  justify-evenly" key={rowIndex}>
                     {row.map((column, columnIndex: number) => (
-                        <div className="flex flex-col  justify-center items-center " key={`${rowIndex}-${columnIndex}`}>
-                            <SingleClock
+                        <div className="flex flex-col w-full h-full  justify-center items-center " key={`${rowIndex}-${columnIndex}`}>
+                            <SingleClockFull
                                 input={grid?.[rowIndex]?.[columnIndex] ? grid[rowIndex][columnIndex] : [""][2]}
                                 minutedegree={waveGrid?.[rowIndex]?.[columnIndex]?.[0] ? waveGrid[rowIndex][columnIndex][0] : 0}
                                 hourdegree={waveGrid?.[rowIndex]?.[columnIndex]?.[1] ? waveGrid[rowIndex][columnIndex][1] : 0}
@@ -225,4 +225,4 @@ function MillionClock(props: Props) {
     );
 }
 
-export default MillionClock;
+export default MillionClockFull;
