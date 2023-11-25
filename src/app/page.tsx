@@ -1,7 +1,6 @@
 import { getServerAuthSession } from "~/server/auth";
 import Dashboard from "./(dashboards)/Dashboard";
 import AuthenticationPage from "../../components/authform/authpage";
-import WordClockDashboard from "~/app/(dashboards)/WordClockDashboard";
 
 
 export default async function Home() {
@@ -15,12 +14,17 @@ export default async function Home() {
         <>
             {session ? (
                 <>
-                    <div className="flex bg-cover  min-h-screen  h-full w-full flex-col  text-white bg-gradient-to-b from-[#2e026d] to-[#15162c]" style={{ backgroundImage: nightmode === "nightmode" ? "none" : "url('/porsche.jpg')", backgroundColor: nightmode === "nightmode" ? "black" : "" }}>
-                        <WordClockDashboard style = {nightmode} />
+                    <div className="flex bg-cover max-w-screen min-h-screen bg-center flex-col items-center justify-center text-white bg-gradient-to-b from-[#2e026d] to-[#15162c]" style={{ backgroundImage: nightmode === "nightmode" ? "none" : "url('/porsche.jpg')", backgroundColor: nightmode === "nightmode" ? "black" : "" }}>
+
+                        <Dashboard style = {nightmode} />
                     </div>
                 </>
+
+
             ) : (
+
                 <AuthenticationPage />
+
             )}
         </>
     );

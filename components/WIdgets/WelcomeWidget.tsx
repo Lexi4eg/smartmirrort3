@@ -36,7 +36,7 @@ interface Props {
         >
             <div className="">
                 <div className="">{greeting}</div>
-                <div className={"text-6xl"}>
+                <div className="text-6xl">
                     {props.username}
                 </div>
             </div>

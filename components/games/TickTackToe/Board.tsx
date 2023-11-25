@@ -4,15 +4,14 @@ type Props = {
     squares: Array<string>;
     finished: boolean;
     onClick: (i: number) => void;
-    style?: string;
 };
 const Board: React.FC<Props> = props => {
     // @ts-ignore
     const renderSquare = (i: number) => (
-        <Square value={props.squares[i]} style={props.style} onClick={() => props.onClick(i)} />
+        <Square value={props.squares[i]} onClick={() => props.onClick(i)} />
     );
     return (
-        <div className={` text-white flex justify-center items-center ${props.style === "nightmode" ? "text-nightmode" : ""}`}>
+        <div className={" text-white flex justify-center items-center "}>
             <div className="">
                 {renderSquare(0)}
                 {renderSquare(1)}

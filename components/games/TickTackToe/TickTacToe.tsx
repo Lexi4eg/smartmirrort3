@@ -63,9 +63,8 @@ const TickTackToe = (props: Props) => {
                 squares={squares}
                 finished={finished}
                 onClick={i => handleClick(i)}
-                style={props.style}
             />
-            <div className={`text-center p-10 ${props.style === "nightmode" ? "text-nightmode" : ""}`}>
+            <div className="text-center p-10">
                 <div>{status}</div>
                <button onClick={() => restart ()}>Restart</button>
             </div>
