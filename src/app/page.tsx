@@ -15,7 +15,7 @@ const optionsData = [
 export default async function Home() {
     const session = await getServerAuthSession();
     const now = new Date();
-    let style = "nightmode";
+    let style = "daymode";
 
     const selectedOption:number = 1;
 

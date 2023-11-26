@@ -12,6 +12,7 @@ import Wordclock from "../../../components/Clocks/Wordclock/Wordclock";
 import WelcomeWidget from "../../../components/WIdgets/WelcomeWidget";
 import MillionClock from "../../../components/Clocks/MillionClock/MillionClock";
 import TickTackToe from "../../../components/games/TickTackToe/TickTacToe";
+import Weather from "../../../components/WIdgets/Weather";
 
 interface Props {
     style?: string;
@@ -37,8 +38,8 @@ export default  async function Dashboard(props: Props) {
                     <Clock2 time={4} style={nightmode}/>
                 </div>
 
-                <div className='col-span-4 row-span-2 ' style={{backdropFilter: "blur(10px)"}}>
-                    <MillionClock style={nightmode}/>
+                <div className='col-span-4 row-span-2 flex justify-center items-center ' style={{backdropFilter: "blur(10px)"}}>
+                    <Weather style={nightmode}/>
                 </div>
 
                 <div className='col-span-3 row-span-2 ' style={{backdropFilter: "blur(10px)"}}>

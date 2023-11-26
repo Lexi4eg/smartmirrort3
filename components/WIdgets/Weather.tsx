@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import Image from 'next/image';
+import {useEffect} from "react";
 
 interface WeatherData {
     name: string;
@@ -27,20 +28,22 @@ interface Props {
 const WeatherWidget = ({style =""}: Props) => {
     const [weather, setWeather] = useState<WeatherData | null>(null);
 
-    const fetchWeather = () => {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=Graz&units=metric&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`;
-        axios.get(url).then((response) => {
-            setWeather(response.data);
-        });
-        console.log(weather);
-    };
+    useEffect(() => {
+        const fetchWeather = () => {
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=Graz&units=metric&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`;
+            axios.get(url).then((response) => {
+                setWeather(response.data);
+            });
+            console.log("fetching weather");
+        };
+
+        fetchWeather();
+    }, []);
 
     return (
         <div className={`flex items-center justify-center  ${style === "nightmode" ? "text-nightmode" : "text-white"}`}>
             <div className="flex flex-col items-center justify-center p-4 rounded-md">
-                <button onClick={fetchWeather} className="mb-2">
-                    Refresh
-                </button>
+
                 {weather ? (
                     <>
                         <div className={`flex flex-row border  rounded-2xl p-3  ${style === "nightmode" ? "border-nightmode" : "border-white"}`}>

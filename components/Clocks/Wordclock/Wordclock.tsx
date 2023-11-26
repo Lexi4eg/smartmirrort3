@@ -4,7 +4,7 @@ import { Roboto } from "next/font/google";
 import {compileNonPath} from "next/dist/shared/lib/router/utils/prepare-destination";
 
 const black_Ops_One = Roboto({
-    weight: "100",
+    weight: "400",
     variable: "--font-inter",
     subsets: ["latin"],
 });
@@ -220,7 +220,7 @@ function Words(props: WordProps) {
     return (
         <div
             className={`flex-1 flex justify-center items-center text-center ${
-                props.highlighted && props.style === "nightmode" ? "text-nightmode text-xl font-extrabold" : ""
+                props.highlighted && props.style === "nightmode" ? "text-nightmode text-xl  font-extrabold" : ""
             } ${
                 props.highlighted && props.style !== "nightmode" ? "text-white" : ""
                 } ${
