@@ -13,7 +13,7 @@ import WelcomeWidget from "../../../components/WIdgets/WelcomeWidget";
 import MillionClock from "../../../components/Clocks/MillionClock/MillionClock";
 import TickTackToe from "../../../components/games/TickTackToe/TickTacToe";
 import Weather from "../../../components/WIdgets/Weather";
-import NYTWidget from "../../../components/WIdgets/NYTWidget";
+import NYTWidget from "../../../components/WIdgets/NYTWidget/NYTWidget";
 
 interface Props {
     style?: string;
