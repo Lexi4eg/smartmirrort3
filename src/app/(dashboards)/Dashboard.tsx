@@ -59,12 +59,11 @@ export default  async function Dashboard(props: Props) {
                 <div className='col-span-4 row-span-3 ' style={{backdropFilter: "blur(10px)"}}>
                     <Wordclock time={now.getTime()} style={nightmode}/>
                 </div>
-                <div className='col-span-4 row-span-3 p-10  ' style={{backdropFilter: "blur(10px)"}}>
-                    <TickTackToe style={nightmode}/>
-                </div>
-                <div className='col-span-4 row-span-3 p-10  ' style={{backdropFilter: "blur(10px)"}}>
+
+                <div className='col-span-4 row-span-4 p-3 ' style={{backdropFilter: "blur(10px)"}}>
                     <NYTWidget style={nightmode}/>
                 </div>
+
 
             </div>
         </div>

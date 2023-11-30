@@ -10,7 +10,8 @@ interface Props {
 interface Article {
     title: string;
     abstract: string;
-    imageURl: string;
+    imageUrl: string;
+    style?: string;
 }
 
 const NYTWidget = (props: Props) => {
@@ -23,33 +24,43 @@ const NYTWidget = (props: Props) => {
         setData(jsonData);
     };
 
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 5) % (data ? data.length : 1));
-        }, 20000);
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % (data ? data.length : 1));
+        }, 10000);
         return () => clearInterval(interval);
     }, [data]);
 
+    const progress = data ? (currentIndex / data.length) * 100 : 0;
+
     return (
-        <div className="max-h-screen overflow-y-auto p-4">
-            <div className="mb-4 flex justify-center text-3xl">News to go </div>
-            <button onClick={fetchData} className={"text-center  w-full"}>Fetch NYT Data</button>
-            {data && data.slice(currentIndex, currentIndex + 5).map((article, index ) => (
-                <NewsItem key={index} title={article.title} abstract={article.abstract} imageURl={article.imageUrl} />
+        <div className="max-h-screen overflow-y-auto ">
+            {data && data.slice(currentIndex, currentIndex + 1).map((article, index ) => (
+                <NewsItem key={index} title={article.title} abstract={article.abstract} imageUrl={article.imageUrl} style={props.style} />
             ))}
+            <div className="mt-4 w-full">
+                <div className="h-2 rounded bg-zinc-900">
+                    <div style={{width: `${progress}%`}} className={`h-full rounded bg-nightmode  transition-all duration-500 ${props.style === "nightmode" ? "text-nightmode" : "text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"}`}></div>
+                </div>
+            </div>
         </div>
     );
 };
 
 const NewsItem = (props: Article) => {
     return (
-        <div className="bg-zinc-900 flex flex-row shadow-lg rounded-lg p-4 mb-4 animate-fade-in-down">
-            <div className="flex flex-col">
-            <h2 className="text-2xl mb-2">{props.title}</h2>
-            <p className="text-gray-300">{props.abstract}</p>
+        <div className={`bg-zinc-900 w-full h-full flex flex-col shadow-lg rounded-lg  mb-4 animate-fade-in-down  ${props.style === "nightmode" ? "text-nightmode" : "text-white"}`}>
+            <div className="z-0">
+            <Image src={props.imageUrl} alt="" width={4000} height={4000} className={"rounded-t-xl"} />
             </div>
-            <Image src={props.imageURl} alt="" width={400} height={400} className={"rounded-xl"} />
+            <div className="p-3">
+                <h2 className="text-2xl mb-2">{props.title}</h2>
+                <p className={`${props.style === "nightmode" ? "text-nightmode" : "text-gray-300"}`}>{props.abstract}</p>
+            </div>
         </div>
     );
 }
