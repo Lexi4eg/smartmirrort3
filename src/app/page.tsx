@@ -17,7 +17,7 @@ export default async function Home() {
     const now = new Date();
     let style = "daymode";
 
-    const selectedOption:number = 1;
+    const selectedOption:number = 3;
 
     if(now.getHours() >= 18 || now.getHours() <= 6){
         style = "nightmode";

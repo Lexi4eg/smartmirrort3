@@ -13,6 +13,7 @@ import WelcomeWidget from "../../../components/WIdgets/WelcomeWidget";
 import MillionClock from "../../../components/Clocks/MillionClock/MillionClock";
 import TickTackToe from "../../../components/games/TickTackToe/TickTacToe";
 import Weather from "../../../components/WIdgets/Weather";
+import NYTWidget from "../../../components/WIdgets/NYTWidget";
 
 interface Props {
     style?: string;
@@ -60,6 +61,9 @@ export default  async function Dashboard(props: Props) {
                 </div>
                 <div className='col-span-4 row-span-3 p-10  ' style={{backdropFilter: "blur(10px)"}}>
                     <TickTackToe style={nightmode}/>
+                </div>
+                <div className='col-span-4 row-span-3 p-10  ' style={{backdropFilter: "blur(10px)"}}>
+                    <NYTWidget style={nightmode}/>
                 </div>
 
             </div>
