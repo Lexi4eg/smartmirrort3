@@ -28,7 +28,6 @@ export default  async function Dashboard3(props: Props) {
     return (
         <div>
             <div className='grid grid-cols-12 overflow-hidden grid-rows-6 gap-4 h-screen max-w-screen max-h-screen w-screen'>
-
                 <div className='col-span-4 row-span-4 p-3 ' style={{backdropFilter: "blur(10px)"}}>
                     <StockWidget style={nightmode}/>
                 </div>
