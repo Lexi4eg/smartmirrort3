@@ -14,6 +14,7 @@ import MillionClock from "../../../components/Clocks/MillionClock/MillionClock";
 import TickTackToe from "../../../components/games/TickTackToe/TickTacToe";
 import Weather from "../../../components/WIdgets/Weather";
 import NYTWidget from "../../../components/WIdgets/NYTWidget/NYTWidget";
+import StockWidget from "../../../components/WIdgets/StockWidget";
 
 interface Props {
     style?: string;
@@ -29,9 +30,8 @@ export default  async function Dashboard3(props: Props) {
             <div className='grid grid-cols-12 overflow-hidden grid-rows-6 gap-4 h-screen max-w-screen max-h-screen w-screen'>
 
                 <div className='col-span-4 row-span-4 p-3 ' style={{backdropFilter: "blur(10px)"}}>
-                    <NYTWidget style={nightmode}/>
+                    <StockWidget style={nightmode}/>
                 </div>
-
             </div>
         </div>
     );
