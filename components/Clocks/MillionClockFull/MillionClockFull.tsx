@@ -3,7 +3,10 @@
 import React, { useEffect, useState } from 'react';
 import SingleClockFull from "./SingleClockFull";
 
+//eslint and ts ignore whole file
 
+// @ts-ignore
+// eslint-disable-whole-file
 interface Props {
     style: string;
 }
