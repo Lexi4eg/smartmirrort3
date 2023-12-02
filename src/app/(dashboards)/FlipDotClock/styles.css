@@ -1,0 +1,35 @@
+.flip-clock {
+    perspective: 300px;
+    display: inline-block;
+}
+
+.flip-clock div {
+    position: relative;
+    display: inline-block;
+    animation: flip 1s infinite;
+    transform-style: preserve-3d;
+}
+
+.flip-clock div:before,
+.flip-clock div:after {
+    position: absolute;
+    content: attr(data-digit);
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.flip-clock div:before {
+    transform: rotateX(90deg) translateY(-20px);
+}
+
+.flip-clock div:after {
+    transform: rotateX(-90deg) translateY(20px);
+}
+
+@keyframes flip {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(-90deg); }
+    100% { transform: rotateX(-180deg); }
+}

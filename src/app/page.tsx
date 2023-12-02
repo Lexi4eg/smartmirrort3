@@ -4,6 +4,8 @@ import AuthenticationPage from "../../components/authform/authpage";
 import WorkClockDashboard from "~/app/(dashboards)/WorkClockDashboard";
 import MillionTimesDashboard from "~/app/(dashboards)/MillionTimesDashboard";
 import Dashboard3 from "~/app/(dashboards)/Dashboard3";
+import FlipDotClock from "~/app/(dashboards)/FlipDotClock/FlipDotClock";
+import SolarSystemWallpaper from "~/app/(dashboards)/solarSystem/solarSystemWallpaper";
 
 const optionsData = [
     { id: 1, text: 'MillionTimesF' },
@@ -18,7 +20,7 @@ export default async function Home() {
     const now = new Date();
     let style = "daymode";
 
-    const selectedOption:number = 4;
+    const selectedOption:number = 6;
 
     if(now.getHours() >= 18 || now.getHours() <= 6){
         style = "nightmode";
@@ -37,6 +39,8 @@ export default async function Home() {
                         {selectedOption === 2 && <WorkClockDashboard style={style} />}
                         {selectedOption === 3 && <MillionTimesDashboard style={style} />}
                         {selectedOption === 4 && <Dashboard3 style={style} />}
+                        {selectedOption === 5 && <FlipDotClock style={style} />}
+                        {selectedOption === 6 && <SolarSystemWallpaper style={style }/>}
 
                     </div>
                 </>

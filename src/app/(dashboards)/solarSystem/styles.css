@@ -1,0 +1,64 @@
+.solar-system {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    overflow: hidden; /* Add this to hide anything outside the viewport */
+}
+
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2vw; /* Adjust this to make the sun smaller */
+    height: 2vw; /* Adjust this to make the sun smaller */
+    margin: -1vw 0 0 -1vw; /* Adjust this to center the sun */
+    background: white;
+    border-radius: 50%;
+}
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid white;
+    border-radius: 50%;
+    animation: orbit 10s infinite linear;
+}
+
+.planet {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 0 0 0 -5px;
+    background: white;
+    border-radius: 50%;
+}
+
+.orbit1 { width: 10vw; height: 10vw; margin: -5vw 0 0 -5vw; animation: orbit 88s infinite linear; } /* Mercury */
+.orbit2 { width: 18vw; height: 18vw; margin: -9vw 0 0 -9vw; animation: orbit 224.7s infinite linear; } /* Venus */
+.orbit3 { width: 25vw; height: 25vw; margin: -12.5vw 0 0 -12.5vw; animation: orbit 365.2s infinite linear; } /* Earth */
+.orbit4 { width: 30vw; height: 30vw; margin: -15vw 0 0 -15vw; animation: orbit 687s infinite linear; } /* Mars */
+.orbit5 { width: 35vw; height: 35vw; margin: -17.5vw 0 0 -17.5vw; animation: orbit 4331s infinite linear; } /* Jupiter */
+.orbit6 { width: 40vw; height: 40vw; margin: -20vw 0 0 -20vw; animation: orbit 10747s infinite linear; } /* Saturn */
+.orbit7 { width: 45vw; height: 45vw; margin: -22.5vw 0 0 -22.5vw; animation: orbit 30660s infinite linear; } /* Uranus */
+.orbit8 { width: 50vw; height: 50vw; margin: -25vw 0 0 -25vw; animation: orbit 60152s infinite linear; } /* Neptune */
+
+.planet1 { width: 0.382vw; height: 0.382vw; margin: 0.4vw 0 0 -0.191vw; } /* Mercury */
+.planet2 { width: 0.949vw; height: 0.949vw; margin: -0vw 0 0 -0.4745vw; } /* Venus */
+.planet3 { width: 1vw; height: 1vw; margin: 0 0 0 -0.5vw; } /* Earth */
+.planet4 { width: 0.532vw; height: 0.532vw; margin: 0.3vw 0 0 -0.266vw; } /* Mars */
+.planet5 { width: 1vw; height: 1vw; margin: 0 0 0 -0.5vw; } /* Jupiter */
+.planet6 { width: 1vw; height: 1vw; margin: 0 0 0 -0.5vw; } /* Saturn */
+.planet7 { width: 0.4vw; height: 0.4vw; margin: 0.4vw 0 0 -0.2vw; } /* Uranus */
+.planet8 { width: 0.38vw; height: 0.38vw; margin: 0.4vw 0 0 -0.19vw; } /* Neptune */
+
+
+
+
+@keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

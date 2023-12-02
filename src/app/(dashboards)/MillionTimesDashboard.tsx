@@ -5,7 +5,7 @@ import MillionClockFull from "../../../components/Clocks/MillionClockFull/Millio
 
 
 interface Props {
-    style?: string | undefined;
+    style?: string ;
 }
 export default async function MillionTimesDashboard(props: Props) {
 
