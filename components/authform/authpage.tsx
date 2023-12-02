@@ -1,6 +1,8 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import {Roboto} from "next/font/google";
+import {signIn} from "next-auth/react";
 
 const roboto = Roboto({
     weight: '500',
@@ -18,20 +20,20 @@ export default function AuthenticationPage (){
                     . . .
                 </div>
             </div>
-            <div className="flex w-screen h-screen justify-center ">
+            <div className="flex w-screen h-screen justify-center pt-20">
                 <div className="w-1/3 flex justify-center  h-1/2 bg-[#191A1B] rounded-3xl shadow-md">
                    <div className="flex justify-center flex-col items-center">
                        <Image src={"/applelogin.png"} alt={""}  width={200} height={200}></Image>
                        <div className="text-center text-4xl p-10">
                            Smart Mirror UI
                        </div>
-                       <Link href={"/api/auth/signin"}>
-                            <button className="bg-[#191A1B] shadow  rounded-lg p-3 text-xl">
+
+                            <button onClick={() => signIn("google")} className="bg-[#191A1B] shadow  rounded-lg p-3 text-xl">
                                 <div className={roboto.className}>
                                  Sign In
                                 </div>
                             </button>
-                       </Link>
+
 
                    </div>
                 </div>

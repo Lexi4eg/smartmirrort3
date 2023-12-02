@@ -9,13 +9,9 @@ interface Props {
 }
 
  function WelcomeWidget(props: Props) {
-    const [greeting, setGreeting] = useState("");
-    const [now , setNow] = useState(new Date(props.time));
-    const [hour, setHour] = useState<number>(now.getHours());
-
-
-
-
+    let [greeting, setGreeting] = useState("");
+     let [now , setNow] = useState(new Date(props.time));
+     let [hour, setHour] = useState<number>(now.getHours());
 
     useEffect(() => {
 

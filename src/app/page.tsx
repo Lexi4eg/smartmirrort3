@@ -7,13 +7,6 @@ import Dashboard3 from "~/app/(dashboards)/Dashboard3";
 import FlipDotClock from "~/app/(dashboards)/FlipDotClock/FlipDotClock";
 import SolarSystemWallpaper from "~/app/(dashboards)/solarSystem/solarSystemWallpaper";
 
-const optionsData = [
-    { id: 1, text: 'MillionTimesF' },
-    { id: 2, text: 'WordClockF' },
-    { id: 3, text: 'Dashboard1' },
-    { id: 4, text: 'Dashboard2' },
-];
-
 
 export default async function Home() {
     const session = await getServerAuthSession();
@@ -30,10 +23,7 @@ export default async function Home() {
         <>
             {session ? (
                 <>
-                    <div className="flex bg-cover max-w-screen min-h-screen bg-center bg-black flex-col items-center justify-center text-white bg-gradient-to-b from-[#2e026d] to-[#15162c]"
-                         style={{
-                             backgroundImage: (selectedOption === 1 && style === "daymode") ? "url('/porsche.jpg')" : "none"
-                    }}
+                    <div className="flex bg-cover max-w-screen min-h-screen bg-center  flex-col items-center justify-center text-white  bg-[#191a1b] "
                     >
                         {selectedOption === 1 && <Dashboard style={style} />}
                         {selectedOption === 2 && <WorkClockDashboard style={style} />}

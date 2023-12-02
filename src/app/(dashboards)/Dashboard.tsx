@@ -27,7 +27,7 @@ export default  async function Dashboard(props: Props) {
     return (
         <div>
             <div className='grid grid-cols-12 overflow-hidden grid-rows-6 gap-4 h-screen max-w-screen max-h-screen w-screen'>
-                <div className='col-span-2 row-span-2 rounded-xl  ' style={{backdropFilter: "blur(10px)"}}>
+                <div className='col-span-3 row-span-2 rounded-xl  ' style={{backdropFilter: "blur(10px)"}}>
                     <WelcomeWidget username={session?.user.name ?? ""} style={nightmode}  time={now.getTime()}/>
                 </div>
                 <div className='col-span-2 row-span-2 rounded-xl  flex items-center justify-center  '
@@ -60,7 +60,7 @@ export default  async function Dashboard(props: Props) {
                     <Wordclock time={now.getTime()} style={nightmode}/>
                 </div>
 
-                <div className='col-span-2 row-span-2 p-3 ' style={{backdropFilter: "blur(10px)"}}>
+                <div className='col-span-3 row-span-3 p-3 ' style={{backdropFilter: "blur(10px)"}}>
                     <NYTWidget style={nightmode}/>
                 </div>
 
