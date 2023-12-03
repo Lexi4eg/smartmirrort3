@@ -17,7 +17,7 @@ export const metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {
@@ -30,15 +30,3 @@ export default function RootLayout({
   );
 }
 
-
-// @ts-ignore
-export const dynamic  =  {
-  async headers() {
-    return [
-        {
-            source: '/api/auth/signin',
-        }
-
-    ]
-  }
-}

@@ -1,8 +1,12 @@
-import { NextRequest } from 'next/server'
+import {NextApiRequest, NextApiResponse} from "next";
 
-const  handler = (req: NextRequest, res: NextRequest) => {
-    const detectedIp = req.ip;
-    console.log(detectedIp);
+const  handler = (
+    req: NextApiRequest ,
+    res: NextApiResponse
+) => {
+    //const detectedIp = req.ip;
+    //console.log(detectedIp);
+    return new Response("hi this does not work yet");
 }
 
 
