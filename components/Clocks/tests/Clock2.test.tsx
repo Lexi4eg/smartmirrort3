@@ -15,4 +15,13 @@ describe('Clock2 component', () => {
         const style = 'nightmode';
         render(<Clock2 style={style} time={time} />);
     });
+    test('renders with nightmode text color when style is nightmode', () => {
+        const time = new Date().getTime();
+        const style = 'nightmode';
+        const { container } = render(<Clock2 style={style} time={time} />);
+
+      // @ts-ignore
+        const hasNightmodeClass = container.firstChild.classList.contains('text-nightmode');
+        expect(hasNightmodeClass).toBe(true);
+    });
 });
