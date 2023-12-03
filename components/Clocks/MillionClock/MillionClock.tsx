@@ -5,7 +5,7 @@ import SingleClock from "./SingleClock";
 
 
 interface Props {
-    style: string;
+    style?: string;
 }
 
 function MillionClock(props: Props) {
@@ -212,9 +212,9 @@ function MillionClock(props: Props) {
                     {row.map((column, columnIndex: number) => (
                         <div className="flex flex-col  justify-center items-center " key={`${rowIndex}-${columnIndex}`}>
                             <SingleClock
-                                input={grid?.[rowIndex]?.[columnIndex] ? grid[rowIndex][columnIndex] : [""][2]}
-                                minutedegree={waveGrid?.[rowIndex]?.[columnIndex]?.[0] ? waveGrid[rowIndex][columnIndex][0] : 0}
-                                hourdegree={waveGrid?.[rowIndex]?.[columnIndex]?.[1] ? waveGrid[rowIndex][columnIndex][1] : 0}
+                                input={grid?.[rowIndex]?.[columnIndex]  }
+                                minutedegree={waveGrid?.[rowIndex]?.[columnIndex]?.[0] ?? 0}
+                                hourdegree={waveGrid?.[rowIndex]?.[columnIndex]?.[1] ?? 0}
                                 mavemode={false}
                                 style={props.style}
                             />                        </div>

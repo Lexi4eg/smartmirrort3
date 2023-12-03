@@ -1,8 +1,6 @@
-import {NextApiRequest, NextApiResponse} from "next";
 
 const  handler = (
-    req: NextApiRequest ,
-    res: NextApiResponse
+
 ) => {
     //const detectedIp = req.ip;
     //console.log(detectedIp);

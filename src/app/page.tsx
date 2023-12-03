@@ -11,10 +11,9 @@ import SolarSystemWallpaper from "~/app/(dashboards)/solarSystem/solarSystemWall
 export default async function Home() {
     const session = await getServerAuthSession();
     const now = new Date();
-    let style = "daymode";
+    let style: string = "daymode";
 
-    const selectedOption:number = 1;
-
+    let selectedOption: number = 1;
     if(now.getHours() >= 18 || now.getHours() <= 6){
         style = "nightmode";
     }

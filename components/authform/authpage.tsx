@@ -1,5 +1,4 @@
 "use client"
-import Link from "next/link";
 import Image from "next/image";
 import {Roboto} from "next/font/google";
 import {signIn} from "next-auth/react";

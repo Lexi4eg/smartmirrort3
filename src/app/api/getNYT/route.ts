@@ -1,9 +1,6 @@
-import {NextRequest} from "next/server";
 import {env} from "~/env.mjs";
-import {metadata} from "~/app/layout";
-import {NextApiRequest, NextApiResponse} from "next";
 
-const handler = async (req: NextApiRequest , res: NextApiResponse) => {
+const handler = async ()  => {
 
     const data = await fetch(`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${env.NYTKEY}`)
     const json = await data.json();

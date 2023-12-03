@@ -1,8 +1,6 @@
-import {NextApiRequest, NextApiResponse} from "next";
 
 const handler = async (
-    req: NextApiRequest ,
-    res: NextApiResponse
+
 ) => {
     const dataIBM = await fetch("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=Z5H8Z0Y4QXG9JQW0");
     const json = await dataIBM.json();

@@ -1,7 +1,6 @@
 
 "use client";
-import React, { useState, useEffect, useRef } from 'react';
-import SingleClock from "./MillionClock/SingleClock";
+import React, {useState, useEffect, useRef, useCallback} from 'react';
 
 
 interface ClockProps {
@@ -12,9 +11,15 @@ const AppleClockWidget = (props: ClockProps) => {
     const [time, setTime] = useState<Date>(new Date(props.time));
     const requestRef = useRef<number>();
 
-    const animate = () => {
+    const animate = useCallback(() => {
         setTime(new Date());
-    };
+    }, []);
+
+    useEffect(() => {
+        const timer = setInterval(animate, 1000);
+
+        return () => clearInterval(timer);
+    }, [animate]);
 
     useEffect(() => {
         requestRef.current = requestAnimationFrame(animate);
