@@ -6,6 +6,7 @@ import SingleClock from "./SingleClock";
 
 interface Props {
     style?: string;
+    mode : string;
 }
 
 function MillionClock(props: Props) {
@@ -21,21 +22,13 @@ function MillionClock(props: Props) {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            const hh = new Date().getHours();
-            const mm = new Date().getMinutes();
-            const newGrid = AutoGrid(hh, mm, grid);
-
-
-            const newWaveGrid = setWave(waveGrid);
-            setWaveGrid(newWaveGrid);
-            // @ts-ignore
-
+            const newgrid = AutoGrid(new Date().getHours(), new Date().getMinutes(), grid);
+            setGrid(newgrid);
 
         }, 100);
 
         return () => clearInterval(timer);
     }, [grid]);
-
 
 
     const numbers: string[][][] = [
@@ -126,7 +119,6 @@ function MillionClock(props: Props) {
 
             for (let i: number = 0; i < rows; i++) {
                 for (let j: number = 0; j < columns; j++) {
-                    // set the minute and hour degree to a sine wave
                     const waveValue = Math.round(Math.sin(j / 5 * 2 * Math.PI + waveDegree) * 2);
                     newGrid[i][j][0] = waveValue * 10;
                     newGrid[i][j][1] = waveValue * 10;
@@ -147,7 +139,6 @@ function MillionClock(props: Props) {
         const m: number = Math.floor(minute / 10);
         const m2: number = minute % 10;
 
-        // get the number from numbers and write it to the grid
         const number: string[][] = numbers[h] as string[][];
         const number2: string[][] = numbers[h2] as string[][];
         const number3: string[][] = numbers[m] as string[][];
@@ -206,23 +197,38 @@ function MillionClock(props: Props) {
 
     // @ts-ignore
     return (
-        <div className="flex flex-col p-10 sm:p-5 md:p-10 lg:p-20 xl:p-40 rounded-xl justify-center items-center w-full h-full">
+        <div className={`flex flex-col p-10  rounded-xl justify-center items-center ${props.mode === "full" ? "w-screen h-screen " : "w-full h-full"}`}>
             {grid.map((row, rowIndex: number) => (
-                <div className="flex flex-row  justify-evenly" key={rowIndex}>
+                <div className="flex flex-row w-full h-full justify-evenly" key={rowIndex}>
                     {row.map((column, columnIndex: number) => (
-                        <div className="flex flex-col  justify-center items-center " key={`${rowIndex}-${columnIndex}`}>
-                            <SingleClock
-                                input={grid?.[rowIndex]?.[columnIndex]  }
-                                minutedegree={waveGrid?.[rowIndex]?.[columnIndex]?.[0] ?? 0}
-                                hourdegree={waveGrid?.[rowIndex]?.[columnIndex]?.[1] ?? 0}
-                                mavemode={false}
-                                style={props.style}
-                            />                        </div>
+                        <div className="flex flex-col justify-center items-center w-full h-full" key={`${rowIndex}-${columnIndex}`} >
+                            {props.mode === "full" ? (
+                                <SingleClock
+                                    input={grid?.[rowIndex]?.[columnIndex]}
+                                    minutedegree={waveGrid?.[rowIndex]?.[columnIndex]?.[0] ?? 0}
+                                    hourdegree={waveGrid?.[rowIndex]?.[columnIndex]?.[1] ?? 0}
+                                    mavemode={false}
+                                    style={props.style}
+                                    isFull={true}
+
+                                />
+                            ) : (
+                                <SingleClock
+                                    input={grid?.[rowIndex]?.[columnIndex]}
+                                    minutedegree={waveGrid?.[rowIndex]?.[columnIndex]?.[0] ?? 0}
+                                    hourdegree={waveGrid?.[rowIndex]?.[columnIndex]?.[1] ?? 0}
+                                    mavemode={false}
+                                    style={props.style}
+
+                                />
+                            )}
+                        </div>
                     ))}
                 </div>
             ))}
         </div>
     );
+
 }
 
 export default MillionClock;

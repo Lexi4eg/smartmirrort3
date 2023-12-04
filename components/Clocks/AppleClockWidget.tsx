@@ -23,7 +23,7 @@ const AppleClockWidget = (props: ClockProps) => {
 
     useEffect(() => {
         requestRef.current = requestAnimationFrame(animate);
-        return () => cancelAnimationFrame(requestRef.current as number);
+        return () => cancelAnimationFrame(requestRef.current!);
     }, [animate]);
 
     const hours = time.getHours();
