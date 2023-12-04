@@ -8,9 +8,13 @@ interface Digit {
     minute: number;
 }
 
+
+interface HandPositions {
+    smallHand: number;
+    largeHand: number;
+}
+
 const ClockClock24: React.FC = () => {
-    const [time, setTime] = useState<string>('----');
-    const [specialState, setSpecialState] = useState<Digit[] | null>(null);
 
     const digits  = [
         [    // 0
@@ -89,14 +93,15 @@ const ClockClock24: React.FC = () => {
     const happyDigit: Digit[] = Array(6).fill({ hour: 22.5, minute: 7.5 });
     const neutralDigit: Digit[] = Array(6).fill({ hour: 7.5, minute: 7.5 });
 
-    const hourToDegrees = (hour: number) => hour * (360 / 12) - 90;
-    const minuteToDegrees = (minute: number) => minute * (360 / 60) - 90;
+    const [time, setTime] = useState<string>('----');
+    const [handPositions, setHandPositions] = useState<HandPositions[]>([]);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            const currentTime = new Date(Date.now() + 10000).toTimeString();
+            const currentTime = new Date(Date.now()).toTimeString();
             if (currentTime !== time) {
                 setTime(currentTime);
+                updateHandPositions(currentTime);
             }
         }, 1000);
 
@@ -115,13 +120,14 @@ const ClockClock24: React.FC = () => {
     const handleClickRight = () => showSpecialState(neutralDigit);
 
     const setHands = (id: number, hour: number, minute: number) => {
-        const clock = document.querySelector(`.clock--${id}`);
+        const clock = document.querySelector(`.clock--${id}`) as HTMLElement;
         clock?.style.setProperty(`--small-hand`, `${hourToDegrees(hour) + 360}deg`);
         clock?.style.setProperty(`--large-hand`, `${minuteToDegrees(minute) - 360}deg`);
     }
 
     const setDigit = (id: number, values: Digit[]) => {
         for (let x = 0; x < 6; x++) {
+            // @ts-ignore
             setHands(id * 6 + x, values[x].hour, values[x].minute);
         }
     }
