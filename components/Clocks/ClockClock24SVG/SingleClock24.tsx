@@ -1,5 +1,5 @@
 import React from 'react';
-import ConvertStringToHourMinute from "../Clocks/MillionClock/ConvertStringToHourMinute";
+import ConvertStringToHourMinute from "../MillionClock/ConvertStringToHourMinute";
 
 interface ClockProps {
     minutedegree: number | undefined;

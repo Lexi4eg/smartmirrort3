@@ -193,16 +193,6 @@ function MillionClock(props: Props) {
                                     isFull={true}
 
                                 />
-                            ) : (
-                                <SingleClock
-                                    input={grid?.[rowIndex]?.[columnIndex]}
-                                    minutedegree={waveGrid?.[rowIndex]?.[columnIndex]?.[0] ?? 0}
-                                    hourdegree={waveGrid?.[rowIndex]?.[columnIndex]?.[1] ?? 0}
-                                    mavemode={false}
-                                    style={props.style}
-
-                                />
-                            )
                         </div>
                     ))}
                 </div>

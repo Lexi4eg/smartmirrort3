@@ -6,7 +6,7 @@ import MillionTimesDashboard from "~/app/(dashboards)/MillionTimesDashboard";
 import Dashboard3 from "~/app/(dashboards)/Dashboard3";
 import FlipDotClock from "~/app/(dashboards)/FlipDotClock/FlipDotClock";
 import SolarSystemWallpaper from "~/app/(dashboards)/solarSystem/solarSystemWallpaper";
-import ClockClock24F from "../../components/ClockClock24/ClockClock24";
+import ClockClock24F from "../../components/Clocks/ClockClock24SVG/ClockClock24";
 import ClockClock24FDashboard from "~/app/(dashboards)/ClockClock24F";
 
 
