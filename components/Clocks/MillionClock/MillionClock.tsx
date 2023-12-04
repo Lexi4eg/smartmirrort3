@@ -110,24 +110,6 @@ function MillionClock(props: Props) {
             ["──"]],
     ];
 
-    function setWave(grid: number[][][]) {
-        let newGrid = JSON.parse(JSON.stringify(grid));
-        let now = new Date();
-
-        setInterval(() => {
-            let waveDegree = (now.getSeconds() / 60) * 360;
-
-            for (let i: number = 0; i < rows; i++) {
-                for (let j: number = 0; j < columns; j++) {
-                    const waveValue = Math.round(Math.sin(j / 5 * 2 * Math.PI + waveDegree) * 2);
-                    newGrid[i][j][0] = waveValue * 10;
-                    newGrid[i][j][1] = waveValue * 10;
-                }
-            }
-        }, 10);
-
-        return newGrid;
-    }
 
     function AutoGrid(
         hour = 0,
@@ -202,7 +184,6 @@ function MillionClock(props: Props) {
                 <div className="flex flex-row w-full h-full justify-evenly" key={rowIndex}>
                     {row.map((column, columnIndex: number) => (
                         <div className="flex flex-col justify-center items-center w-full h-full" key={`${rowIndex}-${columnIndex}`} >
-                            {props.mode === "full" ? (
                                 <SingleClock
                                     input={grid?.[rowIndex]?.[columnIndex]}
                                     minutedegree={waveGrid?.[rowIndex]?.[columnIndex]?.[0] ?? 0}
@@ -221,7 +202,7 @@ function MillionClock(props: Props) {
                                     style={props.style}
 
                                 />
-                            )}
+                            )
                         </div>
                     ))}
                 </div>
