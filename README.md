@@ -24,8 +24,8 @@ This is the Software part of the Smart Mirror T3 project. The Smart Mirror T3 is
 
 ### Installation
 > - Clone the repository
-> - Install Docker
-> - Run `docker-compose up` in the root directory
+> - Install Docker and dependencies 
+> - Run `npm run dev` in the root directory
 > - Open `localhost:3000` in your browser
 > - Enjoy!
 
