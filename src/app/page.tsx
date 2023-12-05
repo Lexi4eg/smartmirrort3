@@ -9,13 +9,22 @@ import SolarSystemWallpaper from "~/app/(dashboards)/solarSystem/solarSystemWall
 import ClockClock24F from "../../components/Clocks/ClockClock24SVG/ClockClock24";
 import ClockClock24FDashboard from "~/app/(dashboards)/ClockClock24F";
 
-
 export default async function Home() {
     const session = await getServerAuthSession();
+
+    let selectedOption: number = 1;
+
+
+        const response = await fetch("http://192.168.178.57:3000/api/remotetest");
+        const data = await response.json();
+        console.log(data);
+        selectedOption = data;
+
+
+
     const now = new Date();
     let style: string = "daymode";
 
-    let selectedOption: number = 7;
     if(now.getHours() >= 18 || now.getHours() <= 6){
         style = "nightmode";
     }
@@ -24,6 +33,7 @@ export default async function Home() {
         <>
             {session ? (
                 <>
+
                     <div className="flex bg-cover max-w-screen min-h-screen bg-center  flex-col items-center justify-center text-white  bg-[#191a1b] ">
                         {selectedOption === 1 && <Dashboard style={style} />}
                         {selectedOption === 2 && <WorkClockDashboard style={style} />}
