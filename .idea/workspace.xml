@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Auth Page">
-      <change afterPath="$PROJECT_DIR$/.license" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Clocks/ClockClock24SVG/ClockClock24.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Clocks/ClockClock24SVG/ClockClock24.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Clocks/ClockClock24SVG/SingleClock24.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Clocks/ClockClock24SVG/SingleClock24.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/Dashboard2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/Dashboard2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +93,9 @@
       <workItem from="1700396108298" duration="581000" />
       <workItem from="1700744406945" duration="2344000" />
       <workItem from="1701762715858" duration="113000" />
+      <workItem from="1701854989027" duration="404000" />
+      <workItem from="1701855616684" duration="139000" />
+      <workItem from="1701858160430" duration="1820000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />

@@ -22,7 +22,7 @@ export default async function Dashboard2({ style = "", widgets,  }: Props) {
                 {widgets.map((widget, index) => (
                     <div key={index} className={`col-span-${widget.colSpan} row-span-${widget.rowSpan}`} style={{ backdropFilter: "blur(10px)" }}>
                         {widget.type === 'Clock2' && <Clock2 time={4} style={nightmode} />}
-                        {widget.type === 'MillionClock' && <MillionClock style={nightmode} />}
+                        {widget.type === 'MillionClock' && <MillionClock style={nightmode}  mode={""}/>}
                         {widget.type === 'DailyQuoteWidget' && <DailyQuoteWidget style={nightmode} />}
                     </div>
                 ))}

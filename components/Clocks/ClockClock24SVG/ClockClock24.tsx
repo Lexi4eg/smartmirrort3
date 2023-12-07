@@ -1,5 +1,4 @@
 "use client"
-import React, {useEffect, useState} from 'react';
 import "./ClockClock24.css";
 
 
@@ -88,6 +87,7 @@ const digits  = [
     ]
 ];
 
+/*
 const ClockClock24: React.FC = () => {
 
 
@@ -124,14 +124,14 @@ const ClockClock24: React.FC = () => {
 
     const setDigit = (id: number, values: Digit[]) => {
         for (let x = 0; x < 6; x++) {
-            setHands(id * 6 + x, values[x].hour, values[x].minute);
+            //setHands(id * 6 + x, values[x].hour, values[x].minute);
         }
     }
 
     const updateHandPositions = (time: string) => {
         const [hours, minutes] = time.split(':').map(Number);
         setHandPositions([
-            { smallHand: hourToDegrees(hours), largeHand: minuteToDegrees(minutes) },
+            //{ smallHand: hourToDegrees(hours), largeHand: minuteToDegrees(minutes) },
             // ... rest of your code ...
         ]);
     }
@@ -168,3 +168,5 @@ const ClockClock24: React.FC = () => {
 }
 
 export default ClockClock24;
+
+*/

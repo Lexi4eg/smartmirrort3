@@ -6,19 +6,25 @@ import MillionTimesDashboard from "~/app/(dashboards)/MillionTimesDashboard";
 import Dashboard3 from "~/app/(dashboards)/Dashboard3";
 import FlipDotClock from "~/app/(dashboards)/FlipDotClock/FlipDotClock";
 import SolarSystemWallpaper from "~/app/(dashboards)/solarSystem/solarSystemWallpaper";
-import ClockClock24F from "../../components/Clocks/ClockClock24SVG/ClockClock24";
 import ClockClock24FDashboard from "~/app/(dashboards)/ClockClock24F";
 
 export default async function Home() {
     const session = await getServerAuthSession();
 
-    let selectedOption: number = 1;
+    let selectedOption: number = 3;
 
 
-        const response = await fetch("http://192.168.178.57:3000/api/remotetest");
-        const data = await response.json();
-        console.log(data);
-        selectedOption = data;
+        //const response = await fetch("http://192.168.178.57:3000/api/remotetest");
+        //const data = await response.json();
+        //console.log(data);
+        //selectedOption = data;
+
+
+
+
+
+
+
 
 
 
@@ -42,6 +48,7 @@ export default async function Home() {
                         {selectedOption === 5 && <FlipDotClock style={style} />}
                         {selectedOption === 6 && <SolarSystemWallpaper style={style }/>}
                         {selectedOption === 7 && <ClockClock24FDashboard style={style }/>}
+                        
                     </div>
                 </>
             ) : (
