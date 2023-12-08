@@ -2,6 +2,8 @@
   "name": "smartmirrort3",
   "version": "0.1.0",
   "private": true,
+ 
+
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -11,8 +13,11 @@
     "test": "jest",
     "test:watch": "jest --watch"
   },
+
+
   "dependencies": {
     "@leenguyen/react-flip-clock-countdown": "^1.5.0",
+    "@prisma/client": "^5.7.0",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@t3-oss/env-nextjs": "^0.7.0",
@@ -48,7 +53,7 @@
     "@testing-library/user-event": "^14.5.1",
     "@types/eslint": "^8.44.2",
     "@types/jest": "^29.5.10",
-    "@types/node": "^18.16.0",
+    "@types/node": "^18.19.3",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
@@ -60,12 +65,19 @@
     "postcss": "^8.4.27",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.5.1",
+    "prisma": "^5.7.0",
     "tailwindcss": "^3.3.3",
     "ts-jest": "^29.1.1",
-    "typescript": "^5.1.6"
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.3"
   },
   "ct3aMetadata": {
     "initVersion": "7.22.0"
   },
-  "packageManager": "npm@9.7.1"
+  "packageManager": "npm@9.7.1",
+  "description": "This is the Software part of the Smart Mirror T3 project. The Smart Mirror T3 is a smart mirror that can display the time, weather, news, and more. The Smart Mirror T3 is a project that is part of the course SPL at HTL Bulme. The project is done by a group of 2 students.",
+  "main": "jest.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

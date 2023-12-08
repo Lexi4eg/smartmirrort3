@@ -11,8 +11,32 @@ const config = {
     publicRuntimeConfig: {
         myEnvVar: process.env.MY_ENV_VAR
     },
+
+
     images: {
-        domains: ['openweathermap.org', 'apod.nasa.gov','static01.nyt.com'],
+        // @ts-ignore
+        remotePatterns: [
+            {
+            protocol: 'https',
+            hostname: 'openweathermap.org',
+            port: '',
+            pathname: '/**',
+        },
+            {
+                protocol: 'https',
+                hostname: 'apod.nasa.gov',
+                port: '',
+                pathname: '/**',
+            },
+
+            {
+                protocol: 'https',
+                hostname: 'static01.nyt.com',
+                port: '',
+                pathname: '/**',
+            }
+        ],
+
     },
 };
 

@@ -1,13 +1,17 @@
 import {NextRequest, NextResponse} from "next/server";
 
-const handler = async (req: NextRequest, res: NextResponse)  => {
+let mode = 1; // This variable will store the mode value
 
+const handler = async (req: NextRequest, res: NextResponse)  => {
         if(req.headers.get('Custom-Header') == null){
-                return new Response("2");
+                return new Response(mode + "");
         }
         else {
-        console.log(req.headers.get('Custom-Header'));
-        return new Response("3");
+                console.log(req.headers.get('Custom-Header'));
+                // @ts-ignore
+                mode = parseInt(req.headers.get('Custom-Header')) || 1; // Update the mode value
+                console.log(mode);
+                return new Response(mode + "");
         }
 }
 

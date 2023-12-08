@@ -1,23 +1,49 @@
-"use client"
-import React, { useState } from 'react';
+import { revalidatePath } from 'next/cache'
+import {PrismaClient} from "@prisma/client";
 
-export default function Page () {
-    const [text, setText] = useState('');
-    const [header, setHeader] = useState('My Custom Header');
+interface Mode {
+    id : number,
+    mode : number
+}
 
-    const sendreq = async () => {
-        const response = await fetch(
-            'http://192.168.178.57:3000/api/remotetest', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Custom-Header': text,
-                },
-                body: JSON.stringify({control: text}),
-            }
-        );
-        console.log(await response.json());
-    };
+export const revalidate = 1;
+
+export default async function Page () {
+
+
+    const prisma = new PrismaClient();
+
+    const mode = await prisma.mode.findUnique({
+        where: { id: 1 },
+    });
+
+
+    const text = mode?.mode ?? 1;
+
+
+    async function update(formData: FormData) {
+        "use server";
+        const prisma = new PrismaClient();
+        const mode = parseInt(formData.get("mode") as string) || 1;
+
+
+        await prisma.mode.update({
+            where: { id: 1 },
+            data: {
+                mode: mode as number,
+            },
+        });
+        //update all open pages in different tabs
+        revalidatePath('/remotetest')
+
+
+
+        
+        console.log("revalidating")
+        revalidatePath('/')
+
+    }
+
 
     return (
         <>
@@ -25,17 +51,20 @@ export default function Page () {
                 <div className="p-3 text-3xl flex justify-center ">
                     Mobile Control app
                 </div>
+                <form action = {update}>
+
                 <input
                     type="text"
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
+                    name="mode"
+                    defaultValue={text}
                     className="mb-4"
                 />
-                <button onClick={sendreq}>
+                <button type={"submit"}>
                     <div className="p-3 text-3xl flex justify-center ">
                         Remote Test
                     </div>
                 </button>
+                </form>
             </div>
         </>
     )

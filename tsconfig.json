@@ -1,14 +1,16 @@
 {
+
   "compilerOptions": {
     "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "esModuleInterop": true,
+
     "checkJs": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -21,6 +23,9 @@
       "~/*": ["./src/*"]
     },
     "plugins": [{ "name": "next" }]
+  },
+  "ts-node": {
+    "esm": true
   },
   "include": [
     ".eslintrc.cjs",
