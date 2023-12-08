@@ -1,4 +1,4 @@
-
+"use client";
 import AppleClockWidget from "../../../components/Clocks/AppleClockWidget";
 
 import Link from "next/link";

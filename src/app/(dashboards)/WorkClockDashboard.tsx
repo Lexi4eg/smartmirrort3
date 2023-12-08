@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import WordclockFUll from "../../../components/Clocks/WordClockFull/Wordclockfull";
 

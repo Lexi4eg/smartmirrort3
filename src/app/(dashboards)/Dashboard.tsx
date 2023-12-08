@@ -1,4 +1,4 @@
-
+"use client"
 import AppleClockWidget from "../../../components/Clocks/AppleClockWidget";
 
 import Link from "next/link";
@@ -6,7 +6,6 @@ import Clock2 from "../../../components/Clocks/Clock2";
 
 
 
-import {getServerAuthSession} from "~/server/auth";
 import DailyQuoteWidget from "../../../components/WIdgets/DailyQuoteWidget";
 import Wordclock from "../../../components/Clocks/Wordclock/Wordclock";
 import WelcomeWidget from "../../../components/WIdgets/WelcomeWidget";
@@ -17,11 +16,12 @@ import NYTWidget from "../../../components/WIdgets/NYTWidget/NYTWidget";
 
 interface Props {
     style?: string;
+    session: any;
 }
 export default  async function Dashboard(props: Props) {
 
     const now = new Date();
-    const session = await getServerAuthSession();
+    const session =  props.session;
     const nightmode = props.style ?? "daymode";
 
     return (
@@ -43,9 +43,7 @@ export default  async function Dashboard(props: Props) {
                     <Weather style={nightmode}/>
                 </div>
 
-                <div className='col-span-3 row-span-2 ' style={{backdropFilter: "blur(10px)"}}>
-                    <DailyQuoteWidget style={nightmode}/>
-                </div>
+                
                 <div className='col-span-1 row-span-1 rounded-xl flex justify-center items-center'
                      style={{backdropFilter: "blur(10px)"}}>
                     <Link

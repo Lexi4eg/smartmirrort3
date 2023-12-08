@@ -1,5 +1,9 @@
-import { revalidatePath } from 'next/cache'
-import {PrismaClient} from "@prisma/client";
+"use client";
+
+import React, { useState, useEffect } from 'react';
+import io from 'socket.io-client';
+
+const socket = io('http://localhost:3001'); // Replace with your server URL
 
 interface Mode {
     id : number,
@@ -9,40 +13,16 @@ interface Mode {
 export const revalidate = 1;
 
 export default async function Page () {
-
-
-    const prisma = new PrismaClient();
-
-    const mode = await prisma.mode.findUnique({
-        where: { id: 1 },
-    });
+    const [mode, setMode] = useState<Mode>({id: 1, mode: 1});
 
 
     const text = mode?.mode ?? 1;
 
 
-    async function update(formData: FormData) {
-        "use server";
-        const prisma = new PrismaClient();
-        const mode = parseInt(formData.get("mode") as string) || 1;
+    const sendMessage = () => {
+        socket.emit('mode', text);
 
-
-        await prisma.mode.update({
-            where: { id: 1 },
-            data: {
-                mode: mode as number,
-            },
-        });
-        //update all open pages in different tabs
-        revalidatePath('/remotetest')
-
-
-
-        
-        console.log("revalidating")
-        revalidatePath('/')
-
-    }
+    };
 
 
     return (
@@ -51,7 +31,7 @@ export default async function Page () {
                 <div className="p-3 text-3xl flex justify-center ">
                     Mobile Control app
                 </div>
-                <form action = {update}>
+                <form onSubmit=  {sendMessage}>
 
                 <input
                     type="text"

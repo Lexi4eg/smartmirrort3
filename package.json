@@ -2,8 +2,6 @@
   "name": "smartmirrort3",
   "version": "0.1.0",
   "private": true,
- 
-
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -13,8 +11,6 @@
     "test": "jest",
     "test:watch": "jest --watch"
   },
-
-
   "dependencies": {
     "@leenguyen/react-flip-clock-countdown": "^1.5.0",
     "@prisma/client": "^5.7.0",
@@ -39,6 +35,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.69.5",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2",
     "superjson": "^1.13.1",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
