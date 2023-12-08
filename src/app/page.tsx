@@ -8,6 +8,7 @@ import Rootdashboard from "~/app/(dashboards)/Rootdashboard";
 
 export default async function Home() {
 
+
     const session = await getServerAuthSession();
 
     const now = new Date();

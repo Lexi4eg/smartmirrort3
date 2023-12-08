@@ -6,7 +6,7 @@ const server = http.createServer((req, res) => {
 const { Server } = require('socket.io');
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000", // Allow only this origin
+        origin: "http://192.168.178.57:3000", // Allow only this origin
         methods: ["GET", "POST"]
     }
 });

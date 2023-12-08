@@ -3,26 +3,22 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:3001'); // Replace with your server URL
+const socket = io('http://192.168.178.57:3001'); // Replace with your server URL
 
 interface Mode {
     id : number,
     mode : number
 }
 
-
-export default  function Page () {
+export default function Page () {
     const [mode, setMode] = useState<Mode>({id: 1, mode: 1});
 
+    const sendMessage = (formData : FormData) => {
 
-    const text = mode.mode ;
-
-
-    const sendMessage = () => {
+        const text = formData.get('mode');
+        console.log(text);
         socket.emit('mode', text);
-
     };
-
 
     return (
         <>
@@ -30,18 +26,17 @@ export default  function Page () {
                 <div className="p-3 text-3xl flex justify-center ">
                     Mobile Control app
                 </div>
-                <form onSubmit=  {sendMessage}>
-
-                <input
-                    type="text"
-                    name="mode"
-                    className="mb-4"
-                />
-                <button type={"submit"}>
-                    <div className="p-3 text-3xl flex justify-center ">
-                        Remote Test
-                    </div>
-                </button>
+                <form action={sendMessage}>
+                    <input
+                        type="text"
+                        name="mode"
+                        className="mb-4"
+                    />
+                    <button type="submit">
+                        <div className="p-3 text-3xl flex justify-center ">
+                            Remote Test
+                        </div>
+                    </button>
                 </form>
             </div>
         </>
