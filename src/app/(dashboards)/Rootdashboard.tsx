@@ -22,13 +22,13 @@ interface Props {
 }
 export default function Rootdashboard ({style, session}: Props) {
 
-    const [selectedOption, setSelectedOption] = useState(1);
+    const [selectedOption, setSelectedOption] = useState(2);
 
 
     useEffect(() => {
-        // Listen for incoming messages
-        socket.on('mode', (message) => {
-            setSelectedOption(message);
+        socket.on('mode', (socket) => {
+            setSelectedOption(socket);
+            console.log(socket);
         });
     }, []);
 

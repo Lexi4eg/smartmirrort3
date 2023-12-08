@@ -10,13 +10,12 @@ interface Mode {
     mode : number
 }
 
-export const revalidate = 1;
 
-export default async function Page () {
+export default  function Page () {
     const [mode, setMode] = useState<Mode>({id: 1, mode: 1});
 
 
-    const text = mode?.mode ?? 1;
+    const text = mode.mode ;
 
 
     const sendMessage = () => {
@@ -36,7 +35,6 @@ export default async function Page () {
                 <input
                     type="text"
                     name="mode"
-                    defaultValue={text}
                     className="mb-4"
                 />
                 <button type={"submit"}>

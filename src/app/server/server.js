@@ -1,18 +1,24 @@
-// server/server.js
 const http = require('http');
 const server = http.createServer((req, res) => {
     // Handle HTTP requests if needed
 });
 
 const { Server } = require('socket.io');
-const io = new Server(server);
+const io = new Server(server, {
+    cors: {
+        origin: "http://localhost:3000", // Allow only this origin
+        methods: ["GET", "POST"]
+    }
+});
 
 io.on('connection', (socket) => {
     console.log('A user connected');
 
+
     // Handle chat messages
-    socket.on('chat message', (message) => {
-        io.emit('chat message', message); // Broadcast the message to all connected clients
+    socket.on('mode', (mode) => {
+        io.emit('mode', mode);
+        console.log(mode)// Broadcast the message to all connected clients
     });
 
     socket.on('disconnect', () => {
