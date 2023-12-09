@@ -55,7 +55,7 @@ const NewsItem = (props: Article) => {
     return (
         <div className={`bg-zinc-900 w-full h-full flex flex-col shadow-lg rounded-lg  mb-4 animate-fade-in-down  ${props.style === "nightmode" ? "text-nightmode" : "text-white"}`}>
             <div className="z-0">
-            <Image src={props.imageUrl} alt="" width={4000} height={4000} className={"rounded-t-xl"} />
+            <Image priority src={props.imageUrl} alt="" width={4000} height={4000} className={"rounded-t-xl"} />
             </div>
             <div className="p-3">
                 <h2 className="text-2xl mb-2">{props.title}</h2>
