@@ -13,11 +13,9 @@ interface Mode {
 export default function Page () {
     const [mode, setMode] = useState<Mode>({id: 1, mode: 1});
 
-    const sendMessage = (formData : FormData) => {
-
-        const text = formData.get('mode');
-        console.log(text);
-        socket.emit('mode', text);
+    const sendMessage = (mode : number) => {
+        console.log(mode);
+        socket.emit('mode', mode);
     };
 
     return (
@@ -26,18 +24,23 @@ export default function Page () {
                 <div className="p-3 text-3xl flex justify-center ">
                     Mobile Control app
                 </div>
-                <form action={sendMessage}>
-                    <input
-                        type="text"
-                        name="mode"
-                        className="mb-4"
-                    />
-                    <button type="submit">
+                <div className="">
+                    <button onClick={() => sendMessage(1)}>
                         <div className="p-3 text-3xl flex justify-center ">
-                            Remote Test
+                            Mode 1
                         </div>
                     </button>
-                </form>
+                    <button onClick={() => sendMessage(2)}>
+                        <div className="p-3 text-3xl flex justify-center ">
+                            Mode 2
+                        </div>
+                    </button>
+                    <button onClick={() => sendMessage(3)}>
+                        <div className="p-3 text-3xl flex justify-center ">
+                            Mode 3
+                        </div>
+                    </button>
+                </div>
             </div>
         </>
     )
