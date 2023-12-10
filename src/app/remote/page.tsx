@@ -58,7 +58,7 @@ export default async function Page() {
       {session ? (
         <div className={roboto.className}>
           <div className="flex  h-full  w-screen flex-col   overflow-hidden overflow-y-hidden bg-[#161618] p-5 text-[#E4E1DC]   sm:hidden">
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row items-center justify-between">
               <div className="pb-3 pt-2 text-2xl  ">Hello, Felix Prattes</div>
               <Remote_Navbar />
             </div>
