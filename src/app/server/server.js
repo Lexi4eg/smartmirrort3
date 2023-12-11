@@ -6,7 +6,7 @@ const server = http.createServer((req, res) => {
 const { Server } = require('socket.io');
 const io = new Server(server, {
     cors: {
-        origin: ["http://192.168.178.57:3000","http://localhost:3000"],
+        origin: ["http://192.168.178.57:3000","http://localhost:3000", "http://172.16.84.116:3000"   ],
         // Allow only this origin
         methods: ["GET", "POST"]
     }
@@ -15,11 +15,9 @@ const io = new Server(server, {
 io.on('connection', (socket) => {
     console.log('A user connected');
 
-
-    // Handle chat messages
     socket.on('mode', (mode) => {
         io.emit('mode', mode);
-        console.log(mode)// Broadcast the message to all connected clients
+        console.log(mode)
     });
 
     socket.on('disconnect', () => {

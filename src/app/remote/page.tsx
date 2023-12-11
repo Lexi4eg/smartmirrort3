@@ -51,8 +51,8 @@ export default async function Page() {
   const temperature = 25;
   const humidity = 50;
 
-  const session = await getServerAuthSession();
-
+  //const session = await getServerAuthSession();
+    const session = true;
   return (
     <>
       {session ? (
