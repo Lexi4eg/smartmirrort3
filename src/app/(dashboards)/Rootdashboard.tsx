@@ -20,7 +20,7 @@ interface Props {
 }
 
 export default function Rootdashboard({ style, session }: Props) {
-  const [selectedOption, setSelectedOption] = useState(7); // Set initial value to 1
+  const [selectedOption, setSelectedOption] = useState(6); // Set initial value to 1
   const router = useRouter();
   useEffect(() => {
     socket.on("mode", (newMode) => {

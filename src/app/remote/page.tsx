@@ -52,12 +52,12 @@ export default async function Page() {
   const humidity = 50;
 
   //const session = await getServerAuthSession();
-    const session = true;
+  const session = true;
   return (
     <>
       {session ? (
         <div className={roboto.className}>
-          <div className="flex  h-full  w-screen flex-col   overflow-hidden overflow-y-hidden bg-[#161618] p-5 text-[#E4E1DC]   sm:hidden">
+          <div className="flex  h-full min-h-screen  w-screen flex-col   overflow-hidden overflow-y-hidden bg-[#161618] p-5 text-[#E4E1DC]   sm:hidden">
             <div className="flex flex-row items-center justify-between">
               <div className="pb-3 pt-2 text-2xl  ">Hello, Felix Prattes</div>
               <Remote_Navbar />
