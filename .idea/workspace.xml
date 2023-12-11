@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Auth Page">
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Quick Change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/remote.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/remote.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/Rootdashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/Rootdashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/remote/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/remote/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +36,9 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -73,7 +78,10 @@
       <recent name="$PROJECT_DIR$/components" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.server.js">
+    <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/app/server/server.js" working-dir="$PROJECT_DIR$/src/app/server">
+      <method v="2" />
+    </configuration>
     <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
@@ -84,6 +92,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.server.js" />
         <item itemvalue="Docker.Dockerfile" />
       </list>
     </recent_temporary>
@@ -227,6 +236,7 @@
     <MESSAGE value="New Loading UI" />
     <MESSAGE value="Small change" />
     <MESSAGE value="New Auth Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Auth Page" />
+    <MESSAGE value="Quick Change" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quick Change" />
   </component>
 </project>
