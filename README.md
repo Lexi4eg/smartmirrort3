@@ -29,3 +29,7 @@ This is the Software part of the Smart Mirror T3 project. The Smart Mirror T3 is
 > - Open `localhost:3000` in your browser
 > - Enjoy!
 
+
+### References
+> DrA1ex: https://github.com/DrA1ex/ClockClock 
+

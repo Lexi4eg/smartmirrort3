@@ -25,7 +25,7 @@ export default function MillionTimesDashboardBlackWhite(props: Props) {
   return (
     <>
       <iframe
-        src="https://dra1ex.github.io/ClockClock/?theme=dark"
+        src="https://dra1ex.github.io/ClockClock/?theme=dark&clock_size=78&clock_margin=10&clock_width=5&clock_hour=29&clock_minute=33&fps=100"
         style={{
           position: "absolute",
           top: 0,
