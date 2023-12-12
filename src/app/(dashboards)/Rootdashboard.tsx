@@ -9,7 +9,7 @@ import SolarSystemWallpaper from "~/app/(dashboards)/solarSystem/solarSystemWall
 import io from "socket.io-client";
 import { useEffect, useState } from "react";
 
-const socket = io("http://172.16.84.116:3001"); // Replace with your server URL
+const socket = io("localhost:3001"); // Replace with your server URL
 import { useRouter } from "next/navigation";
 import MillionTimesDashboardBlackWhite from "~/app/(dashboards)/MillionTimesDashboardBlackWhite";
 import MillionTimesDashboardGlass from "~/app/(dashboards)/MillionTimesDashboardGlass";
@@ -20,7 +20,7 @@ interface Props {
 }
 
 export default function Rootdashboard({ style, session }: Props) {
-  const [selectedOption, setSelectedOption] = useState(6); // Set initial value to 1
+  const [selectedOption, setSelectedOption] = useState(1); // Set initial value to 1
   const router = useRouter();
   useEffect(() => {
     socket.on("mode", (newMode) => {
