@@ -14,13 +14,14 @@ import { useRouter } from "next/navigation";
 import MillionTimesDashboardBlackWhite from "~/app/(dashboards)/MillionTimesDashboardBlackWhite";
 import MillionTimesDashboardGlass from "~/app/(dashboards)/MillionTimesDashboardGlass";
 import MillionTimesDashboardWood from "~/app/(dashboards)/MillionTimesDashboardWood";
+import DoublePendulum from "~/app/(dashboards)/DoublePendulum";
 interface Props {
   style?: string;
   session: any;
 }
 
 export default function Rootdashboard({ style, session }: Props) {
-  const [selectedOption, setSelectedOption] = useState(1); // Set initial value to 1
+  const [selectedOption, setSelectedOption] = useState(9); // Set initial value to 1
   const router = useRouter();
   useEffect(() => {
     socket.on("mode", (newMode) => {
@@ -50,7 +51,8 @@ export default function Rootdashboard({ style, session }: Props) {
 
         {Number(selectedOption) === 7 && <SolarSystemWallpaper style={style} />}
         {Number(selectedOption) === 8 && <FlipDotClock style={style} />}
-        {![1, 2, 3, 4, 5, 6, 7, 8].includes(Number(selectedOption)) && (
+        {Number(selectedOption) === 9 && <DoublePendulum />}
+        {![1, 2, 3, 4, 5, 6, 7, 8, 9].includes(Number(selectedOption)) && (
           <div>Unexpected mode: {selectedOption}</div>
         )}
       </div>
