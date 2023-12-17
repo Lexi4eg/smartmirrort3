@@ -5,7 +5,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
 
-const navLinks = [{ title: "Log Out", href: "api/auth/signout" }];
+const navLinks = [
+  { title: "Log Out", href: "api/auth/signout" },
+  { title: "Widget", href: "/remote/widgetsettings" },
+];
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const toggleMenu = () => {
@@ -57,15 +60,6 @@ const Navbar = () => {
           >
             <CiMenuBurger />
           </span>
-        </div>
-        <div className="text-md hidden gap-12  lg:flex">
-          <Link href="#" className="font-medium ">
-            <div>Home</div>
-          </Link>
-          <Link href={"/projects"}>
-            <div>Projects</div>
-          </Link>
-          <div>Contact</div>
         </div>
       </nav>
       <AnimatePresence>
