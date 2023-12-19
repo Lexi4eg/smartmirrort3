@@ -3,7 +3,7 @@ import io from "socket.io-client";
 const socket = io("localhost:3001"); // Replace with your server URL
 
 interface WidgetPosition {
-  position: number;
+  id: string;
   widget: string;
   colSpan: number;
   rowSpan: number;
