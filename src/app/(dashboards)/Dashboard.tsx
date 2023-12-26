@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import AppleClockWidget from "../../../components/Clocks/AppleClockWidget";
 import Link from "next/link";
@@ -6,6 +7,8 @@ import Wordclock from "../../../components/Clocks/Wordclock/Wordclock";
 import WelcomeWidget from "../../../components/WIdgets/WelcomeWidget";
 import Weather from "../../../components/WIdgets/Weather";
 import NYTWidget from "../../../components/WIdgets/NYTWidget/NYTWidget";
+import Temperature_Sensor_Dashboard from "../../../components/WIdgets/TemperatureSensorDashboard";
+import Humidity_Sensor_Dashboard from "../../../components/WIdgets/Humidity_Sensor_Dashboard";
 
 interface Props {
   style?: string;
@@ -82,6 +85,20 @@ const Dashboard: React.FC<Props> = (props: Props) => {
       rowSpan: 3,
       widget: <NYTWidget style={nightmode} />,
     },
+    {
+      position: 8,
+      colSpan: 3,
+      rowSpan: 3,
+      widget: (
+        <Temperature_Sensor_Dashboard temperature={20} style={nightmode} />
+      ),
+    },
+    {
+      position: 9,
+      colSpan: 3,
+      rowSpan: 3,
+      widget: <Humidity_Sensor_Dashboard humidity={20} style={nightmode} />,
+    },
   ];
 
   widgets.sort((a, b) => a.position - b.position);
@@ -92,7 +109,7 @@ const Dashboard: React.FC<Props> = (props: Props) => {
         {widgets.map((widget: WidgetPosition, index: number) => (
           <div
             key={index}
-            className={`col-span-${widget.colSpan} row-span-${widget.rowSpan} flex items-center justify-center rounded-xl`}
+            className={`col-span-2 row-span-2 flex items-center justify-center rounded-xl`}
             style={{ backdropFilter: "blur(10px)" }}
           >
             {widget.widget}

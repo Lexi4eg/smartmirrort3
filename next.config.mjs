@@ -12,7 +12,7 @@ const config = {
         myEnvVar: process.env.MY_ENV_VAR
     },
 
-    ReactStrictMode: false,
+
 
 
     images: {
