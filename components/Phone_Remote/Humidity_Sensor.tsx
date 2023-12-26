@@ -11,6 +11,8 @@ const roboto2 = Roboto({
 });
 
 export default function Humidity_Sensor({ humidity }: Props) {
+  //implement the humidity api here and pass it to humidity
+
   return (
     <div className=" m-2   flex w-1/2 justify-center rounded-md bg-[#212124] p-2">
       <div className={roboto2.className}>
