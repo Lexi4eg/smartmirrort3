@@ -8,7 +8,7 @@ This is the Software part of the Smart Mirror T3 project. The Smart Mirror T3 is
   
            
 
-### Features
+### Features 
 > - Display the time
 > - Display the weather
 > - Display the news with the NYT API
