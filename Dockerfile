@@ -17,10 +17,15 @@ COPY . .
 
 
 ENV NODE_ENV=production
-ENV PORT=3000:3000
+ENV APP_PORT=3000
+ENV SERVER_PORT=3001:3001
 
-EXPOSE $PORT
+
+
+EXPOSE 3000:3000
+EXPOSE $SERVER_PORT
+
 
 
 RUN npm run build
-CMD ["npm", "start"]
+CMD npm run start -- -p 3000 & node server.js -p 3001

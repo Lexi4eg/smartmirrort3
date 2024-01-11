@@ -51,15 +51,16 @@ export default async function Page() {
   const temperature = 25;
   const humidity = 50;
 
-  //const session = await getServerAuthSession();
-    const session = true;
+  const session = await getServerAuthSession();
+  const username = session?.user.name ?? "Felix Prattes f";
+
   return (
     <>
       {session ? (
         <div className={roboto.className}>
-          <div className="flex  h-full  w-screen flex-col   overflow-hidden overflow-y-hidden bg-[#161618] p-5 text-[#E4E1DC]   sm:hidden">
+          <div className="flex  h-full min-h-screen  w-screen flex-col   overflow-hidden overflow-y-hidden bg-[#161618] p-5 text-[#E4E1DC]   sm:hidden">
             <div className="flex flex-row items-center justify-between">
-              <div className="pb-3 pt-2 text-2xl  ">Hello, Felix Prattes</div>
+              <div className="py-3 text-2xl  ">Hello, {username}</div>
               <Remote_Navbar />
             </div>
             <div className="">Smart Mirror Alpha 1.1</div>

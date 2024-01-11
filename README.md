@@ -5,8 +5,10 @@
 #### What is this project about?
 
 This is the Software part of the Smart Mirror T3 project. The Smart Mirror T3 is a smart mirror that can display the time, weather, news, and more. The Smart Mirror T3 is a project that is part of the course SPL at HTL Bulme. The project is done by a group of 2 students.
+  
+           
 
-### Features
+### Features 
 > - Display the time
 > - Display the weather
 > - Display the news with the NYT API
@@ -28,4 +30,8 @@ This is the Software part of the Smart Mirror T3 project. The Smart Mirror T3 is
 > - Run `npm run dev` in the root directory
 > - Open `localhost:3000` in your browser
 > - Enjoy!
+
+
+### References 
+> DrA1ex: https://github.com/DrA1ex/ClockClock 
 

@@ -18,7 +18,7 @@ interface Props {
 }
 export default function Power_Graph({ data }: Props) {
   return (
-    <div className="m-3 flex h-64 flex-col rounded-md bg-[#212124]   p-3 ">
+    <div className="m-2 flex h-64 flex-col rounded-md bg-[#212124]   p-2 ">
       <div className="">Power Consumption</div>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
