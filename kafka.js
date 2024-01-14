@@ -11,8 +11,8 @@ const run = async () => {
   // Producing
   await producer.connect();
   await producer.send({
-    topic: "test",
-    messages: [{ value: "New message for test topic 2" }],
+    topic: "mode",
+    messages: [{ value: "1" }],
   });
 
   // Ensure the producer gracefully disconnects

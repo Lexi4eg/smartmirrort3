@@ -6,7 +6,7 @@ const kafka = new Kafka({
 });
 
 // Use a new group ID to consume all messages from the beginning
-const consumer = kafka.consumer({ groupId: "new-test-group" });
+const consumer = kafka.consumer({ groupId: "mode" });
 
 const run = async () => {
   // Consuming
