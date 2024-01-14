@@ -1,6 +1,11 @@
-import io from "socket.io-client";
+import { Kafka } from "kafkajs";
 
-const socket = io("localhost:3001"); // Replace with your server URL
+const kafka = new Kafka({
+  clientId: "my-app",
+  brokers: ["localhost:9092"],
+});
+
+const producer = kafka.producer();
 
 interface WidgetPosition {
   id: string;
@@ -8,7 +13,14 @@ interface WidgetPosition {
   colSpan: number;
   rowSpan: number;
 }
-export default function sendWidget(widget: WidgetPosition[]) {
+
+export default async function sendWidget(widget: WidgetPosition[]) {
   console.log(widget);
-  socket.emit("widget", widget);
+
+  await producer.connect();
+  await producer.send({
+    topic: "mode",
+    messages: [{ value: JSON.stringify(widget) }],
+  });
+  await producer.disconnect();
 }

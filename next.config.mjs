@@ -13,8 +13,6 @@ const config = {
     },
 
 
-
-
     images: {
         // @ts-ignore
         remotePatterns: [
