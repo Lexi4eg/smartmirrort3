@@ -1,18 +1,31 @@
 "use client";
 import React from "react";
-import sendMessage from "./remote";
 
 interface ButtonProps {
   number: number;
 }
 
 const Button = ({ number }: ButtonProps) => (
-  <button onClick={() => sendMessage(number)}>
+  <button onClick={() => sendMode(number)}>
     <div className="flex items-center justify-center p-3 px-5 text-center text-3xl">
       {number}
     </div>
   </button>
 );
+
+async function sendMode(mode: number) {
+  const response = await fetch("/api/sendMode", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ mode }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to send mode");
+  }
+}
 
 export default function Mode_Selector() {
   return (

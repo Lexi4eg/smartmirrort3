@@ -5,7 +5,7 @@ import WorkClockDashboard from "~/app/(dashboards)/WorkClockDashboard";
 import MillionTimesDashboard from "~/app/(dashboards)/MillionTimesDashboard";
 import FlipDotClock from "~/app/(dashboards)/FlipDotClock/FlipDotClock";
 import SolarSystemWallpaper from "~/app/(dashboards)/solarSystem/solarSystemWallpaper";
-
+import { Kafka } from "kafkajs";
 import io from "socket.io-client";
 import { useEffect, useState } from "react";
 
@@ -25,11 +25,35 @@ export default function Rootdashboard({ style, session }: Props) {
   const router = useRouter();
 
   useEffect(() => {
-    socket.on("mode", (newMode) => {
-      setSelectedOption(newMode);
-      console.log(newMode);
-      router.push("/");
+    const kafka = new Kafka({
+      clientId: "my-app",
+      brokers: ["localhost:9092"],
     });
+
+    const consumer = kafka.consumer({ groupId: "dashboard-group" });
+
+    const run = async () => {
+      await consumer.connect();
+      await consumer.subscribe({ topic: "mode", fromBeginning: false });
+
+      await consumer.run({
+        eachMessage: async ({ topic, partition, message }) => {
+          if (message.value !== null) {
+            const newMode = parseInt(message.value.toString(), 10);
+            setSelectedOption(newMode);
+            console.log(newMode);
+            router.push("/");
+          }
+        },
+      });
+    };
+
+    run().catch(console.error);
+
+    // Clean up the consumer when the component unmounts
+    return () => {
+      consumer.disconnect();
+    };
   }, []);
 
   return (
