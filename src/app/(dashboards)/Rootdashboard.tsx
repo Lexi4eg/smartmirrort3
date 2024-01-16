@@ -21,7 +21,7 @@ interface Props {
 }
 
 export default function Rootdashboard({ style, session }: Props) {
-  const [selectedOption, setSelectedOption] = useState(1); // Set initial value to 1
+  const [selectedOption, setSelectedOption] = useState(2); // Set initial value to 1
   const router = useRouter();
 
   useEffect(() => {
