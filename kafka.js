@@ -6,7 +6,7 @@ const kafka = new Kafka({
 });
 
 const producer = kafka.producer({
-  createPartitioner: Partitioners.DefaultPartitione,
+  createPartitioner: Partitioners.DefaultPartitioner,
 });
 
 const run = async () => {

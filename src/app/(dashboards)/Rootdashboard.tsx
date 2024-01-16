@@ -6,10 +6,8 @@ import MillionTimesDashboard from "~/app/(dashboards)/MillionTimesDashboard";
 import FlipDotClock from "~/app/(dashboards)/FlipDotClock/FlipDotClock";
 import SolarSystemWallpaper from "~/app/(dashboards)/solarSystem/solarSystemWallpaper";
 import { Kafka } from "kafkajs";
-import io from "socket.io-client";
 import { useEffect, useState } from "react";
 
-const socket = io("localhost:3001"); // Replace with your server URL
 import { useRouter } from "next/navigation";
 import MillionTimesDashboardBlackWhite from "~/app/(dashboards)/MillionTimesDashboardBlackWhite";
 import MillionTimesDashboardGlass from "~/app/(dashboards)/MillionTimesDashboardGlass";
@@ -20,39 +18,34 @@ interface Props {
   session: any;
 }
 
+const kafka = new Kafka({
+  clientId: "my-app",
+  brokers: ["localhost:9092"],
+});
+
+const consumer = kafka.consumer({ groupId: "mode" });
+
+async function run() {
+  await consumer.connect();
+  await consumer.subscribe({ topic: "mode", fromBeginning: false });
+}
+
 export default function Rootdashboard({ style, session }: Props) {
   const [selectedOption, setSelectedOption] = useState(2); // Set initial value to 1
   const router = useRouter();
 
   useEffect(() => {
-    const kafka = new Kafka({
-      clientId: "my-app",
-      brokers: ["localhost:9092"],
-    });
+    const eventSource = new EventSource("/api/modeUpdates");
 
-    const consumer = kafka.consumer({ groupId: "dashboard-group" });
-
-    const run = async () => {
-      await consumer.connect();
-      await consumer.subscribe({ topic: "mode", fromBeginning: false });
-
-      await consumer.run({
-        eachMessage: async ({ topic, partition, message }) => {
-          if (message.value !== null) {
-            const newMode = parseInt(message.value.toString(), 10);
-            setSelectedOption(newMode);
-            console.log(newMode);
-            router.push("/");
-          }
-        },
-      });
+    eventSource.onmessage = (event) => {
+      const newMode = parseInt(event.data, 10);
+      setSelectedOption(newMode);
+      console.log(newMode);
+      router.push("/");
     };
 
-    run().catch(console.error);
-
-    // Clean up the consumer when the component unmounts
     return () => {
-      consumer.disconnect();
+      eventSource.close();
     };
   }, []);
 

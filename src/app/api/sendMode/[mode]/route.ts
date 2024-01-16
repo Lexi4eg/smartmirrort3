@@ -14,7 +14,7 @@ export async function GET(
   { params }: { params: { mode: string } },
 ) {
   const slug: string = params.mode;
-  const mode = parseInt(slug);
+  const mode: number = parseInt(slug);
 
   await producer.connect();
 
