@@ -1,6 +1,5 @@
-// pages/api/modeUpdates.ts
 import { Kafka } from "kafkajs";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 
 const kafka = new Kafka({
   clientId: "my-app",
@@ -9,32 +8,30 @@ const kafka = new Kafka({
 
 const consumer = kafka.consumer({ groupId: "mode" });
 
-const HEARTBEAT_INTERVAL = 400; // 5 seconds (adjust this as needed)
+export async function GET(req: NextRequest) {
+  const res = new NextResponse();
+  try {
+    // Set SSE headers
+    res.headers.set("Content-Type", "text/event-stream");
+    res.headers.set("Cache-Control", "no-cache");
+    res.headers.set("Connection", "keep-alive");
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  // Set SSE headers
+    await consumer.connect();
+    await consumer.subscribe({ topic: "mode", fromBeginning: true });
 
-  res.setHeader("Content-Type", "text/event-stream");
+    await consumer.run({
+      eachMessage: async ({ topic, partition, message }) => {
+        // Write the message value to the response stream
+        res.send(`data: ${message.value.toString()}\n\n`);
+      },
+    });
 
-  res.setHeader("Cache-Control", "no-cache");
+    // Handle client disconnect
+    // req.socket is not available in Next.js 14, so we can't handle client disconnect here
+  } catch (error) {
+    console.error(error);
+    return new Response("Error 500", { status: 500 });
+  }
 
-  res.setHeader("Connection", "keep-alive");
-
-  const intervalId = setInterval(() => {
-    // Send a heartbeat message to keep the connection alive
-
-    res.write(": heartbeat\n\n");
-  }, HEARTBEAT_INTERVAL);
-
-  // ... Rest of the SSE implementation
-
-  // Handle client disconnect
-
-  req.socket.on("close", () => {
-    // Clean up resources and stop sending updates when the client disconnects
-
-    clearInterval(intervalId);
-
-    res.end();
-  });
+  return res;
 }

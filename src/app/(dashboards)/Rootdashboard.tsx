@@ -30,24 +30,26 @@ async function run() {
   await consumer.subscribe({ topic: "mode", fromBeginning: false });
 }
 
-export default function Rootdashboard({ style, session }: Props) {
+export default async function Rootdashboard({ style, session }: Props) {
   const [selectedOption, setSelectedOption] = useState(2); // Set initial value to 1
   const router = useRouter();
 
-  useEffect(() => {
-    const eventSource = new EventSource("/api/modeUpdates");
-
-    eventSource.onmessage = (event) => {
-      const newMode = parseInt(event.data, 10);
-      setSelectedOption(newMode);
-      console.log(newMode);
-      router.push("/");
-    };
-
-    return () => {
-      eventSource.close();
-    };
-  }, []);
+  async function run() {
+    "use server";
+    await consumer.connect();
+    await consumer.subscribe({ topic: "mode", fromBeginning: false });
+    await consumer.run({
+      eachMessage: async ({ topic, partition, message }) => {
+        // @ts-ignore
+        console.log({
+          value: message.value.toString(),
+        });
+        // @ts-ignore
+        setSelectedOption(message.value.toString());
+        router.push("/");
+      },
+    });
+  }
 
   return (
     <>
