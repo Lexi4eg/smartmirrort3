@@ -1,13 +1,14 @@
 "use client";
-
 import Dashboard from "~/app/(dashboards)/Dashboard";
 import WorkClockDashboard from "~/app/(dashboards)/WorkClockDashboard";
 import MillionTimesDashboard from "~/app/(dashboards)/MillionTimesDashboard";
 import FlipDotClock from "~/app/(dashboards)/FlipDotClock/FlipDotClock";
 import SolarSystemWallpaper from "~/app/(dashboards)/solarSystem/solarSystemWallpaper";
-import { Kafka } from "kafkajs";
+
+import io from "socket.io-client";
 import { useEffect, useState } from "react";
 
+const socket = io("http://192.168.178.57:3001"); // Replace with your server URL
 import { useRouter } from "next/navigation";
 import MillionTimesDashboardBlackWhite from "~/app/(dashboards)/MillionTimesDashboardBlackWhite";
 import MillionTimesDashboardGlass from "~/app/(dashboards)/MillionTimesDashboardGlass";
@@ -18,38 +19,16 @@ interface Props {
   session: any;
 }
 
-const kafka = new Kafka({
-  clientId: "my-app",
-  brokers: ["localhost:9092"],
-});
-
-const consumer = kafka.consumer({ groupId: "mode" });
-
-async function run() {
-  await consumer.connect();
-  await consumer.subscribe({ topic: "mode", fromBeginning: false });
-}
-
-export default async function Rootdashboard({ style, session }: Props) {
+export default function Rootdashboard({ style, session }: Props) {
   const [selectedOption, setSelectedOption] = useState(2); // Set initial value to 1
   const router = useRouter();
-
-  async function run() {
-    "use server";
-    await consumer.connect();
-    await consumer.subscribe({ topic: "mode", fromBeginning: false });
-    await consumer.run({
-      eachMessage: async ({ topic, partition, message }) => {
-        // @ts-ignore
-        console.log({
-          value: message.value.toString(),
-        });
-        // @ts-ignore
-        setSelectedOption(message.value.toString());
-        router.push("/");
-      },
+  useEffect(() => {
+    socket.on("mode", (newMode) => {
+      setSelectedOption(newMode);
+      console.log(newMode);
+      router.push("/");
     });
-  }
+  }, []);
 
   return (
     <>
