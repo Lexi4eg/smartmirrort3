@@ -7,7 +7,7 @@ const kafka = new Kafka({
   brokers: ["localhost:9092"],
 });
 
-const producer: Producer = kafka.producer();
+const producer: Producer =kafka.producer({ createPartitioner: Partitioners.DefaultPartitioner })
 
 export async function GET(
   request: NextRequest,
