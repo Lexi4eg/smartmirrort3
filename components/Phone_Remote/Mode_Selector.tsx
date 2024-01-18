@@ -14,7 +14,7 @@ const Button = ({ number }: ButtonProps) => (
 );
 
 async function sendMode(mode: number) {
-  const response = await fetch("/api/sendMode", {
+  const response = await fetch(`/api/sendMode`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

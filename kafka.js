@@ -26,6 +26,11 @@ const run = async () => {
     messages: [{ value: "23" }], // replace with your actual temperature data
   });
 
+  await producer.send({
+    topic: "humidityData",
+    messages: [{ value: "23" }], // replace with your actual humidity data
+  });
+
   // Ensure the producer gracefully disconnects
   await producer.disconnect();
 };

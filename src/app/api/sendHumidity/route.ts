@@ -1,4 +1,3 @@
-// pages/api/sendMode.ts
 import { Kafka, Partitioners, Producer } from "kafkajs";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -7,20 +6,19 @@ const kafka = new Kafka({
   brokers: ["localhost:9092"],
 });
 
-const producer: Producer =kafka.producer({ createPartitioner: Partitioners.DefaultPartitioner })
+const producer: Producer = kafka.producer({
+  createPartitioner: Partitioners.DefaultPartitioner,
+});
+export async function POST(request: Request) {
+  const data = await request.json();
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { mode: string } },
-) {
-  const slug: string = params.mode;
-  const mode: number = parseInt(slug);
+  const humidity: number = parseFloat(data.humidity);
 
   await producer.connect();
 
   await producer.send({
-    topic: "mode",
-    messages: [{ value: JSON.stringify(mode) }],
+    topic: "humidityData",
+    messages: [{ value: JSON.stringify(humidity) }],
   });
 
   // Disconnect the producer
