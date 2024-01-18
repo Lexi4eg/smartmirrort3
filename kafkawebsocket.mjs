@@ -20,8 +20,11 @@ const run = async () => {
   // Run Kafka consumer
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
-      // Emit new message to WebSocket server
-      socket.emit("mode", message.value.toString());
+      // Check if message.value is not null before calling toString()
+      if (message.value) {
+        // Emit new message to WebSocket server
+        socket.emit("mode", message.value.toString());
+      }
     },
   });
 };

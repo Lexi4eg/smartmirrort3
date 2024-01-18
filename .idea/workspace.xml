@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Quick Change">
-      <change afterPath="$PROJECT_DIR$/queryDB.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/sendTemperature/[temperature]/route.ts" afterDir="false" />
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Working Kafka Save to DB with temperatureLog and ModeChange Working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka.js" beforeDir="false" afterPath="$PROJECT_DIR$/kafka.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka2.js" beforeDir="false" afterPath="$PROJECT_DIR$/kafka2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/sendMode/[mode]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/sendMode/[mode]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose2.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafkawebsocket.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/kafkawebsocket.mjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702284346406</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Working Kafka Save to DB with temperatureLog and ModeChange Working">
+      <option name="closed" value="true" />
+      <created>1705563141247</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1705563141247</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +277,7 @@
     <MESSAGE value="Small change" />
     <MESSAGE value="New Auth Page" />
     <MESSAGE value="Quick Change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quick Change" />
+    <MESSAGE value="Working Kafka Save to DB with temperatureLog and ModeChange Working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working Kafka Save to DB with temperatureLog and ModeChange Working" />
   </component>
 </project>
