@@ -4,7 +4,7 @@ import { getServerAuthSession } from "~/server/auth";
 import Mode_Selector from "../../../../components/Phone_Remote/Mode_Selector";
 import Temperature_Sensor from "../../../../components/Phone_Remote/Temperature_Sensor";
 import Humidity_Sensor from "../../../../components/Phone_Remote/Humidity_Sensor";
-import Power_Graph from "../../../../components/Phone_Remote/Power_Graph";
+import Power_Graph from "../../../../components/Phone_Remote/Temperature_Graph";
 
 export default async function Page() {
   const session = await getServerAuthSession();

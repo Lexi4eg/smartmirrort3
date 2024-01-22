@@ -14,9 +14,22 @@ interface TemperatureData {
   createdAt: Date;
 }
 
-export default async function Temperature_Graph(
-  temperatureData: TemperatureData[],
-) {
+interface TemperatureGraphProps {
+  tempData: TemperatureData[];
+}
+
+export default async function Temperature_Graph({
+  tempData,
+}: TemperatureGraphProps) {
+  // Format the date
+  const formattedTempData = tempData.map((data) => ({
+    ...data,
+    createdAt: `${data.createdAt.getHours()} ${data.createdAt.getDate()} ${
+      data.createdAt.getMonth() + 1
+    } ${data.createdAt.getFullYear()}`,
+  }));
+
+  console.log(formattedTempData);
   return (
     <div className="m-2 flex h-64 flex-col rounded-md bg-[#212124]   p-2 ">
       <div className="">Temperature </div>
@@ -24,7 +37,7 @@ export default async function Temperature_Graph(
         <AreaChart
           width={500}
           height={400}
-          data={temperatureData}
+          data={formattedTempData}
           margin={{
             top: 30,
             right: 30,
@@ -32,12 +45,12 @@ export default async function Temperature_Graph(
             bottom: 0,
           }}
         >
-          <XAxis dataKey="time" />
+          <XAxis dataKey="createdAt" />
           <YAxis />
           <Tooltip />
           <Area
             type="monotone"
-            dataKey="power"
+            dataKey="value"
             stroke="#008170"
             fill="#008170"
           />

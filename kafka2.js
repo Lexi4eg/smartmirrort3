@@ -1,5 +1,5 @@
 const { Kafka } = require("kafkajs");
-const { Client } = require('pg');
+const { PrismaClient } = require("@prisma/client");
 
 const kafka = new Kafka({
   clientId: "my-app",
@@ -8,25 +8,8 @@ const kafka = new Kafka({
 
 const consumer = kafka.consumer({ groupId: "mode" });
 
-const client = new Client({
-  user: 'postgres', // updated user
-  host: 'localhost', // updated host
-  database: 'smartmirror', // updated database
-  password: 'postgres', // updated password
-  port: 5432, // updated port
-});
-
-const run = async options => {
-  await client.connect();
-
-  const createTableQuery = `
-    CREATE TABLE IF NOT EXISTS temperatureDataLog (
-      id SERIAL PRIMARY KEY,
-      message TEXT NOT NULL
-    )
-  `;
-  await client.query(createTableQuery);
-
+import prisma from "./prismaClient";
+const run = async (/** @type {undefined} */ options) => {
   // Consuming
   await consumer.connect();
   await consumer.subscribe({ topic: "temperatureData", fromBeginning: true });
@@ -34,13 +17,16 @@ const run = async options => {
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
       // Instead of logging the message value, insert it into your PostgreSQL database
-      const text = 'INSERT INTO temperatureDataLog(message) VALUES($1) RETURNING *';
-      const values = [message.value.toString()];
-
       try {
-        const res = await client.query(text, values);
-        console.log(res.rows[0]);
+        const res = await prisma.temperature.create({
+          data: {
+            // @ts-ignore
+            message: message.value.toString(),
+          },
+        });
+        console.log(res);
       } catch (err) {
+        // @ts-ignore
         console.log(err.stack);
       }
     },
