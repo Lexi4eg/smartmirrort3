@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Fetch Data from the DB for the ML Model">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addTemperatureData.js" afterDir="false" />
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Working API for data fetching from DB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Power_Graph.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Power_Graph.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/sendMode/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/sendMode/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/fetchPowerData/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/fetchPowerData/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/remote/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/remote/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/fetchPowerData/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/fetchPowerData/route.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +81,7 @@
       <recent name="$PROJECT_DIR$/src/app/(dashboards)" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.addTemperatureData.js">
+  <component name="RunManager" selected="Node.js.kafka2.js">
     <configuration name="addTemperatureData.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/addTemperatureData.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -110,8 +104,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.addTemperatureData.js" />
         <item itemvalue="Node.js.kafka2.js" />
+        <item itemvalue="Node.js.addTemperatureData.js" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Node.js.queryDB.js" />
         <item itemvalue="Node.js.kafka.js" />
@@ -144,7 +138,7 @@
       <workItem from="1703925026547" duration="1294000" />
       <workItem from="1704709041448" duration="908000" />
       <workItem from="1704976229518" duration="2550000" />
-      <workItem from="1705916896486" duration="2878000" />
+      <workItem from="1705916896486" duration="3509000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -250,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705917799640</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="New Working API for data fetching from DB">
+      <option name="closed" value="true" />
+      <created>1705919792033</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1705919792033</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +297,7 @@
     <MESSAGE value="Quick Change" />
     <MESSAGE value="Working Kafka Save to DB with temperatureLog and ModeChange Working" />
     <MESSAGE value="New Fetch Data from the DB for the ML Model" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Fetch Data from the DB for the ML Model" />
+    <MESSAGE value="New Working API for data fetching from DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Working API for data fetching from DB" />
   </component>
 </project>

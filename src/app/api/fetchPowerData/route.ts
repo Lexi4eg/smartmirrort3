@@ -9,9 +9,12 @@ const client = new Client({
 });
 
 export async function GET(request: Request) {
-    await client.connect();
+    if (!client._connected) {
+        await client.connect();
+    }
+
     const res = await client.query('SELECT * FROM temperatureDataLog');
     await client.end();
 
-    return new Response(JSON.stringify(res.rows), { status: 200 });
+    return new Response(JSON.stringify(res.rows), {status: 200});
 }

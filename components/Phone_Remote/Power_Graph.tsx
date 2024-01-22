@@ -13,11 +13,31 @@ import {
 
 export default function Power_Graph() {
     const [powerData, setPowerData] = useState([]);
+    let processedData = [];
 
     useEffect(() => {
         const getPowerData = async () => {
-            const data:any = await fetch("/api/fetchPowerData ")
-            setPowerData(data);
+            const response = await fetch("/api/fetchPowerData");
+
+            if (!response.ok) {
+                console.error(`HTTP error! status: ${response.status}`);
+                return;
+            }
+
+            const data = await response.text();
+
+            if (!data) {
+                console.log('No data returned from API');
+                return;
+            }
+
+            const jsonData = JSON.parse(data);
+            const processedData = jsonData.map((item: any, index: number) => ({
+                time: index,
+                power: item.message,
+            }));
+
+            setPowerData(processedData);
         };
 
         getPowerData();
