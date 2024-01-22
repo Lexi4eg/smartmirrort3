@@ -8,6 +8,9 @@ await import("./src/env.mjs");
 /** @type {import("next").NextConfig} */
 const config = {
 
+    output: 'standalone',
+
+
     publicRuntimeConfig: {
         myEnvVar: process.env.MY_ENV_VAR
     },

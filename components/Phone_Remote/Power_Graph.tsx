@@ -13,6 +13,7 @@ interface PowerData {
   time: number;
   power: number;
 }
+
 interface Props {
   data: PowerData[];
 }

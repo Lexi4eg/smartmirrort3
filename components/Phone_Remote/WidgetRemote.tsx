@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 import React, { useState } from "react";
 import {
   DragDropContext,
@@ -92,3 +92,5 @@ export default function App() {
     </DragDropContext>
   );
 }
+
+*/
