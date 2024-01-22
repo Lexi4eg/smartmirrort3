@@ -15,37 +15,6 @@ const roboto = Roboto({
   style: "normal",
 });
 
-interface PowerData {
-  time: number;
-  power: number;
-}
-
-const data: PowerData[] = [
-  {
-    time: 0,
-    power: 33,
-  },
-  {
-    time: 1,
-    power: 40,
-  },
-  {
-    time: 2,
-    power: 45,
-  },
-  {
-    time: 3,
-    power: 50,
-  },
-  {
-    time: 4,
-    power: 55,
-  },
-  {
-    time: 5,
-    power: 60,
-  },
-];
 
 export default async function Page() {
   const temperature = 25;
@@ -73,7 +42,7 @@ export default async function Page() {
                   <Temperature_Sensor temperature={temperature} />
                   <Humidity_Sensor humidity={humidity} />
                 </div>
-                <Power_Graph data={data} />
+                <Power_Graph  />
               </div>
             </div>
           </div>

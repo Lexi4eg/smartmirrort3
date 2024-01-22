@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Working Kafka Save to DB with temperatureLog and ModeChange Working">
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Working API for data fetching from DB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose2.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkawebsocket.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/kafkawebsocket.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Power_Graph.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Power_Graph.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/fetchPowerData/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/fetchPowerData/route.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +51,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "Docker.docker-compose2.yml: Compose Deployment.executor": "Run",
+    "Node.js.addTemperatureData.js.executor": "Run",
     "Node.js.kafka.js.executor": "Run",
     "Node.js.kafka2.js.executor": "Run",
     "Node.js.queryDB.js.executor": "Run",
@@ -74,13 +75,16 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/api" />
+      <recent name="$PROJECT_DIR$/src/server" />
       <recent name="$PROJECT_DIR$/src/server/api" />
       <recent name="$PROJECT_DIR$/src/app/api/time" />
       <recent name="$PROJECT_DIR$/src/app/(dashboards)" />
-      <recent name="$PROJECT_DIR$/components" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.queryDB.js">
+  <component name="RunManager" selected="Node.js.kafka2.js">
+    <configuration name="addTemperatureData.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/addTemperatureData.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <configuration name="kafka2.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/kafka2.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -88,14 +92,6 @@
       <method v="2" />
     </configuration>
     <configuration name="queryDB.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/queryDB.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose2.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose2.yml" />
-        </settings>
-      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -108,11 +104,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.queryDB.js" />
         <item itemvalue="Node.js.kafka2.js" />
-        <item itemvalue="Node.js.kafka.js" />
+        <item itemvalue="Node.js.addTemperatureData.js" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose2.yml: Compose Deployment" />
+        <item itemvalue="Node.js.queryDB.js" />
+        <item itemvalue="Node.js.kafka.js" />
       </list>
     </recent_temporary>
   </component>
@@ -142,6 +138,7 @@
       <workItem from="1703925026547" duration="1294000" />
       <workItem from="1704709041448" duration="908000" />
       <workItem from="1704976229518" duration="2550000" />
+      <workItem from="1705916896486" duration="3509000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -239,7 +236,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705563141247</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="New Fetch Data from the DB for the ML Model">
+      <option name="closed" value="true" />
+      <created>1705917799640</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1705917799640</updated>
+    </task>
+    <task id="LOCAL-00014" summary="New Working API for data fetching from DB">
+      <option name="closed" value="true" />
+      <created>1705919792033</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1705919792033</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +264,11 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -278,6 +296,8 @@
     <MESSAGE value="New Auth Page" />
     <MESSAGE value="Quick Change" />
     <MESSAGE value="Working Kafka Save to DB with temperatureLog and ModeChange Working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working Kafka Save to DB with temperatureLog and ModeChange Working" />
+    <MESSAGE value="New Fetch Data from the DB for the ML Model" />
+    <MESSAGE value="New Working API for data fetching from DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Working API for data fetching from DB" />
   </component>
 </project>
