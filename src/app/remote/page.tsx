@@ -8,6 +8,9 @@ import Power_Graph from "../../../components/Phone_Remote/Power_Graph";
 import { getServerAuthSession } from "~/server/auth";
 import AuthenticationPage from "../../../components/authform/authpage";
 import Remote_Navbar from "../../../components/Phone_Remote/Remote_Navbar";
+import prisma from "../../../prismaClient";
+import { template } from "@babel/core";
+import Temperature_Graph from "../../../components/Phone_Remote/Power_Graph";
 
 const roboto = Roboto({
   weight: "300",
@@ -15,13 +18,29 @@ const roboto = Roboto({
   style: "normal",
 });
 
+interface TemperatureData {
+  value: number;
+  createdAt: Date;
+}
 
 export default async function Page() {
   const temperature = 25;
   const humidity = 50;
 
   const session = await getServerAuthSession();
-  const username = session?.user.name ?? "Felix Prattes f";
+  const username = session?.user.name ?? "Felix Prattes";
+  let temperatureData: TemperatureData[];
+  temperatureData = await prisma.temperature.findMany({
+    take: 20,
+
+    select: {
+      value: true,
+      createdAt: true,
+    },
+    orderBy: {
+      createdAt: "asc",
+    },
+  });
 
   return (
     <>
@@ -42,7 +61,7 @@ export default async function Page() {
                   <Temperature_Sensor temperature={temperature} />
                   <Humidity_Sensor humidity={humidity} />
                 </div>
-                <Power_Graph  />
+                <Temperature_Graph temperatureData={temperatureData} />
               </div>
             </div>
           </div>

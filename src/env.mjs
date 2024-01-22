@@ -29,6 +29,8 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: z.string(),
     // @ts-ignore
     NEXT_PUBLIC_WEATHER_KEY: z.string(),
+
+    DATABASE_URL: z.string().url(),
   },
 
   /**
@@ -55,6 +57,7 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     // @ts-ignore
     NEXT_PUBLIC_WEATHER_KEY: process.env.NEXT_PUBLIC_WEATHER_KEY,
+    DATABASE_URL: process.env.DATABASE_URL,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
