@@ -1,0 +1,22 @@
+# Ignore node_modules
+node_modules
+
+# Ignore .next build output
+.next
+
+# Ignore logs
+*.log
+
+# Ignore the npm debug log
+npm-debug.log*
+
+# Ignore .env file
+.env
+
+# Ignore .git directory
+.git/
+
+# Ignore other unnecessary files
+.DS_Store
+*.pem
+*.cert

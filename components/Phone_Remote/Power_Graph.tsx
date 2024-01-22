@@ -1,5 +1,5 @@
+"use client"
 import React, { useEffect, useState } from "react";
-import { fetchPowerData } from "~/app/api/fetchPowerData";
 import {
     Area,
     AreaChart,
@@ -9,21 +9,14 @@ import {
     YAxis,
 } from "recharts";
 
-interface PowerData {
-    time: number;
-    power: number;
-}
 
-interface Props {
-    data: PowerData[];
-}
 
-export default function Power_Graph({ data }: Props) {
+export default function Power_Graph() {
     const [powerData, setPowerData] = useState([]);
 
     useEffect(() => {
         const getPowerData = async () => {
-            const data = await fetchPowerData();
+            const data:any = await fetch("/api/fetchPowerData ")
             setPowerData(data);
         };
 

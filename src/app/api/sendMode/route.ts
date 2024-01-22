@@ -8,7 +8,7 @@ const kafka = new Kafka({
 const producer: Producer = kafka.producer({
   createPartitioner: Partitioners.DefaultPartitioner,
 });
-export async function POST(request: Request) {
+export default  async function POST(request: Request) {
   const data = await request.json();
 
   const mode: number = parseFloat(data.mode);
