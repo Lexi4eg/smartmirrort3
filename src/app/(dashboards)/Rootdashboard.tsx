@@ -17,11 +17,15 @@ import DoublePendulum from "~/app/(dashboards)/DoublePendulum";
 interface Props {
   style?: string;
   session: any;
+  humidity: number;
+  temperature: number;
 }
 
-export default function Rootdashboard({ style, session }: Props) {
+export default function Rootdashboard({ style, session, temperature, humidity }: Props) {
   const [selectedOption, setSelectedOption] = useState(2); // Set initial value to 1
   const router = useRouter();
+
+
   useEffect(() => {
     socket.on("mode", (newMode) => {
       setSelectedOption(newMode);
@@ -34,7 +38,7 @@ export default function Rootdashboard({ style, session }: Props) {
     <>
       <div className="max-w-screen flex min-h-screen flex-col items-center  justify-center bg-[#191a1b] bg-cover bg-center  text-white ">
         {Number(selectedOption) === 1 && (
-          <Dashboard session={session} style={style} />
+          <Dashboard session={session} style={style} humidity={humidity} temperature={temperature} />
         )}
         {Number(selectedOption) === 2 && <WorkClockDashboard style={style} />}
         {Number(selectedOption) === 3 && (

@@ -24,13 +24,11 @@ interface TemperatureData {
 }
 
 export default async function Page() {
-  const temperature = 25;
-  const humidity = 50;
 
   const session = await getServerAuthSession();
   const username = session?.user.name ?? "Felix Prattes";
-  let temperatureData: TemperatureData[];
-  temperatureData = await prisma.temperature.findMany({
+
+  const temperatureData = await prisma.temperature.findMany({
     take: 20,
 
     select: {
@@ -41,6 +39,21 @@ export default async function Page() {
       createdAt: "asc",
     },
   });
+
+  const humidityData = await prisma.humidity.findMany({
+    take: 1,
+    select: {
+      value: true,
+      createdAt: true,
+    },
+    orderBy: {
+      createdAt: "asc",
+    },
+  });
+
+  const temperature = temperatureData && temperatureData.length > 0 ? temperatureData[temperatureData.length - 1].value : 0;
+  const humidity = humidityData && humidityData.length > 0 ? humidityData[humidityData.length - 1].value : 0;
+
 
   return (
     <>

@@ -13,6 +13,9 @@ import Humidity_Sensor_Dashboard from "../../../components/WIdgets/Humidity_Sens
 interface Props {
   style?: string;
   session: any;
+  humidity: number;
+  temperature: number;
+
 }
 
 interface WidgetPosition {
@@ -26,6 +29,8 @@ const Dashboard: React.FC<Props> = (props: Props) => {
   const now = new Date();
   const session = props.session;
   const nightmode = props.style ?? "daymode";
+
+
 
   const widgets: WidgetPosition[] = [
     {
@@ -90,14 +95,14 @@ const Dashboard: React.FC<Props> = (props: Props) => {
       colSpan: 3,
       rowSpan: 3,
       widget: (
-        <Temperature_Sensor_Dashboard temperature={20} style={nightmode} />
+        <Temperature_Sensor_Dashboard temperature={props.temperature} style={nightmode} />
       ),
     },
     {
       position: 9,
       colSpan: 3,
       rowSpan: 3,
-      widget: <Humidity_Sensor_Dashboard humidity={20} style={nightmode} />,
+      widget: <Humidity_Sensor_Dashboard humidity={props.humidity} style={nightmode} />,
     },
   ];
 
