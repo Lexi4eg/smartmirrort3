@@ -24,23 +24,25 @@ interface TemperatureData {
 }
 
 export default async function Page() {
-
   const session = await getServerAuthSession();
   const username = session?.user.name ?? "Felix Prattes";
 
-  const temperatureResponse = await fetch("api/fetchTemperature");
+  const temperatureResponse = await fetch(
+    "http://localhost:3000/api/fetchTemperature",
+  );
   const temperature: number = await temperatureResponse.json();
 
-  const humidityResponse = await fetch("api/fetchHumidity");
+  const humidityResponse = await fetch(
+    "http://localhost:3000/api/fetchHumidity",
+  );
   const humidity: number = await humidityResponse.json();
 
-    const temperatureData: TemperatureData[] = await prisma.temperature.findMany({
-        orderBy: {
-        createdAt: "desc",
-        },
-        take: 30,
-    });
-
+  const temperatureData: TemperatureData[] = await prisma.temperature.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+    take: 30,
+  });
 
   return (
     <>

@@ -1,20 +1,29 @@
 import prisma from "../../../../prismaClient";
 
-
-
+interface TemperatureData {
+  value: number;
+  createdAt: Date;
+}
 export async function GET(request: Request) {
-    const humidityData = await prisma.humidity.findMany({
-        take: 1,
-        select: {
-            value: true,
-            createdAt: true,
-        },
-        orderBy: {
-            createdAt: "asc",
-        },
-    });
+  const temperatureData: TemperatureData[] = await prisma.temperature.findMany({
+    take: 20,
+    select: {
+      value: true,
+      createdAt: true,
+    },
+    orderBy: {
+      createdAt: "asc",
+    },
+  });
 
+  console.log(temperatureData);
 
-    const humidity = humidityData && humidityData.length > 0 ? humidityData[humidityData.length - 1].value : 0;
-    return new Response(JSON.stringify(humidity), {status: 200});
+  // @ts-ignore
+
+  const temperature: number =
+    temperatureData.length > 0
+      ? temperatureData[temperatureData.length - 1].value
+      : 0;
+
+  return new Response(JSON.stringify(temperature), { status: 200 });
 }
