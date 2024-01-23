@@ -1,5 +1,6 @@
-import consumer from "./kafkaConsumer.js";
 import prisma from "./prismaClient.js";
+
+import { consumer } from "./kafkaConsumer.js";
 
 const run = async () => {
   // Consuming
