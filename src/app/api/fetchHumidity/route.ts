@@ -4,24 +4,19 @@ interface HumidityData {
   value: number;
   createdAt: Date;
 }
-export async function GET(request: Request) {
-  const humidityData: HumidityData[] = await prisma.humidity.findMany({
-    take: 20,
 
+export async function GET(request: Request) {
+  const humidityData: HumidityData | null = await prisma.humidity.findFirst({
     select: {
       value: true,
       createdAt: true,
     },
     orderBy: {
-      createdAt: "asc",
+      createdAt: "desc",
     },
   });
 
-  // @ts-ignore
-  const temperature: number =
-    humidityData && humidityData.length > 0
-      ? humidityData[humidityData.length - 1].value
-      : 0;
+  const humidity: number = humidityData ? humidityData.value : 0;
 
-  return new Response(JSON.stringify(temperature), { status: 200 });
+  return new Response(JSON.stringify(humidity), { status: 200 });
 }

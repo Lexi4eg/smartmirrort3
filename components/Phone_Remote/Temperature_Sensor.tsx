@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { Roboto } from "next/font/google";
 const roboto2 = Roboto({
   weight: "100",
@@ -6,10 +7,26 @@ const roboto2 = Roboto({
   style: "normal",
 });
 
-interface Props {
-  temperature: number;
+interface TemperatureProps {
+  initTemperature: number;
 }
-export default function Temperature_Sensor({ temperature }: Props) {
+
+export default function Temperature_Sensor(props: TemperatureProps) {
+  const [temperature, setTemperature] = useState(props.initTemperature);
+
+  //fetch the data every 10 seconds
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch("http://localhost:3000/api/fetchTemperature")
+        .then((response) => response.json())
+        .then((data) => {
+          setTemperature(data);
+        });
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className=" m-2 flex w-1/2 justify-center rounded-md bg-[#212124] p-2 pb-10">
       <div className={roboto2.className}>

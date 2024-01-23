@@ -39,9 +39,9 @@ export default async function Page() {
 
   const temperatureData: TemperatureData[] = await prisma.temperature.findMany({
     orderBy: {
-      createdAt: "desc",
+      createdAt: "asc",
     },
-    take: 30,
+    take: 100,
   });
 
   return (
@@ -60,8 +60,8 @@ export default async function Page() {
               </div>
               <div className="flex h-full w-full flex-col  ">
                 <div className="flex w-full flex-row   ">
-                  <Temperature_Sensor temperature={temperature} />
-                  <Humidity_Sensor humidity={humidity} />
+                  <Temperature_Sensor initTemperature={temperature} />
+                  <Humidity_Sensor initHumidity={humidity} />
                 </div>
                 <Temperature_Graph tempData={temperatureData} />
               </div>

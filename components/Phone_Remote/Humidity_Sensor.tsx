@@ -1,17 +1,31 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { Roboto } from "next/font/google";
 
-interface Props {
-  humidity: number;
-}
 const roboto2 = Roboto({
   weight: "100",
   subsets: ["latin-ext"],
   style: "normal",
 });
 
-export default function Humidity_Sensor({ humidity }: Props) {
+interface HumidityProps {
+  initHumidity: number;
+}
+
+export default function Humidity_Sensor(props: HumidityProps) {
   //implement the humidity api here and pass it to humidity
+  const [humidity, setHumidity] = useState(props.initHumidity);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch("http://localhost:3000/api/fetchHumidity")
+        .then((response) => response.json())
+        .then((data) => {
+          setHumidity(data);
+        });
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className=" m-2   flex w-1/2 justify-center rounded-md bg-[#212124] p-2">

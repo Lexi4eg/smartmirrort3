@@ -1,22 +1,8 @@
 import prisma from "./prismaClient";
 
-const sampleTemperatureData = [
-  { value: 20 },
-  { value: 21 },
-  { value: 22 },
-  { value: 23 },
-  { value: 24 },
-  { value: 25 },
-];
+const sampleTemperatureData = [{ value: 23 }, { value: 23 }];
 
-const sampleHumidityData = [
-  { value: 50 },
-  { value: 51 },
-  { value: 52 },
-  { value: 53 },
-  { value: 54 },
-  { value: 55 },
-];
+const sampleHumidityData = [{ value: 70 }, { value: 70 }, { value: 70 }];
 
 for (const data of sampleTemperatureData) {
   try {
@@ -26,13 +12,20 @@ for (const data of sampleTemperatureData) {
       },
     });
 
-    const res2 = await prisma.humidity.create({
+    console.log(res);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+for (const data of sampleHumidityData) {
+  try {
+    const res = await prisma.humidity.create({
       data: {
         value: data.value,
       },
     });
 
-    console.log(res2);
     console.log(res);
   } catch (err) {
     console.log(err);
