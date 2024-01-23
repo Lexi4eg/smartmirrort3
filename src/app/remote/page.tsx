@@ -34,6 +34,13 @@ export default async function Page() {
   const humidityResponse = await fetch("api/fetchHumidity");
   const humidity: number = await humidityResponse.json();
 
+    const temperatureData: TemperatureData[] = await prisma.temperature.findMany({
+        orderBy: {
+        createdAt: "desc",
+        },
+        take: 30,
+    });
+
 
   return (
     <>
