@@ -18,12 +18,12 @@ export default function Temperature_Sensor(props: TemperatureProps) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      fetch("http://localhost:3000/api/fetchTemperature")
+      fetch("http://localhost:3000/api/fetchcurrTemperature")
         .then((response) => response.json())
         .then((data) => {
           setTemperature(data);
         });
-    }, 10000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 

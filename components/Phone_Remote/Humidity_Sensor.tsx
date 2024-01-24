@@ -23,7 +23,7 @@ export default function Humidity_Sensor(props: HumidityProps) {
         .then((data) => {
           setHumidity(data);
         });
-    }, 10000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 

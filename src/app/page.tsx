@@ -6,7 +6,7 @@ export default async function Home() {
   const session = await getServerAuthSession();
 
   const temperatureResponse = await fetch(
-    "http://localhost:3000/api/fetchTemperature",
+    "http://localhost:3000/api/fetchcurrTemperature",
   );
   const temperature: number = await temperatureResponse.json();
 

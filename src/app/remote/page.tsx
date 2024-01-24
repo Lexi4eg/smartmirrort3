@@ -28,7 +28,7 @@ export default async function Page() {
   const username = session?.user.name ?? "Felix Prattes";
 
   const temperatureResponse = await fetch(
-    "http://localhost:3000/api/fetchTemperature",
+    "http://localhost:3000/api/fetchcurrTemperature",
   );
   const temperature: number = await temperatureResponse.json();
 
