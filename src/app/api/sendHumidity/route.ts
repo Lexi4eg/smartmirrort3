@@ -1,5 +1,4 @@
 import { Kafka, Partitioners, Producer } from "kafkajs";
-import { NextRequest, NextResponse } from "next/server";
 
 const kafka = new Kafka({
   clientId: "my-app",

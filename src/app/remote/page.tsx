@@ -63,7 +63,7 @@ export default async function Page() {
                   <Temperature_Sensor initTemperature={temperature} />
                   <Humidity_Sensor initHumidity={humidity} />
                 </div>
-                <Temperature_Graph tempData={temperatureData} />
+                <Temperature_Graph temperatureData={temperatureData} />
               </div>
             </div>
           </div>

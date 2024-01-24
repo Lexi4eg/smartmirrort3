@@ -1,4 +1,5 @@
 import { Kafka, Partitioners, Producer } from "kafkajs";
+import { NextResponse } from "next/server";
 
 const kafka = new Kafka({
   clientId: "my-app",
@@ -8,7 +9,7 @@ const kafka = new Kafka({
 const producer: Producer = kafka.producer({
   createPartitioner: Partitioners.DefaultPartitioner,
 });
-export default  async function POST(request: Request) {
+export async function POST(request: Request) {
   const data = await request.json();
 
   const mode: number = parseFloat(data.mode);
@@ -22,5 +23,5 @@ export default  async function POST(request: Request) {
   });
 
   await producer.disconnect();
-  return new Response("OK", { status: 200 });
+  return NextResponse.json({ mode: mode }, { status: 200 });
 }
