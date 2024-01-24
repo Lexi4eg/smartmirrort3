@@ -5,14 +5,14 @@ interface TemperatureData {
   createdAt: Date;
 }
 export async function GET(request: Request) {
-  const temperatureData: TemperatureData | null =
-    await prisma.temperature.findFirst({
+  const temperatureData: TemperatureData[] | null =
+    await prisma.temperature.findMany({
       select: {
         value: true,
         createdAt: true,
       },
       orderBy: {
-        createdAt: "desc",
+        createdAt: "asc",
       },
     });
 
