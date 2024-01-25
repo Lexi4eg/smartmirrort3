@@ -3,12 +3,12 @@ import React, {useEffect, useState} from "react";
 import {Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis,} from "recharts";
 
 interface TemperatureData {
-  value: number;
-  createdAt: Date;
+    value: number;
+    createdAt: Date;
 }
 
 interface TemperatureProps {
-  temperatureData: TemperatureData[];
+    temperatureData: TemperatureData[];
 }
 
 export default function Temperature_Graph(props: TemperatureProps) {
