@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { Roboto } from "next/font/google";
-import { signIn } from "next-auth/react";
+import {Roboto} from "next/font/google";
+import {signIn} from "next-auth/react";
 
 const roboto = Roboto({
   weight: "500",

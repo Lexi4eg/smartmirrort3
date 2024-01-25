@@ -1,4 +1,4 @@
-import { Kafka } from "kafkajs";
+import {Kafka} from "kafkajs";
 import io from "socket.io-client";
 
 // Initialize Kafka consumer

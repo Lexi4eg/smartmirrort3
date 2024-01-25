@@ -4,22 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Quick fix">
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Cleanup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Humidity_Sensor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Humidity_Sensor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Mode_Selector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/functions/Mode_Selector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Temperature_Graph.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Graph.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Temperature_Sensor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Sensor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/remote.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/functions/remote.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/sendWidget.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/functions/sendWidget.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Clocks/AppleClockWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Clocks/AppleClockWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Clocks/Clock2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Clocks/Clock2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Clocks/ClockClock24F/ClockClock24F.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Clocks/ClockClock24F/ClockClock24F.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Clocks/MillionClock/MillionClock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Clocks/MillionClock/MillionClock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Clocks/WordClockFull/Wordclockfull.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Clocks/WordClockFull/Wordclockfull.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Clocks/Wordclock/Wordclock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Clocks/Wordclock/Wordclock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Clocks/tests/AppleClockWidget.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Clocks/tests/AppleClockWidget.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Clocks/tests/Clock2.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Clocks/tests/Clock2.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Clocks/tests/WordClock.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Clocks/tests/WordClock.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Clocks/tests/WordClockFull.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Clocks/tests/WordClockFull.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Remote_Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Remote_Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Stats/Humidity_Sensor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Humidity_Sensor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Graph.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Graph.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Sensor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Sensor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/functions/sendWidget.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/functions/sendWidget.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Phone_Remote/tests/Humidity_Test.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/tests/Humidity_Test.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Phone_Remote/tests/Mode_Selector.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/tests/Mode_Selector.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/tests/Remote_Navbar.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/tests/Remote_Navbar.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Phone_Remote/tests/Temperatur_Sensor.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/tests/Temperatur_Sensor.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka.js" beforeDir="false" afterPath="$PROJECT_DIR$/kafka.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/WIdgets/Humidity_Sensor_Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/WIdgets/Humidity_Sensor_Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/WIdgets/IPWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/WIdgets/IPWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/WIdgets/NYTWidget/NYTWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/WIdgets/NYTWidget/NYTWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/WIdgets/NasaWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/WIdgets/NasaWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/WIdgets/TemperatureSensorDashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/WIdgets/TemperatureSensorDashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/WIdgets/Weather.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/WIdgets/Weather.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/WIdgets/WelcomeWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/WIdgets/WelcomeWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/authform/authpage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/authform/authpage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/games/TickTackToe/Board.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/games/TickTackToe/Board.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/games/TickTackToe/Square.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/games/TickTackToe/Square.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/games/TickTackToe/TickTacToe.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/games/TickTackToe/TickTacToe.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/loading/ProgressBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/loading/ProgressBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kafka2.js" beforeDir="false" afterPath="$PROJECT_DIR$/kafka2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafkaConsumer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/kafkaConsumer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafkawebsocket.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/kafkawebsocket.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prismaClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prismaClient.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/saveDataKafkaDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/saveDataKafkaDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/Dashboard2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/Dashboard2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/Dashboard3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/Dashboard3.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/FlipDotClock/FlipDotClock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/FlipDotClock/FlipDotClock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/MillionTimesDashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/MillionTimesDashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/MillionTimesDashboardBlackWhite.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/MillionTimesDashboardBlackWhite.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/MillionTimesDashboardGlass.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/MillionTimesDashboardGlass.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/MillionTimesDashboardWood.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/MillionTimesDashboardWood.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/Rootdashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/Rootdashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/mode/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/mode/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/sendHumidity/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/sendHumidity/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/sendMode/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/sendMode/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/sendTemperature/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/sendTemperature/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/remote/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/remote/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/remote/widgetsettings/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/remote/widgetsettings/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/env.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/src/env.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/api/root.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/api/root.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/api/routers/post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/api/routers/post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/api/trpc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/api/trpc.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trpc/react.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/trpc/react.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trpc/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/trpc/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trpc/shared.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/trpc/shared.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +200,7 @@
       <workItem from="1704976229518" duration="2550000" />
       <workItem from="1705916896486" duration="3509000" />
       <workItem from="1706003513217" duration="976000" />
-      <workItem from="1706177448093" duration="246000" />
+      <workItem from="1706177448093" duration="548000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -290,7 +338,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706082243557</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Cleanup">
+      <option name="closed" value="true" />
+      <created>1706177718785</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1706177718785</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +400,7 @@
     <MESSAGE value="Rewriting Temperature Data Flow" />
     <MESSAGE value="New API Route for Temperature and Humidity fetching" />
     <MESSAGE value="Quick fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quick fix" />
+    <MESSAGE value="Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
   </component>
 </project>

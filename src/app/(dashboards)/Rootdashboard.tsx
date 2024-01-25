@@ -6,14 +6,14 @@ import FlipDotClock from "~/app/(dashboards)/FlipDotClock/FlipDotClock";
 import SolarSystemWallpaper from "~/app/(dashboards)/solarSystem/solarSystemWallpaper";
 
 import io from "socket.io-client";
-import { useEffect, useState } from "react";
-
-const socket = io("http://192.168.178.57:3001"); // Replace with your server URL
-import { useRouter } from "next/navigation";
+import {useEffect, useState} from "react";
+import {useRouter} from "next/navigation";
 import MillionTimesDashboardBlackWhite from "~/app/(dashboards)/MillionTimesDashboardBlackWhite";
 import MillionTimesDashboardGlass from "~/app/(dashboards)/MillionTimesDashboardGlass";
 import MillionTimesDashboardWood from "~/app/(dashboards)/MillionTimesDashboardWood";
 import DoublePendulum from "~/app/(dashboards)/DoublePendulum";
+
+const socket = io("http://192.168.178.57:3001"); // Replace with your server URL
 interface Props {
   style?: string;
   session: any;

@@ -1,21 +1,18 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import {
-  Area,
-  AreaChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+import React, {useEffect, useState} from "react";
+import {Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis,} from "recharts";
 
 interface TemperatureData {
   value: number;
   createdAt: Date;
 }
 
-export default function Temperature_Graph(tempData: TemperatureData[]) {
-  const [temperatureData, setTemperatureData] = useState<TemperatureData[]>(tempData);
+interface TemperatureProps {
+  temperatureData: TemperatureData[];
+}
+
+export default function Temperature_Graph(props: TemperatureProps) {
+  const [temperatureData, setTemperatureData] = useState<TemperatureData[]>(props.temperatureData);
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -1,7 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 
 const Time = dynamic(() => import('./time'), { ssr: false })
 

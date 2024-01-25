@@ -1,5 +1,4 @@
 "use client";
-import {getServerAuthSession} from "~/server/auth";
 import {useEffect, useState} from "react";
 
 interface Props {

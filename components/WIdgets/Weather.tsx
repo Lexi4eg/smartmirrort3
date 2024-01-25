@@ -1,8 +1,7 @@
 "use client"
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Image from 'next/image';
-import {useEffect} from "react";
 
 interface WeatherData {
     name: string;

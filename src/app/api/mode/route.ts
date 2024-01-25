@@ -1,5 +1,5 @@
 import {NextRequest, NextResponse} from "next/server";
-import { PrismaClient } from '@prisma/client'
+import {PrismaClient} from '@prisma/client'
 
 
 const handler = async (req: NextRequest, res: NextResponse)  => {

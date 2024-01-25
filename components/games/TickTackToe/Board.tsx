@@ -1,5 +1,6 @@
 import React from "react";
 import Square from "./Square";
+
 type Props = {
   squares: Array<string>;
   finished: boolean;

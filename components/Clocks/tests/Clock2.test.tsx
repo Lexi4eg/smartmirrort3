@@ -1,6 +1,6 @@
-import { render } from '@testing-library/react';
+import {render} from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { Clock2 } from '../Clock2'; // Update with your actual import path
+import {Clock2} from '../Clock2'; // Update with your actual import path
 
 // Mock the dynamic import
 jest.mock('next/dynamic', () => () => {

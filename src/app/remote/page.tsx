@@ -1,10 +1,9 @@
 import React from "react";
-import io from "socket.io-client";
-import { Roboto } from "next/font/google";
+import {Roboto} from "next/font/google";
 import Mode_Selector from "../../../components/Phone_Remote/functions/Mode_Selector";
 import Temperature_Sensor from "../../../components/Phone_Remote/Stats/Temperature_Sensor";
 import Humidity_Sensor from "../../../components/Phone_Remote/Stats/Humidity_Sensor";
-import { getServerAuthSession } from "~/server/auth";
+import {getServerAuthSession} from "~/server/auth";
 import AuthenticationPage from "../../../components/authform/authpage";
 import Remote_Navbar from "../../../components/Phone_Remote/Remote_Navbar";
 import prisma from "../../../prismaClient";
@@ -61,7 +60,7 @@ export default async function Page() {
                   <Temperature_Sensor initTemperature={temperature} />
                   <Humidity_Sensor initHumidity={humidity} />
                 </div>
-                <Temperature_Graph tempData={temperatureData} />
+                <Temperature_Graph tempData = {temperatureData}/>
               </div>
             </div>
           </div>
