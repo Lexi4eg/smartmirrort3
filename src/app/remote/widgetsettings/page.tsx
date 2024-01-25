@@ -1,10 +1,10 @@
 import React from "react";
 import Remote_Navbar from "../../../../components/Phone_Remote/Remote_Navbar";
 import { getServerAuthSession } from "~/server/auth";
-import Mode_Selector from "../../../../components/Phone_Remote/Mode_Selector";
-import Temperature_Sensor from "../../../../components/Phone_Remote/Temperature_Sensor";
-import Humidity_Sensor from "../../../../components/Phone_Remote/Humidity_Sensor";
-import Power_Graph from "../../../../components/Phone_Remote/Temperature_Graph";
+import Mode_Selector from "../../../../components/Phone_Remote/functions/Mode_Selector";
+import Temperature_Sensor from "../../../../components/Phone_Remote/Stats/Temperature_Sensor";
+import Humidity_Sensor from "../../../../components/Phone_Remote/Stats/Humidity_Sensor";
+import Power_Graph from "../../../../components/Phone_Remote/Stats/Temperature_Graph";
 
 export default async function Page() {
   const session = await getServerAuthSession();

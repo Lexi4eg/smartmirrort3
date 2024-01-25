@@ -17,17 +17,16 @@ const run = async (/** @type {undefined} */ options) => {
 
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
-      // Instead of logging the message value, insert it into your PostgreSQL database
       try {
         const res = await prisma.temperature.create({
           data: {
-            // @ts-ignore
+
             message: message.value.toString(),
           },
         });
         console.log(res);
       } catch (err) {
-        // @ts-ignore
+
         console.log(err.stack);
       }
     },

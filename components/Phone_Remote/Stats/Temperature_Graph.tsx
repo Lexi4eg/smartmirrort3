@@ -14,8 +14,8 @@ interface TemperatureData {
   createdAt: Date;
 }
 
-export default function Temperature_Graph() {
-  const [temperatureData, setTemperatureData] = useState<TemperatureData[]>([]);
+export default function Temperature_Graph(tempData: TemperatureData[]) {
+  const [temperatureData, setTemperatureData] = useState<TemperatureData[]>(tempData);
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -4,8 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New API Route for Temperature and Humidity fetching">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Quick fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Humidity_Sensor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Humidity_Sensor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Mode_Selector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/functions/Mode_Selector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Temperature_Graph.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Graph.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Temperature_Sensor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Sensor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/remote.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/functions/remote.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/sendWidget.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/functions/sendWidget.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/tests/Humidity_Test.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/tests/Humidity_Test.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/tests/Mode_Selector.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/tests/Mode_Selector.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/tests/Temperatur_Sensor.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/tests/Temperatur_Sensor.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka.js" beforeDir="false" afterPath="$PROJECT_DIR$/kafka.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka2.js" beforeDir="false" afterPath="$PROJECT_DIR$/kafka2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saveDataKafkaDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/saveDataKafkaDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/remote/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/remote/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/remote/widgetsettings/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/remote/widgetsettings/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +86,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/Phone_Remote/functions" />
+      <recent name="$PROJECT_DIR$/components/Phone_Remote/Stats" />
       <recent name="$PROJECT_DIR$/src/app/api" />
       <recent name="$PROJECT_DIR$/src/server" />
       <recent name="$PROJECT_DIR$/src/server/api" />
-      <recent name="$PROJECT_DIR$/src/app/api/time" />
-      <recent name="$PROJECT_DIR$/src/app/(dashboards)" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.kafka2.js">
@@ -138,6 +152,7 @@
       <workItem from="1704976229518" duration="2550000" />
       <workItem from="1705916896486" duration="3509000" />
       <workItem from="1706003513217" duration="976000" />
+      <workItem from="1706177448093" duration="246000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -267,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706004404314</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Quick fix">
+      <option name="closed" value="true" />
+      <created>1706082243557</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1706082243557</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +298,6 @@
     <option name="exactExcludedFiles">
       <list>
         <option value="$PROJECT_DIR$/prismaClient.js" />
-        <option value="$PROJECT_DIR$/addTemperatureData.js" />
       </list>
     </option>
   </component>
@@ -321,6 +343,7 @@
     <MESSAGE value="New Working API for data fetching from DB" />
     <MESSAGE value="Rewriting Temperature Data Flow" />
     <MESSAGE value="New API Route for Temperature and Humidity fetching" />
-    <option name="LAST_COMMIT_MESSAGE" value="New API Route for Temperature and Humidity fetching" />
+    <MESSAGE value="Quick fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quick fix" />
   </component>
 </project>

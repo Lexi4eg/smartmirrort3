@@ -1,16 +1,14 @@
 import React from "react";
 import io from "socket.io-client";
 import { Roboto } from "next/font/google";
-import Mode_Selector from "../../../components/Phone_Remote/Mode_Selector";
-import Temperature_Sensor from "../../../components/Phone_Remote/Temperature_Sensor";
-import Humidity_Sensor from "../../../components/Phone_Remote/Humidity_Sensor";
-import Power_Graph from "../../../components/Phone_Remote/Temperature_Graph";
+import Mode_Selector from "../../../components/Phone_Remote/functions/Mode_Selector";
+import Temperature_Sensor from "../../../components/Phone_Remote/Stats/Temperature_Sensor";
+import Humidity_Sensor from "../../../components/Phone_Remote/Stats/Humidity_Sensor";
 import { getServerAuthSession } from "~/server/auth";
 import AuthenticationPage from "../../../components/authform/authpage";
 import Remote_Navbar from "../../../components/Phone_Remote/Remote_Navbar";
 import prisma from "../../../prismaClient";
-import { template } from "@babel/core";
-import Temperature_Graph from "../../../components/Phone_Remote/Temperature_Graph";
+import Temperature_Graph from "../../../components/Phone_Remote/Stats/Temperature_Graph";
 
 const roboto = Roboto({
   weight: "300",

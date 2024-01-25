@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Mode_Selector from "../Mode_Selector";
+import Mode_Selector from "../functions/Mode_Selector";
 
 describe("Mode_Selector", () => {
   test("renders without crashing", () => {
