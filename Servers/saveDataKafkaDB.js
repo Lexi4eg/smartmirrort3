@@ -10,8 +10,8 @@ const kafka = new Kafka({
 
 const consumer = kafka.consumer({ groupId: "mode" });
 
-const run = async (/** @type {undefined} */ options) => {
-  // Consuming
+const run = async () => {
+
   await consumer.connect();
   await consumer.subscribe({ topic: "temperatureData", fromBeginning: true });
   await consumer.subscribe({ topic: "humidityData", fromBeginning: true });

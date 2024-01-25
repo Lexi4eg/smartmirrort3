@@ -16,14 +16,18 @@ const run = async () => {
   // Connect to Kafka consumer
   await consumer.connect();
   await consumer.subscribe({ topic: "mode", fromBeginning: true });
+  await consumer.subscribe({ topic: "temperature", fromBeginning: true });
+  await consumer.subscribe({ topic: "humidity", fromBeginning: true });
+
 
   // Run Kafka consumer
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
       // Check if message.value is not null before calling toString()
       if (message.value) {
-        // Emit new message to WebSocket server
-        socket.emit("mode", message.value.toString());
+        const value = message.value.toString();
+        // Emit the message to the WebSocket
+        socket.emit(topic, value);
       }
     },
   });

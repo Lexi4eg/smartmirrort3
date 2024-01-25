@@ -11,8 +11,8 @@ const consumer = kafka.consumer({ groupId: "mode" });
 import prisma from "../prismaClient.js";
 
 s;
-const run = async (/** @type {undefined} */ options) => {
-  // Consuming
+const run = async () => {
+
   await consumer.connect();
   await consumer.subscribe({ topic: "temperatureData", fromBeginning: true });
 

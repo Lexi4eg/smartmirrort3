@@ -10,10 +10,9 @@ const producer = kafka.producer({
 });
 
 const run = async () => {
-  // Producing
+
   await producer.connect();
 
-  // Send message to 'mode' topic
   await producer.send({
     topic: "mode",
     messages: [{ value: "1" }],
@@ -30,7 +29,7 @@ const run = async () => {
     messages: [{ value: "23" }],
   });
 
-  // Ensure the producer gracefully disconnects
+
   await producer.disconnect();
 };
 
