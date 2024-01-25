@@ -2,7 +2,6 @@ import React from 'react'
 
 
 export default function Loading() {
-    // You can add any UI inside Loading, including a Skeleton.
     return (
 
             <div role="status" className={"bg-black flex justify-center w-screen h-screen items-center"}>

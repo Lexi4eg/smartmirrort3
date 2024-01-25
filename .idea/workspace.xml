@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Import Optimization">
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Improved File Structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Graph.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Graph.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/remote/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/remote/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka.js" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/kafka.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka2.js" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/kafka2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafkaConsumer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/kafkaConsumer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafkawebsocket.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/kafkawebsocket.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saveDataKafkaDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/saveDataKafkaDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/remote/widgetsettings/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/remote/widgetsettings/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,14 +88,14 @@
       <recent name="$PROJECT_DIR$/src/server/api" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.kafka2.js">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="addTemperatureData.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/addTemperatureData.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="kafka2.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/kafka2.js" working-dir="$PROJECT_DIR$">
+    <configuration name="kafka2.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Servers/kafka2.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="kafka.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/kafka.js" working-dir="$PROJECT_DIR$">
+    <configuration name="kafka.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Servers/kafka.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="queryDB.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/queryDB.js" working-dir="$PROJECT_DIR$">
@@ -140,7 +147,8 @@
       <workItem from="1704976229518" duration="2550000" />
       <workItem from="1705916896486" duration="3509000" />
       <workItem from="1706003513217" duration="976000" />
-      <workItem from="1706177448093" duration="729000" />
+      <workItem from="1706177448093" duration="2075000" />
+      <workItem from="1706187630762" duration="905000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -294,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706178017856</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Temp Data Graph Fixed">
+      <option name="closed" value="true" />
+      <created>1706178199366</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1706178199366</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,6 +366,8 @@
     <MESSAGE value="Quick fix" />
     <MESSAGE value="Cleanup" />
     <MESSAGE value="Import Optimization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Import Optimization" />
+    <MESSAGE value="Temp Data Graph Fixed" />
+    <MESSAGE value="Improved File Structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved File Structure" />
   </component>
 </project>

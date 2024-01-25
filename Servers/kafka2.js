@@ -8,7 +8,7 @@ const kafka = new Kafka({
 
 const consumer = kafka.consumer({ groupId: "mode" });
 
-import prisma from "./prismaClient";
+import prisma from "../prismaClient.js";
 
 s;
 const run = async (/** @type {undefined} */ options) => {
