@@ -3,15 +3,10 @@ import AppleClockWidget from "../../../components/Clocks/AppleClockWidget";
 
 import Link from "next/link";
 import Clock2 from "../../../components/Clocks/Clock2";
-
-import DailyQuoteWidget from "../../../components/WIdgets/DailyQuoteWidget";
 import Wordclock from "../../../components/Clocks/Wordclock/Wordclock";
 import WelcomeWidget from "../../../components/WIdgets/WelcomeWidget";
-import MillionClock from "../../../components/Clocks/MillionClock/MillionClock";
-import TickTackToe from "../../../components/games/TickTackToe/TickTacToe";
 import Weather from "../../../components/WIdgets/Weather";
 import NYTWidget from "../../../components/WIdgets/NYTWidget/NYTWidget";
-import { useState } from "react";
 
 interface Props {
   style?: string;

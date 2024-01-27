@@ -1,6 +1,6 @@
 "use client"
 import "./styles.css";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 

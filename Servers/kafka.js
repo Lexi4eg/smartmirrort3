@@ -10,28 +10,26 @@ const producer = kafka.producer({
 });
 
 const run = async () => {
-  // Producing
+
   await producer.connect();
 
-  // Send message to 'mode' topic
   await producer.send({
     topic: "mode",
     messages: [{ value: "1" }],
     producerId: "1",
   });
 
-  // Send message to 'temperatureData' topic
   await producer.send({
     topic: "temperatureData",
-    messages: [{ value: "23" }], // replace with your actual temperature data
+    messages: [{ value: "23" }],
   });
 
   await producer.send({
     topic: "humidityData",
-    messages: [{ value: "23" }], // replace with your actual humidity data
+    messages: [{ value: "23" }],
   });
 
-  // Ensure the producer gracefully disconnects
+
   await producer.disconnect();
 };
 

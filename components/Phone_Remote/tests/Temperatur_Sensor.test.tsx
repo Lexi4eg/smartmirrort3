@@ -1,7 +1,7 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Temperature_Sensor from "../Temperature_Sensor";
+import Temperature_Sensor from "../Stats/Temperature_Sensor";
 
 describe("Temperature_Sensor", () => {
   const mockTemperature = 25;

@@ -1,4 +1,4 @@
-import { getServerAuthSession } from "~/server/auth";
+import {getServerAuthSession} from "~/server/auth";
 import AuthenticationPage from "../../components/authform/authpage";
 import Rootdashboard from "~/app/(dashboards)/Rootdashboard";
 

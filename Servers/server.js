@@ -11,7 +11,7 @@ const io = new Server(server, {
       "http://localhost:3000",
       "http://172.16.84.116:3000",
     ],
-    // Allow only this origin
+
     methods: ["GET", "POST"],
   },
 });
@@ -27,6 +27,16 @@ io.on("connection", (socket) => {
   socket.on("widget", (widget) => {
     io.emit("widget", widget);
     console.log(widget);
+  });
+
+  socket.on("temperature", (temperature) => {
+    io.emit("temperature", temperature);
+    console.log(temperature);
+  });
+
+  socket.on("humidity", (humidity) => {
+    io.emit("humidity", humidity);
+    console.log(humidity);
   });
 
   socket.on("disconnect", () => {

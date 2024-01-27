@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { CiMenuBurger } from "react-icons/ci";
-import { IoCloseOutline } from "react-icons/io5";
+import React, {useState} from "react";
+import {AnimatePresence, motion} from "framer-motion";
+import {CiMenuBurger} from "react-icons/ci";
+import {IoCloseOutline} from "react-icons/io5";
 
 const navLinks = [
   { title: "Log Out", href: "api/auth/signout" },

@@ -1,5 +1,5 @@
-import { Kafka } from "kafkajs";
-import { PrismaClient } from "@prisma/client";
+import {Kafka} from "kafkajs";
+import {PrismaClient} from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -10,15 +10,14 @@ const kafka = new Kafka({
 
 const consumer = kafka.consumer({ groupId: "mode" });
 
-const run = async (/** @type {undefined} */ options) => {
-  // Consuming
+const run = async () => {
+
   await consumer.connect();
   await consumer.subscribe({ topic: "temperatureData", fromBeginning: true });
   await consumer.subscribe({ topic: "humidityData", fromBeginning: true });
 
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
-      // Instead of logging the message value, insert it into your PostgreSQL database
       try {
         if (topic === "temperatureData") {
           const value = parseFloat(message.value.toString());
@@ -38,7 +37,7 @@ const run = async (/** @type {undefined} */ options) => {
           console.log(res);
         }
       } catch (err) {
-        // @ts-ignore
+
         console.log(err.stack);
       }
     },

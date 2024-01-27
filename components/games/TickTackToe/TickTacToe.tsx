@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Board from "./Board";
 
 interface Props {

@@ -1,7 +1,7 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Humidity_Sensor from "../Humidity_Sensor";
+import Humidity_Sensor from "../Stats/Humidity_Sensor";
 
 describe("Humidity_Sensor", () => {
   test("renders with correct humidity", () => {

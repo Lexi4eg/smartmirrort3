@@ -6,11 +6,11 @@
     "build": "next build",
     "dev": "next dev ",
     "lint": "next lint",
-    "start": "node server.js",
+    "start": "node Servers/server.js",
     "tauri": "tauri",
     "test": "jest",
     "test:watch": "jest --watch",
-    "server": "node server.js"
+    "server": "node Servers/server.js"
   },
   "type": "module",
   "dependencies": {

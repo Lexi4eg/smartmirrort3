@@ -1,6 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { Roboto } from "next/font/google";
+import React, {useEffect, useState} from "react";
+import {Roboto} from "next/font/google";
+
 const roboto2 = Roboto({
   weight: "100",
   subsets: ["latin-ext"],
