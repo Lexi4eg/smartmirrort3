@@ -8,6 +8,8 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import io from "socket.io-client";
+import { useRouter } from "next/navigation";
 
 interface TemperatureData {
   value: number;
@@ -18,24 +20,20 @@ interface TemperatureGraphProps {
   temperatureData: TemperatureData[];
 }
 
+const socket = io("http://localhost:3001");
+
 export default function Temperature_Graph(props: TemperatureGraphProps) {
   const [temperatureData, setTemperatureData] = useState<TemperatureData[]>(
     props.temperatureData,
   );
 
+  const router = useRouter();
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      fetch("http://localhost:3000/api/fetchTemperature")
-        .then((response) => response.json())
-        .then((data: TemperatureData[]) => {
-          if (Array.isArray(data)) {
-            setTemperatureData(data);
-          } else {
-            console.error("Fetched data is not an array:", data);
-          }
-        });
-    }, 1000);
-    return () => clearInterval(interval);
+    socket.on("temperatureData", (newTemperatureData) => {
+      setTemperatureData(newTemperatureData);
+      router.push("/");
+    });
   }, []);
 
   const formattedTempData = temperatureData.map((data) => {

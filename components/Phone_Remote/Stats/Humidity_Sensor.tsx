@@ -1,6 +1,8 @@
 "use client";
-import React, {useEffect, useState} from "react";
-import {Roboto} from "next/font/google";
+import React, { useEffect, useState } from "react";
+import { Roboto } from "next/font/google";
+import io from "socket.io-client";
+import { useRouter } from "next/navigation";
 
 const roboto2 = Roboto({
   weight: "100",
@@ -12,19 +14,17 @@ interface HumidityProps {
   initHumidity: number;
 }
 
+const socket = io("http://localhost:3001");
+
 export default function Humidity_Sensor(props: HumidityProps) {
-  //implement the humidity api here and pass it to humidity
   const [humidity, setHumidity] = useState(props.initHumidity);
+  const router = useRouter();
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      fetch("http://localhost:3000/api/fetchHumidity")
-        .then((response) => response.json())
-        .then((data) => {
-          setHumidity(data);
-        });
-    }, 1000);
-    return () => clearInterval(interval);
+    socket.on("humidityData", (humidityData) => {
+      setHumidity(humidityData);
+      router.push("/");
+    });
   }, []);
 
   return (

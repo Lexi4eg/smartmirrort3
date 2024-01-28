@@ -1,6 +1,7 @@
 "use client";
-import React, {useEffect, useState} from "react";
-import {Roboto} from "next/font/google";
+import React, { useEffect, useState } from "react";
+import { Roboto } from "next/font/google";
+import io from "socket.io-client";
 
 const roboto2 = Roboto({
   weight: "100",
@@ -12,20 +13,19 @@ interface TemperatureProps {
   initTemperature: number;
 }
 
+import { useRouter } from "next/navigation";
+
+const socket = io("http://localhost:3001");
 export default function Temperature_Sensor(props: TemperatureProps) {
   const [temperature, setTemperature] = useState(props.initTemperature);
-
-  //fetch the data every 10 seconds
+  const router = useRouter();
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      fetch("http://localhost:3000/api/fetchcurrTemperature")
-        .then((response) => response.json())
-        .then((data) => {
-          setTemperature(data);
-        });
-    }, 1000);
-    return () => clearInterval(interval);
+    socket.on("temperatureData", (temperatureData) => {
+      setTemperature(temperatureData);
+      console.log(temperatureData);
+      router.push("/");
+    });
   }, []);
 
   return (

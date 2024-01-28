@@ -1,9 +1,10 @@
-const http = require("http");
+import http from "http";
 const server = http.createServer((req, res) => {
   // Handle HTTP requests if needed
 });
 
-const { Server } = require("socket.io");
+import { Server } from "socket.io";
+
 const io = new Server(server, {
   cors: {
     origin: [
@@ -29,14 +30,14 @@ io.on("connection", (socket) => {
     console.log(widget);
   });
 
-  socket.on("temperature", (temperature) => {
-    io.emit("temperature", temperature);
-    console.log(temperature);
+  socket.on("temperatureData", (temperatureData) => {
+    io.emit("temperatureData", temperatureData);
+    console.log(temperatureData);
   });
 
-  socket.on("humidity", (humidity) => {
-    io.emit("humidity", humidity);
-    console.log(humidity);
+  socket.on("humidityData", (humidityData) => {
+    io.emit("humidityData", humidityData);
+    console.log(humidityData);
   });
 
   socket.on("disconnect", () => {

@@ -1,4 +1,4 @@
-import {Kafka} from "kafkajs";
+import { Kafka } from "kafkajs";
 import io from "socket.io-client";
 
 // Initialize Kafka consumer
@@ -15,18 +15,17 @@ const socket = io("http://localhost:3001"); // Replace with your server URL
 const run = async () => {
   // Connect to Kafka consumer
   await consumer.connect();
-  await consumer.subscribe({ topic: "mode", fromBeginning: true });
-  await consumer.subscribe({ topic: "temperature", fromBeginning: true });
-  await consumer.subscribe({ topic: "humidity", fromBeginning: true });
 
+  const topics = ["mode", "temperatureData", "humidityData"];
 
-  // Run Kafka consumer
+  for (const topic of topics) {
+    await consumer.subscribe({ topic, fromBeginning: true });
+  }
+
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
-      // Check if message.value is not null before calling toString()
       if (message.value) {
         const value = message.value.toString();
-        // Emit the message to the WebSocket
         socket.emit(topic, value);
       }
     },
