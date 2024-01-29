@@ -32,7 +32,7 @@ export default function Temperature_Graph(props: TemperatureGraphProps) {
   useEffect(() => {
     socket.on("temperatureData", (newTemperatureData) => {
       setTemperatureData(newTemperatureData);
-      router.push("/");
+      router.refresh();
     });
   }, []);
 

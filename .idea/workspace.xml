@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Improved File Structure">
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Websockets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Servers/kafka.js" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/kafka.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Servers/kafka2.js" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/kafka2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Servers/kafkawebsocket.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/kafkawebsocket.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Servers/saveDataKafkaDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/saveDataKafkaDB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Servers/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Stats/Humidity_Sensor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Humidity_Sensor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Graph.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Graph.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Sensor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Sensor.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,36 +50,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "Docker.docker-compose2.yml: Compose Deployment.executor": "Run",
-    "Node.js.addTemperatureData.js.executor": "Run",
-    "Node.js.kafka.js.executor": "Run",
-    "Node.js.kafka2.js.executor": "Run",
-    "Node.js.queryDB.js.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "javascript.nodejs.core.library.configured.version": "20.8.0",
-    "javascript.nodejs.core.library.typings.version": "",
-    "last_opened_file_path": "/Users/felixprattes/Programming/smartmirrort3",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/felixprattes/Programming/smartmirrort3/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose2.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.addTemperatureData.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.kafka.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.kafka2.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.queryDB.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.8.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.8.10&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/felixprattes/Programming/smartmirrort3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/felixprattes/Programming/smartmirrort3/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Servers" />
@@ -152,7 +150,10 @@
       <workItem from="1706003513217" duration="976000" />
       <workItem from="1706177448093" duration="2075000" />
       <workItem from="1706187630762" duration="2282000" />
-      <workItem from="1706190450663" duration="1407000" />
+      <workItem from="1706190450663" duration="1737000" />
+      <workItem from="1706355436709" duration="10000" />
+      <workItem from="1706355455826" duration="607000" />
+      <workItem from="1706511723117" duration="224000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -322,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706188790366</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="New Websockets">
+      <option name="closed" value="true" />
+      <created>1706193067980</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1706193067980</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,6 +389,7 @@
     <MESSAGE value="Import Optimization" />
     <MESSAGE value="Temp Data Graph Fixed" />
     <MESSAGE value="Improved File Structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved File Structure" />
+    <MESSAGE value="New Websockets" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Websockets" />
   </component>
 </project>
