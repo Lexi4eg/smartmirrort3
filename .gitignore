@@ -12,6 +12,7 @@
 /prisma/db.sqlite
 /prisma/db.sqlite-journal
 
+
 /postgres-data
 
 # next.js
@@ -42,3 +43,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+/prisma/migrations/
