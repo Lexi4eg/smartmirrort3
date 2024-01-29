@@ -23,7 +23,8 @@ export default function Humidity_Sensor(props: HumidityProps) {
   useEffect(() => {
     socket.on("humidityData", (humidityData) => {
       setHumidity(humidityData);
-      router.push("/");
+      console.log(humidityData);
+      router.refresh();
     });
   }, []);
 

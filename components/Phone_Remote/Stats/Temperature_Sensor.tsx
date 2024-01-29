@@ -24,7 +24,7 @@ export default function Temperature_Sensor(props: TemperatureProps) {
     socket.on("temperatureData", (temperatureData) => {
       setTemperature(temperatureData);
       console.log(temperatureData);
-      router.push("/");
+      router.refresh();
     });
   }, []);
 
