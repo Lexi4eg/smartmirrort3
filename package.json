@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev ",
+    "dev": "concurrently \"next dev\" \"node Servers/saveDataKafkaDb.js\" \"node Servers/kafkawebsocket.js\" \"node Servers/server.js\"",
     "lint": "next lint",
     "start": "node Servers/server.js",
     "tauri": "tauri",
@@ -70,6 +70,7 @@
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
     "autoprefixer": "^10.4.14",
+    "concurrently": "^8.2.2",
     "eslint-config-next": "^14.0.1",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
