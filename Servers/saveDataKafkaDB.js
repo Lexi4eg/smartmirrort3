@@ -20,7 +20,7 @@ const run = async () => {
       const value = parseFloat(message.value.toString());
       console.log(value);
       try {
-        const value:number = parseFloat(message.value.toString());
+        const value = parseFloat(message.value.toString());
         console.log(value);
         if (isNaN(value)) {
           console.log(
