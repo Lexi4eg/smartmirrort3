@@ -31,9 +31,20 @@ export default function Temperature_Graph(props: TemperatureGraphProps) {
 
   useEffect(() => {
     socket.on("temperatureData", (newTemperatureData) => {
-      setTemperatureData(newTemperatureData);
-      console.log(newTemperatureData);
-      router.refresh();
+      if (typeof newTemperatureData === "number") {
+        const newData = {
+          value: newTemperatureData,
+          createdAt: new Date(),
+        };
+        setTemperatureData((prevTemperatureData) => [
+          ...prevTemperatureData,
+          newData,
+        ]);
+        console.log(newData);
+        router.refresh();
+      } else {
+        console.error("Received invalid temperature data:", newTemperatureData);
+      }
     });
   }, []);
 

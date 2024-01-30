@@ -9,30 +9,43 @@ const kafka = new Kafka({
 
 const consumer = kafka.consumer({ groupId: "mode" });
 
-// Initialize WebSocket client
-const socket = io("http://localhost:3001"); // Replace with your server URL
+const socket = io("http://localhost:3001");
 
 const run = async () => {
-  // Connect to Kafka consumer
-  await consumer.connect();
-  await consumer.subscribe({ topic: "temperatureData", fromBeginning: true });
-  await consumer.subscribe({ topic: "humidityData", fromBeginning: true });
+  try {
+    // Connect to Kafka consumer
+    await consumer.connect();
+    console.log("Connected to Kafka consumer");
 
-  await consumer.run({
-    eachMessage: async ({ topic, partition, message }) => {
-      const value = parseFloat(message.value.toString());
-      console.log(value);
-      if (isNaN(value)) {
-        console.log(
-          `Invalid value received for topic ${topic}: ${message.value.toString()}`,
-        );
-        return;
-      }
+    const topics = ["temperatureData", "humidityData"];
 
-      // Emit the data to the WebSocket server
-      socket.emit(topic, value);
-    },
-  });
+    for (const topic of topics) {
+      await consumer.subscribe({ topic, fromBeginning: true });
+      console.log(`Subscribed to topic "${topic}"`);
+    }
+
+    await consumer.run({
+      eachMessage: async ({ topic, partition, message }) => {
+        try {
+          const value = parseFloat(message.value.toString());
+          console.log(`Received message from topic "${topic}": ${value}`);
+          if (isNaN(value)) {
+            console.log(
+              `Invalid value received for topic ${topic}: ${message.value.toString()}`,
+            );
+            return;
+          }
+
+          // Emit the data to the WebSocket server
+          socket.emit(topic, value);
+        } catch (err) {
+          console.log(`Error processing message from topic "${topic}":`, err);
+        }
+      },
+    });
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
 };
 
 run().catch(console.error);
