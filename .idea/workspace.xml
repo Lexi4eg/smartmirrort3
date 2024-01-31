@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Auto Refresh component">
-      <change afterPath="$PROJECT_DIR$/docker-compose-mac.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Stats/Humidity_Sensor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Humidity_Sensor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Graph.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Temperature_Graph.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/kafkawebsocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/kafkawebsocket.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -350,11 +348,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/prismaClient.js" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
