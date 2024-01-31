@@ -26,18 +26,22 @@ const run = async () => {
 
     await consumer.run({
       eachMessage: async ({ topic, partition, message }) => {
+        console.log(`Received message from ${topic}`);
+
+        const value = parseFloat(message.value.toString());
+        console.log(`Value: ${value}`);
+
         try {
-          const value = parseFloat(message.value.toString());
-          console.log(`Received message from topic "${topic}": ${value}`);
           if (isNaN(value)) {
             console.log(
-              `Invalid value received for topic ${topic}: ${message.value.toString()}`,
+                `Invalid value received for topic ${topic}: ${message.value.toString()}`,
             );
             return;
           }
 
           // Emit the data to the WebSocket server
           socket.emit(topic, value);
+          console.log(`Emitted value to WebSocket server for topic "${topic}"`);
         } catch (err) {
           console.log(`Error processing message from topic "${topic}":`, err);
         }
@@ -47,5 +51,7 @@ const run = async () => {
     console.error("An error occurred:", error);
   }
 };
+
+run().catch(console.error);
 
 run().catch(console.error);
