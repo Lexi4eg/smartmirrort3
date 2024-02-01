@@ -6,19 +6,16 @@ const kafka = new Kafka({
   brokers: ["localhost:9092"],
 });
 
+const consumer = kafka.consumer({ groupId: "mode-temperature" });
 const socket = io("http://localhost:3001");
 
-const run = async (consumerGroupId, topic) => {
-  const consumer = kafka.consumer({ groupId: consumerGroupId });
-
+const run = async () => {
   try {
     await consumer.connect();
-    console.log(
-      `Connected to Kafka consumer with group ID "${consumerGroupId}"`,
-    );
+    console.log("Connected to Kafka consumer");
 
-    await consumer.subscribe({ topic, fromBeginning: true });
-    console.log(`Subscribed to topic "${topic}"`);
+    await consumer.subscribe({ topic: "temperatureData", fromBeginning: true });
+    console.log(`Subscribed to topic "temperatureData"`);
 
     await consumer.run({
       eachMessage: async ({ topic, partition, message }) => {
@@ -47,5 +44,4 @@ const run = async (consumerGroupId, topic) => {
   }
 };
 
-run("mode-temperature", "temperatureData").catch(console.error);
-run("mode-humidity", "humidityData").catch(console.error);
+run().catch(console.error);

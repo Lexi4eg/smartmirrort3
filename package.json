@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "concurrently \"next dev\" \"node Servers/saveDataKafkaDb.js\" \"node Servers/kafkawebsocket.js\" \"node Servers/server.js\"",
+    "dev": "concurrently \"next dev\" \"node Servers/saveDataKafkaDb.js\" \"node Servers/server.js\"",
     "lint": "next lint",
     "start": "node Servers/server.js",
     "tauri": "tauri",
