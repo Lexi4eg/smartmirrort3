@@ -22,7 +22,7 @@ io.on("connection", (socket) => {
 
   socket.on("mode", (mode) => {
     io.emit("mode", mode);
-    console.log(mode);
+    console.log("mode" + mode);
   });
 
   socket.on("widget", (widget) => {
