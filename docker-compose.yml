@@ -12,7 +12,14 @@ services:
       - '5432:5432'
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - dbdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-tier
 
   zookeeper:
     image: confluentinc/cp-zookeeper:7.0.1
@@ -20,6 +27,8 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - app-tier
 
   broker:
     image: confluentinc/cp-kafka:7.0.1
@@ -28,6 +37,7 @@ services:
       - "9092:9092"
     depends_on:
       - zookeeper
+      - db
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
@@ -36,6 +46,35 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+    networks:
+      - app-tier
+
+  next:
+    container_name: 'test-next'
+    restart: unless-stopped
+    image: node:16
+    #install node_modules
+
+    command: npm run dev
+
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/srv/next:rw
+    working_dir: /srv/next
+    env_file:
+      - .env
+    environment:
+      # Overriding the database connection string with container db
+      - DATABASE_URL=postgresql://postgres:password@db:5432/smartmirror?schema=public
+    depends_on:
+      - db
+    networks:
+      - app-tier
 
 volumes:
-  dbdata:
+  pgdata: {}
+
+networks:
+  app-tier:
+    driver: bridge
