@@ -38,3 +38,10 @@ This is the Software part of the Smart Mirror T3 project. The Smart Mirror T3 is
 ### References 
 > DrA1ex: https://github.com/DrA1ex/ClockClock
 
+
+
+### New Features planed:
+> - Machine Learning Prediction model for room temperature
+> - New Docker Compose for production
+> - More Documentation
+

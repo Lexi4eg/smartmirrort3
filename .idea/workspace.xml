@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Package Change">
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Public Folder Cleanup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +75,8 @@
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;postgresql&quot;
+    ],
+    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: [
     ]
   }
 }</component>
@@ -157,6 +160,9 @@
       <workItem from="1706355455826" duration="607000" />
       <workItem from="1706511723117" duration="380000" />
       <workItem from="1706521103018" duration="630000" />
+      <workItem from="1707126214520" duration="691000" />
+      <workItem from="1707133279322" duration="2986000" />
+      <workItem from="1707203575828" duration="134000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -366,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706863139093</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Public Folder Cleanup">
+      <option name="closed" value="true" />
+      <created>1707126312972</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1707126312972</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,6 +437,7 @@
     <MESSAGE value="New Auto Refresh component" />
     <MESSAGE value="Kafka Websocket new Solution" />
     <MESSAGE value="Package Change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Package Change" />
+    <MESSAGE value="Public Folder Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Public Folder Cleanup" />
   </component>
 </project>
