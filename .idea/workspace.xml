@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Features">
-      <change beforePath="$PROJECT_DIR$/src/app/api/getTempPrediction/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/getTempPrediction/route.ts" afterDir="false" />
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New GET Temperature API route">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/WIdgets/Humidity_Sensor_Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/WIdgets/Humidity_Sensor_Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/WIdgets/TemperatureSensorDashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/WIdgets/TemperatureSensorDashboard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +166,7 @@
       <workItem from="1707203575828" duration="147000" />
       <workItem from="1707204309710" duration="27000" />
       <workItem from="1707219408266" duration="2418000" />
-      <workItem from="1707288501191" duration="463000" />
+      <workItem from="1707288501191" duration="1811000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -406,7 +408,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707288940265</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="New GET Temperature API route">
+      <option name="closed" value="true" />
+      <created>1707288969290</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1707288969290</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,6 +475,7 @@
     <MESSAGE value="Package Change" />
     <MESSAGE value="Public Folder Cleanup" />
     <MESSAGE value="New Features" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Features" />
+    <MESSAGE value="New GET Temperature API route" />
+    <option name="LAST_COMMIT_MESSAGE" value="New GET Temperature API route" />
   </component>
 </project>

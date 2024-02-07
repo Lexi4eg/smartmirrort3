@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Roboto} from "next/font/google";
+import io from "socket.io-client";
+import {useRouter} from "next/navigation";
 
 interface Props {
-  humidity: number;
+  humidityInital: number;
   style?: string;
 }
 const roboto2 = Roboto({
@@ -11,7 +13,23 @@ const roboto2 = Roboto({
   style: "normal",
 });
 
-export default function Humidity_Sensor_Dashboard({ humidity, style }: Props) {
+const socket = io("http://localhost:3001");
+
+
+export default function Humidity_Sensor_Dashboard({ humidityInital, style }: Props) {
+
+
+  const [humidity, setHumidity] = useState(humidityInital);
+  const router = useRouter();
+
+  useEffect(() => {
+    socket.on("humidityData", (humidityData) => {
+      setHumidity(humidityData);
+      console.log(humidityData);
+      router.refresh();
+    });
+  }, []);
+
   return (
     <div
       className={` m-2   flex h-full w-full items-center justify-center rounded-md  p-2 pb-10  ${
