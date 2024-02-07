@@ -1,5 +1,5 @@
 
-
+// Get the temperature prediction from the ML model
 export async function GET(request: Request) {
     const data = await request.json();
 
