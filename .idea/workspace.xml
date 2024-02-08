@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Dashboard Humidity and Temperature Sensors using live Data and update on Event">
-      <change afterPath="$PROJECT_DIR$/Writerside/c.list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/s.tree" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/topics/starter-topic.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/v.list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/writerside.cfg" afterDir="false" />
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Docs">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/docker-image.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +197,7 @@
       <workItem from="1707203575828" duration="147000" />
       <workItem from="1707204309710" duration="27000" />
       <workItem from="1707219408266" duration="2418000" />
-      <workItem from="1707288501191" duration="3191000" />
+      <workItem from="1707288501191" duration="3546000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -459,7 +455,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707304284318</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="New Docs">
+      <option name="closed" value="true" />
+      <created>1707375736705</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1707375736705</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="New and improved clock widget that can now display time at the right format more or less." />
     <MESSAGE value="Fixed Clock View that it sizes to the right size and is responsive." />
     <MESSAGE value="New File Structure" />
     <MESSAGE value="New Loading UI" />
@@ -519,6 +522,7 @@
     <MESSAGE value="New Features" />
     <MESSAGE value="New GET Temperature API route" />
     <MESSAGE value="Dashboard Humidity and Temperature Sensors using live Data and update on Event" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dashboard Humidity and Temperature Sensors using live Data and update on Event" />
+    <MESSAGE value="New Docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Docs" />
   </component>
 </project>
