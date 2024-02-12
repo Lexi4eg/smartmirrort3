@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Docs">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/docker-image.yml" beforeDir="false" />
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Temp Removed Github CI">
+      <change afterPath="$PROJECT_DIR$/Architecture.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/starter-topic.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/starter-topic.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/Dashboard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +87,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Docker.docker-compose.yml.db: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "Docker.docker-compose2.yml: Compose Deployment.executor": "Run",
     "Node.js.addTemperatureData.js.executor": "Run",
@@ -114,21 +118,24 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Servers" />
       <recent name="$PROJECT_DIR$/components/Phone_Remote/functions" />
       <recent name="$PROJECT_DIR$/components/Phone_Remote/Stats" />
       <recent name="$PROJECT_DIR$/src/app/api" />
-      <recent name="$PROJECT_DIR$/src/server" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose-mac.yml: Compose Deployment">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="addTemperatureData.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/addTemperatureData.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="kafka2.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Servers/kafka2.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="queryDB.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/queryDB.js" working-dir="$PROJECT_DIR$">
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="docker-compose-mac.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -147,13 +154,26 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose-mac.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose-mac.yml: Compose Deployment" />
         <item itemvalue="Node.js.kafka2.js" />
         <item itemvalue="Node.js.addTemperatureData.js" />
-        <item itemvalue="Node.js.queryDB.js" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +217,11 @@
       <workItem from="1707203575828" duration="147000" />
       <workItem from="1707204309710" duration="27000" />
       <workItem from="1707219408266" duration="2418000" />
-      <workItem from="1707288501191" duration="3546000" />
+      <workItem from="1707288501191" duration="5388000" />
+      <workItem from="1707386920831" duration="16000" />
+      <workItem from="1707396817558" duration="3256000" />
+      <workItem from="1707681035649" duration="79000" />
+      <workItem from="1707730664564" duration="337000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -463,7 +487,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707375736705</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Temp Removed Github CI">
+      <option name="closed" value="true" />
+      <created>1707376090402</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1707376090402</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed Clock View that it sizes to the right size and is responsive." />
     <MESSAGE value="New File Structure" />
     <MESSAGE value="New Loading UI" />
     <MESSAGE value="Small change" />
@@ -523,6 +554,7 @@
     <MESSAGE value="New GET Temperature API route" />
     <MESSAGE value="Dashboard Humidity and Temperature Sensors using live Data and update on Event" />
     <MESSAGE value="New Docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Docs" />
+    <MESSAGE value="Temp Removed Github CI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Temp Removed Github CI" />
   </component>
 </project>

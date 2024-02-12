@@ -95,14 +95,14 @@ const Dashboard: React.FC<Props> = (props: Props) => {
       colSpan: 3,
       rowSpan: 3,
       widget: (
-        <Temperature_Sensor_Dashboard temperature={props.temperature} style={nightmode} />
+        <Temperature_Sensor_Dashboard temperatureInitial={props.temperature} style={nightmode} />
       ),
     },
     {
       position: 9,
       colSpan: 3,
       rowSpan: 3,
-      widget: <Humidity_Sensor_Dashboard humidity={props.humidity} style={nightmode} />,
+      widget: <Humidity_Sensor_Dashboard humidityInital={props.humidity} style={nightmode} />,
     },
   ];
 
