@@ -13,7 +13,7 @@ import MillionTimesDashboardGlass from "~/app/(dashboards)/MillionTimesDashboard
 import MillionTimesDashboardWood from "~/app/(dashboards)/MillionTimesDashboardWood";
 import DoublePendulum from "~/app/(dashboards)/DoublePendulum";
 
-const socket = io("http://192.168.178.57:3001"); // Replace with your server URL
+const socket = io("http://localhost:3001"); // Replace with your server URL
 interface Props {
   style?: string;
   session: any;
