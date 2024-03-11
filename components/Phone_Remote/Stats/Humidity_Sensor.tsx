@@ -20,6 +20,7 @@ export default function Humidity_Sensor(props: HumidityProps) {
   const [humidity, setHumidity] = useState(props.initHumidity);
   const router = useRouter();
 
+
   useEffect(() => {
     socket.on("humidityData", (humidityData) => {
       setHumidity(humidityData);

@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Architecture Graphic Added">
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Ip changes">
+      <change afterPath="$PROJECT_DIR$/src/app/api/sendHumTemp/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Writerside/topics/starter-topic.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/starter-topic.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/saveDataKafkaDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/saveDataKafkaDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Stats/Humidity_Sensor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Humidity_Sensor.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose-mac.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-mac.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/Rootdashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/Rootdashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/Dashboard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,9 +174,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose-mac.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose-mac.yml: Compose Deployment" />
         <item itemvalue="Node.js.kafka2.js" />
         <item itemvalue="Node.js.addTemperatureData.js" />
       </list>
@@ -233,6 +235,9 @@
       <workItem from="1709553795709" duration="49000" />
       <workItem from="1709553996911" duration="52000" />
       <workItem from="1709554096950" duration="330000" />
+      <workItem from="1709558645004" duration="957000" />
+      <workItem from="1709814490796" duration="5604000" />
+      <workItem from="1710151501310" duration="983000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -514,16 +519,51 @@
       <option name="project" value="LOCAL" />
       <updated>1707731032184</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Ip changes">
+      <option name="closed" value="true" />
+      <created>1709558664882</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1709558664882</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="bfb5e1e9-5d9a-4990-a5b6-25d00219a201" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="bfb5e1e9-5d9a-4990-a5b6-25d00219a201">
           <value>
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
@@ -549,7 +589,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="New Loading UI" />
     <MESSAGE value="Small change" />
     <MESSAGE value="New Auth Page" />
     <MESSAGE value="Quick Change" />
@@ -574,6 +613,7 @@
     <MESSAGE value="New Docs" />
     <MESSAGE value="Temp Removed Github CI" />
     <MESSAGE value="Architecture Graphic Added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Architecture Graphic Added" />
+    <MESSAGE value="Ip changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ip changes" />
   </component>
 </project>

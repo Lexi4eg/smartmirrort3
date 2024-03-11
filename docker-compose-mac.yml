@@ -5,7 +5,7 @@ services:
     image: postgres:latest
     platform: linux/arm64
     restart: always
-    environment:best 
+    environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=smartmirror
