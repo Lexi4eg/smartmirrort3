@@ -46,8 +46,8 @@ yarn-error.log*
 /prisma/migrations/
 
 # Python Server
-/Servers/pythonserver/env/
-/Servers/pythonserver/venv/
+/Servers/pythonserver/env/*
+/Servers/pythonserver/venv/*
 
 
 
