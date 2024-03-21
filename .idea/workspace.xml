@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Ip changes">
-      <change afterPath="$PROJECT_DIR$/src/app/api/sendHumTemp/route.ts" afterDir="false" />
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Production Version 0.4">
+      <change afterPath="$PROJECT_DIR$/Servers/pythonsServer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Servers/saveDataKafkaDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/saveDataKafkaDB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Phone_Remote/Stats/Humidity_Sensor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Phone_Remote/Stats/Humidity_Sensor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose-mac.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-mac.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(dashboards)/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboards)/Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/fetchTemperature/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/fetchTemperature/route.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +237,15 @@
       <workItem from="1709554096950" duration="330000" />
       <workItem from="1709558645004" duration="957000" />
       <workItem from="1709814490796" duration="5604000" />
-      <workItem from="1710151501310" duration="983000" />
+      <workItem from="1710151501310" duration="4096000" />
+      <workItem from="1710226416261" duration="145000" />
+      <workItem from="1710402895984" duration="1542000" />
+      <workItem from="1710405597074" duration="2122000" />
+      <workItem from="1710409080199" duration="749000" />
+      <workItem from="1710419661855" duration="45000" />
+      <workItem from="1710422365145" duration="532000" />
+      <workItem from="1710426206183" duration="26000" />
+      <workItem from="1711031031620" duration="216000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -527,7 +535,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709558664882</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Production Version 0.4">
+      <option name="closed" value="true" />
+      <created>1710153212216</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1710153212216</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,7 +605,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Small change" />
     <MESSAGE value="New Auth Page" />
     <MESSAGE value="Quick Change" />
     <MESSAGE value="Working Kafka Save to DB with temperatureLog and ModeChange Working" />
@@ -614,6 +629,7 @@
     <MESSAGE value="Temp Removed Github CI" />
     <MESSAGE value="Architecture Graphic Added" />
     <MESSAGE value="Ip changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ip changes" />
+    <MESSAGE value="Production Version 0.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Production Version 0.4" />
   </component>
 </project>
