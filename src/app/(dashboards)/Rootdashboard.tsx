@@ -6,12 +6,13 @@ import FlipDotClock from "~/app/(dashboards)/FlipDotClock/FlipDotClock";
 import SolarSystemWallpaper from "~/app/(dashboards)/solarSystem/solarSystemWallpaper";
 
 import io from "socket.io-client";
-import {useEffect, useState} from "react";
-import {useRouter} from "next/navigation";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import MillionTimesDashboardBlackWhite from "~/app/(dashboards)/MillionTimesDashboardBlackWhite";
 import MillionTimesDashboardGlass from "~/app/(dashboards)/MillionTimesDashboardGlass";
 import MillionTimesDashboardWood from "~/app/(dashboards)/MillionTimesDashboardWood";
 import DoublePendulum from "~/app/(dashboards)/DoublePendulum";
+import Dashboard4 from "~/app/(dashboards)/Dashboard4";
 
 const socket = io("http://192.168.178.57:3001"); // Replace with your server URL
 interface Props {
@@ -21,10 +22,14 @@ interface Props {
   temperature: number;
 }
 
-export default function Rootdashboard({ style, session, temperature, humidity }: Props) {
-  const [selectedOption, setSelectedOption] = useState(2); // Set initial value to 1
+export default function Rootdashboard({
+  style,
+  session,
+  temperature,
+  humidity,
+}: Props) {
+  const [selectedOption, setSelectedOption] = useState(1); // Set initial value to 1
   const router = useRouter();
-
 
   useEffect(() => {
     socket.on("mode", (newMode) => {
@@ -38,7 +43,12 @@ export default function Rootdashboard({ style, session, temperature, humidity }:
     <>
       <div className="max-w-screen flex min-h-screen flex-col items-center  justify-center bg-[#191a1b] bg-cover bg-center  text-white ">
         {Number(selectedOption) === 1 && (
-          <Dashboard session={session} style={style} humidity={humidity} temperature={temperature} />
+          <Dashboard4
+            session={session}
+            style={style}
+            humidity={humidity}
+            temperature={temperature}
+          />
         )}
         {Number(selectedOption) === 2 && <WorkClockDashboard style={style} />}
         {Number(selectedOption) === 3 && (

@@ -1,9 +1,9 @@
 import "~/styles/globals.css";
+import { Inter } from "next/font/google";
+import { headers } from "next/headers";
 
-import {Inter} from "next/font/google";
-import {headers} from "next/headers";
-
-import {TRPCReactProvider} from "~/trpc/react";
+import { TRPCReactProvider } from "~/trpc/react";
+import React from "react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,8 +17,8 @@ export const metadata = {
 };
 
 export default function RootLayout({
-  children
-} : {
+  children,
+}: {
   children: React.ReactNode;
 }) {
   return (
@@ -29,4 +29,3 @@ export default function RootLayout({
     </html>
   );
 }
-

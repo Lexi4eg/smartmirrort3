@@ -15,7 +15,6 @@ interface Props {
   session: any;
   humidity: number;
   temperature: number;
-
 }
 
 interface WidgetPosition {
@@ -29,8 +28,6 @@ const Dashboard: React.FC<Props> = (props: Props) => {
   const now = new Date();
   const session = props.session;
   const nightmode = props.style ?? "daymode";
-
-
 
   const widgets: WidgetPosition[] = [
     {
@@ -60,7 +57,7 @@ const Dashboard: React.FC<Props> = (props: Props) => {
     {
       position: 4,
       colSpan: 3,
-      rowSpan: 2,
+      rowSpan: 4,
       widget: <Weather style={nightmode} />,
     },
     {
@@ -95,14 +92,22 @@ const Dashboard: React.FC<Props> = (props: Props) => {
       colSpan: 3,
       rowSpan: 3,
       widget: (
-        <Temperature_Sensor_Dashboard temperature={props.temperature} style={nightmode} />
+        <Temperature_Sensor_Dashboard
+          temperature={props.temperature}
+          style={nightmode}
+        />
       ),
     },
     {
       position: 9,
       colSpan: 3,
       rowSpan: 3,
-      widget: <Humidity_Sensor_Dashboard humidity={props.humidity} style={nightmode} />,
+      widget: (
+        <Humidity_Sensor_Dashboard
+          humidity={props.humidity}
+          style={nightmode}
+        />
+      ),
     },
   ];
 
@@ -114,7 +119,7 @@ const Dashboard: React.FC<Props> = (props: Props) => {
         {widgets.map((widget: WidgetPosition, index: number) => (
           <div
             key={index}
-            className={`col-span-2 row-span-2 flex items-center justify-center rounded-xl`}
+            className={`col-span-3 row-span-2 flex items-center justify-center rounded-xl`}
             style={{ backdropFilter: "blur(10px)" }}
           >
             {widget.widget}
