@@ -2,17 +2,17 @@ import prisma from "../../../../prismaClient";
 
 interface TemperatureData {
   value: number;
-    created_at: Date;
+  createdAt: Date;
 }
 export async function GET(request: Request) {
   const temperatureData: TemperatureData[] | null =
     await prisma.temperature.findMany({
       select: {
         value: true,
-          created_at: true,
+        createdAt: true,
       },
       orderBy: {
-          created_at: "asc",
+        createdAt: "asc",
       },
     });
 

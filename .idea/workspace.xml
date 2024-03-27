@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Production Version 0.4">
-      <change afterPath="$PROJECT_DIR$/Servers/pythonsServer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Package Change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/fetchTemperature/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/fetchTemperature/route.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,39 +30,6 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="InstanceColorv3">
-    <option name="map">
-      <map>
-        <entry key="$PROJECT_DIR$/Writerside/s.tree">
-          <value>
-            <ColorState>
-              <option name="customOrder" value="1" />
-              <option name="first">
-                <RgbState>
-                  <option name="blue" value="60" />
-                  <option name="darkBlue" value="60" />
-                  <option name="darkGreen" value="68" />
-                  <option name="darkRed" value="206" />
-                  <option name="green" value="68" />
-                  <option name="red" value="206" />
-                </RgbState>
-              </option>
-              <option name="second">
-                <RgbState>
-                  <option name="blue" value="65" />
-                  <option name="darkBlue" value="65" />
-                  <option name="darkGreen" value="126" />
-                  <option name="darkRed" value="231" />
-                  <option name="green" value="126" />
-                  <option name="red" value="231" />
-                </RgbState>
-              </option>
-            </ColorState>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
@@ -88,8 +50,6 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Docker.docker-compose-mac.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose2.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Node.js.addTemperatureData.js.executor&quot;: &quot;Run&quot;,
@@ -108,26 +68,22 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;bigdataide_conn_settings&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/felixprattes/Programming/smartmirrort3/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
-    &quot;writerside.last.selected.productsmartmirrort3&quot;: &quot;s&quot;
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;postgresql&quot;
-    ],
-    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: [
     ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Servers" />
       <recent name="$PROJECT_DIR$/components/Phone_Remote/functions" />
       <recent name="$PROJECT_DIR$/components/Phone_Remote/Stats" />
       <recent name="$PROJECT_DIR$/src/app/api" />
+      <recent name="$PROJECT_DIR$/src/server" />
     </key>
   </component>
   <component name="RunManager" selected="Docker.docker-compose-mac.yml: Compose Deployment">
@@ -137,10 +93,7 @@
     <configuration name="kafka2.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Servers/kafka2.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings />
-      </deployment>
+    <configuration name="queryDB.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/queryDB.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="docker-compose-mac.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -159,26 +112,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="db" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose-mac.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Node.js.kafka2.js" />
         <item itemvalue="Node.js.addTemperatureData.js" />
+        <item itemvalue="Node.js.queryDB.js" />
       </list>
     </recent_temporary>
   </component>
@@ -217,35 +157,6 @@
       <workItem from="1706355455826" duration="607000" />
       <workItem from="1706511723117" duration="380000" />
       <workItem from="1706521103018" duration="630000" />
-      <workItem from="1707126214520" duration="691000" />
-      <workItem from="1707133279322" duration="2986000" />
-      <workItem from="1707203575828" duration="147000" />
-      <workItem from="1707204309710" duration="27000" />
-      <workItem from="1707219408266" duration="2418000" />
-      <workItem from="1707288501191" duration="5388000" />
-      <workItem from="1707386920831" duration="16000" />
-      <workItem from="1707396817558" duration="3256000" />
-      <workItem from="1707681035649" duration="79000" />
-      <workItem from="1707730664564" duration="2327000" />
-      <workItem from="1708002317724" duration="1051000" />
-      <workItem from="1708007450290" duration="1347000" />
-      <workItem from="1708759894927" duration="7000" />
-      <workItem from="1709547181739" duration="1605000" />
-      <workItem from="1709549089944" duration="1007000" />
-      <workItem from="1709553795709" duration="49000" />
-      <workItem from="1709553996911" duration="52000" />
-      <workItem from="1709554096950" duration="330000" />
-      <workItem from="1709558645004" duration="957000" />
-      <workItem from="1709814490796" duration="5604000" />
-      <workItem from="1710151501310" duration="4096000" />
-      <workItem from="1710226416261" duration="145000" />
-      <workItem from="1710402895984" duration="1542000" />
-      <workItem from="1710405597074" duration="2122000" />
-      <workItem from="1710409080199" duration="749000" />
-      <workItem from="1710419661855" duration="45000" />
-      <workItem from="1710422365145" duration="532000" />
-      <workItem from="1710426206183" duration="26000" />
-      <workItem from="1711031031620" duration="216000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -455,131 +366,16 @@
       <option name="project" value="LOCAL" />
       <updated>1706863139093</updated>
     </task>
-    <task id="LOCAL-00027" summary="Public Folder Cleanup">
-      <option name="closed" value="true" />
-      <created>1707126312972</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1707126312972</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Public Folder Cleanup">
-      <option name="closed" value="true" />
-      <created>1707203715153</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1707203715153</updated>
-    </task>
-    <task id="LOCAL-00029" summary="New Features">
-      <option name="closed" value="true" />
-      <created>1707204329605</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1707204329605</updated>
-    </task>
-    <task id="LOCAL-00030" summary="New Features">
-      <option name="closed" value="true" />
-      <created>1707288940265</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1707288940265</updated>
-    </task>
-    <task id="LOCAL-00031" summary="New GET Temperature API route">
-      <option name="closed" value="true" />
-      <created>1707288969290</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1707288969290</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Dashboard Humidity and Temperature Sensors using live Data and update on Event">
-      <option name="closed" value="true" />
-      <created>1707304284318</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1707304284318</updated>
-    </task>
-    <task id="LOCAL-00033" summary="New Docs">
-      <option name="closed" value="true" />
-      <created>1707375736705</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1707375736705</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Temp Removed Github CI">
-      <option name="closed" value="true" />
-      <created>1707376090402</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1707376090402</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Architecture Graphic Added">
-      <option name="closed" value="true" />
-      <created>1707731032184</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1707731032184</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Ip changes">
-      <option name="closed" value="true" />
-      <created>1709558664882</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1709558664882</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Production Version 0.4">
-      <option name="closed" value="true" />
-      <created>1710153212216</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1710153212216</updated>
-    </task>
-    <option name="localTasksCounter" value="38" />
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="bfb5e1e9-5d9a-4990-a5b6-25d00219a201" value="TOOL_WINDOW" />
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
-          <value>
-            <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="true" />
-                </map>
-              </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-        <entry key="bfb5e1e9-5d9a-4990-a5b6-25d00219a201">
           <value>
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
@@ -605,6 +401,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="New and Working Clock 2 widget" />
+    <MESSAGE value="New and improved clock widget that can now display time at the right format more or less." />
+    <MESSAGE value="Fixed Clock View that it sizes to the right size and is responsive." />
+    <MESSAGE value="New File Structure" />
+    <MESSAGE value="New Loading UI" />
+    <MESSAGE value="Small change" />
     <MESSAGE value="New Auth Page" />
     <MESSAGE value="Quick Change" />
     <MESSAGE value="Working Kafka Save to DB with temperatureLog and ModeChange Working" />
@@ -621,15 +423,6 @@
     <MESSAGE value="New Auto Refresh component" />
     <MESSAGE value="Kafka Websocket new Solution" />
     <MESSAGE value="Package Change" />
-    <MESSAGE value="Public Folder Cleanup" />
-    <MESSAGE value="New Features" />
-    <MESSAGE value="New GET Temperature API route" />
-    <MESSAGE value="Dashboard Humidity and Temperature Sensors using live Data and update on Event" />
-    <MESSAGE value="New Docs" />
-    <MESSAGE value="Temp Removed Github CI" />
-    <MESSAGE value="Architecture Graphic Added" />
-    <MESSAGE value="Ip changes" />
-    <MESSAGE value="Production Version 0.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Production Version 0.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Package Change" />
   </component>
 </project>

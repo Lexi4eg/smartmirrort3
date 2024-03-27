@@ -15,10 +15,6 @@
 
 /postgres-data
 
-venv/
-env/
-.venv
-.env
 # next.js
 /.next/
 /out/

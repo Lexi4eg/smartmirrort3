@@ -1,7 +1,6 @@
 import { Kafka } from "kafkajs";
-import { PrismaClient } from "@prisma/client";
+import prisma from "../prismaClient.js";
 
-const prisma = new PrismaClient();
 const kafka = new Kafka({
   clientId: "my-app",
   brokers: ["localhost:9092"],

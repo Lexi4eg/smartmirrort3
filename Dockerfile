@@ -41,11 +41,6 @@ ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN yarn prisma generate
 
-
-# ping google to test network
-RUN ping -c 4 google.com
-
-
 RUN yarn build
 
 # If using npm comment out above and use below instead

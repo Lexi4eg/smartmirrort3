@@ -9,7 +9,6 @@ import Weather from "../../../components/WIdgets/Weather";
 import NYTWidget from "../../../components/WIdgets/NYTWidget/NYTWidget";
 import Temperature_Sensor_Dashboard from "../../../components/WIdgets/TemperatureSensorDashboard";
 import Humidity_Sensor_Dashboard from "../../../components/WIdgets/Humidity_Sensor_Dashboard";
-import NasaWidget from "../../../components/WIdgets/NasaWidget";
 
 interface Props {
   style?: string;
@@ -96,20 +95,14 @@ const Dashboard: React.FC<Props> = (props: Props) => {
       colSpan: 3,
       rowSpan: 3,
       widget: (
-        <Temperature_Sensor_Dashboard temperatureInitial={props.temperature} style={nightmode} />
+        <Temperature_Sensor_Dashboard temperature={props.temperature} style={nightmode} />
       ),
     },
     {
       position: 9,
       colSpan: 3,
       rowSpan: 3,
-      widget: <Humidity_Sensor_Dashboard humidityInital={props.humidity} style={nightmode} />,
-    },
-    {
-      position: 10,
-      colSpan: 3,
-      rowSpan: 3,
-      widget: <NasaWidget  style={nightmode} />,
+      widget: <Humidity_Sensor_Dashboard humidity={props.humidity} style={nightmode} />,
     },
   ];
 
