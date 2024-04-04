@@ -18,7 +18,7 @@ const roboto = Roboto({
 
 interface TemperatureData {
   value: number;
-  createdAt: Date;
+  created_at: Date;
 }
 
 export default async function Page() {
@@ -37,7 +37,7 @@ export default async function Page() {
 
   const temperatureData: TemperatureData[] = await prisma.temperature.findMany({
     orderBy: {
-      createdAt: "asc",
+      created_at: "asc",
     },
     take: 100,
   });

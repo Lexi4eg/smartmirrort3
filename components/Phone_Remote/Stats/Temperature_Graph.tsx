@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 
 interface TemperatureData {
   value: number;
-  createdAt: Date;
+  created_at: Date;
 }
 
 interface TemperatureGraphProps {
@@ -34,7 +34,7 @@ export default function Temperature_Graph(props: TemperatureGraphProps) {
       if (typeof newTemperatureData === "number") {
         const newData = {
           value: newTemperatureData,
-          createdAt: new Date(),
+          created_at: new Date(),
         };
         setTemperatureData((prevTemperatureData) => [
           ...prevTemperatureData,
@@ -49,7 +49,7 @@ export default function Temperature_Graph(props: TemperatureGraphProps) {
   }, []);
 
   const formattedTempData = temperatureData.map((data) => {
-    const createdAt = new Date(data.createdAt);
+    const createdAt = new Date(data.created_at);
     return {
       ...data,
       createdAt: `${createdAt.getHours()} ${createdAt.getDate()} ${
