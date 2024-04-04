@@ -1,4 +1,4 @@
-#!/home/thomas/Documents/dht11/env/bin/python3
+#!/home/thomas/Documents/smartmirrort3/Servers/pythonserver/env/bin/python3
 
 """Simple FTDI EEPROM configurator.
 """

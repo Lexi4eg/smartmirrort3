@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/thomas/Documents/dht11/env"
+VIRTUAL_ENV="/home/thomas/Documents/smartmirrort3/Servers/pythonserver/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

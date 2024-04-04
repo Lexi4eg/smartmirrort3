@@ -1,4 +1,4 @@
-#!/home/thomas/Documents/dht11/env/bin/python3
+#!/home/thomas/Documents/smartmirrort3/Servers/pythonserver/env/bin/python3
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2018-2022, Emmanuel Blot <emmanuel.blot@free.fr>

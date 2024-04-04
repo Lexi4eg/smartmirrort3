@@ -4,7 +4,7 @@ import board
 import requests
 import json 
 
-API_ENDPOINT = "http://192.168.1.119:3000/api/sendHumTemp"
+API_ENDPOINT = "http://localhost:3000/api/sendHumTemp"
  
 dht_device = adafruit_dht.DHT11(board.D4)
 
