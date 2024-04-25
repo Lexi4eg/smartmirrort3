@@ -10,6 +10,7 @@ const io = new Server(server, {
     origin: [
       "http://192.168.178.57:3000",
       "http://localhost:3000",
+
       "http://172.16.84.116:3000",
     ],
 
