@@ -18,7 +18,7 @@ const socket = io("http://localhost:3001");
 export default function Humidity_Sensor_Dashboard({ humidity, style }: Props) {
   const [humidityLive, setHumidity] = useState(humidity);
   const router = useRouter();
-
+  //test
   useEffect(() => {
     socket.on("humidityData", (humidityData) => {
       setHumidity(humidityData);
