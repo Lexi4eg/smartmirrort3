@@ -1,5 +1,8 @@
-import React from "react";
-import {Roboto} from "next/font/google";
+"use client";
+import React, { useEffect, useState } from "react";
+import { Roboto } from "next/font/google";
+import io from "socket.io-client";
+import { useRouter } from "next/navigation";
 
 const roboto2 = Roboto({
   weight: "100",
@@ -11,11 +14,22 @@ interface Props {
   temperature: number;
   style?: string;
 }
+const socket = io("http://localhost:3001");
+
 export default function Temperature_Sensor_Dashboard({
   temperature,
   style,
 }: Props) {
-  //implement the temperature api here and pass it to temperature
+  const [temperatureLive, setTemperature] = useState(temperature);
+  const router = useRouter();
+
+  useEffect(() => {
+    socket.on("temperatureData", (temperatureData) => {
+      setTemperature(temperatureData);
+      console.log(temperatureData);
+      router.refresh();
+    });
+  }, []);
 
   return (
     <div
@@ -32,7 +46,7 @@ export default function Temperature_Sensor_Dashboard({
               : "bg-gradient-to-r  from-red-700 to-blue-500 text-transparent "
           }`}
         >
-          {temperature}°C
+          {temperatureLive}°C
         </div>
       </div>
     </div>
