@@ -16,6 +16,9 @@ export async function GET(request: Request) {
     },
   });
 
+  console.log(humidityData);
 
-  return new Response(JSON.stringify(humidityData), { status: 200 });
+  const humidity: number = humidityData ? humidityData.value : 0;
+
+  return new Response(JSON.stringify(humidity), { status: 200 });
 }
