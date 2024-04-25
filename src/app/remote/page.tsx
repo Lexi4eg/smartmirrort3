@@ -41,6 +41,7 @@ export default async function Page() {
     },
     take: 100,
   });
+  console.log(temperatureData);
 
   return (
     <>
