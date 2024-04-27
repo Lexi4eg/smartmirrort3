@@ -1,6 +1,5 @@
 import http from "http";
 const server = http.createServer((req, res) => {
-  // Handle HTTP requests if needed
 });
 
 import { Server } from "socket.io";

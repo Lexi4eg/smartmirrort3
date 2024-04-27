@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="API Update">
-      <change afterPath="$PROJECT_DIR$/src/app/api/fetchcurrHumidity/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f1697a51-f18b-4aeb-8835-6006380a8546.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f1697a51-f18b-4aeb-8835-6006380a8546.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Servers/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/fetchHumidity/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/fetchHumidity/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/fetchcurrTemperature/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/fetchcurrTemperature/route.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,39 +78,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Docker.docker-compose-mac.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose2.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.addTemperatureData.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.kafka.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.kafka2.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.queryDB.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.8.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.8.10&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/felixprattes/Programming/smartmirrort3/src/app/api&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;bigdataide_conn_settings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/felixprattes/Programming/smartmirrort3/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Docker.docker-compose-mac.yml: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "Docker.docker-compose2.yml: Compose Deployment.executor": "Run",
+    "Node.js.addTemperatureData.js.executor": "Run",
+    "Node.js.kafka.js.executor": "Run",
+    "Node.js.kafka2.js.executor": "Run",
+    "Node.js.queryDB.js.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "javascript.nodejs.core.library.configured.version": "20.8.0",
+    "javascript.nodejs.core.library.typings.version": "20.8.10",
+    "last_opened_file_path": "/Users/felixprattes/Programming/smartmirrort3/src/app/api",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "swagger",
+    "ts.external.directory.path": "/Users/felixprattes/Programming/smartmirrort3/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: []
+    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": []
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/api" />
@@ -214,7 +208,7 @@
       <workItem from="1713784260607" duration="5393000" />
       <workItem from="1713894049228" duration="59000" />
       <workItem from="1713894208519" duration="5042000" />
-      <workItem from="1714031906630" duration="19000" />
+      <workItem from="1714031906630" duration="1131000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -464,7 +458,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714031925351</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="API Update">
+      <option name="closed" value="true" />
+      <created>1714031965632</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1714031965632</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,5 +532,9 @@
     <MESSAGE value="Installation Update" />
     <MESSAGE value="API Update" />
     <option name="LAST_COMMIT_MESSAGE" value="API Update" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
