@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="API Update">
-      <change afterPath="$PROJECT_DIR$/Servers/pythonServer.py" afterDir="false" />
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Python Server Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -467,7 +467,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714031965632</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Python Server Update">
+      <option name="closed" value="true" />
+      <created>1714382812573</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1714382812573</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +515,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed Clock View that it sizes to the right size and is responsive." />
     <MESSAGE value="New File Structure" />
     <MESSAGE value="New Loading UI" />
     <MESSAGE value="Small change" />
@@ -532,7 +539,8 @@
     <MESSAGE value="Prod Version 0.58" />
     <MESSAGE value="Installation Update" />
     <MESSAGE value="API Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="API Update" />
+    <MESSAGE value="Python Server Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Python Server Update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

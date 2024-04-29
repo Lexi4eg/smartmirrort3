@@ -13,11 +13,11 @@ datasource db {
 model Temperature {
   id        Int      @id @default(autoincrement())
   value     Float
-  createdAt DateTime @default(now())
+  created_at DateTime @default(now())
 }
 
 model Humidity {
   id        Int      @id @default(autoincrement())
   value     Float
-  createdAt DateTime @default(now())
+  created_at DateTime @default(now())
 }
