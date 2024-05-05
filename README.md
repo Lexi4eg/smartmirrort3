@@ -31,6 +31,8 @@ This is the Software part of the Smart Mirror T3 project. The Smart Mirror T3 is
 > - Open `localhost:3000` in your browser
 > - Start the Docker container, which fits your platform
 > - Enjoy!
+> - start the docker conatiner first
+start the docker server
 
 
 ## Planed Features: 
