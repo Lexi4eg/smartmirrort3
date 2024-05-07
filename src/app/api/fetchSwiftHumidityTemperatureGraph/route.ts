@@ -14,7 +14,7 @@ export async function GET(request: Request) {
   tomorrow.setDate(tomorrow.getDate() + 1);
 
   const humidityAndTemperatureData: HumidityAndTemperatureData | null =
-    await prisma.humidityTemperature.findFirst({
+    await prisma.humidityTemperature.findMany({
       select: {
         humidity: true,
         temperature: true,
@@ -22,6 +22,12 @@ export async function GET(request: Request) {
       },
       orderBy: {
         created_at: "desc",
+      },
+      where: {
+        created_at: {
+          gte: today,
+          lt: tomorrow,
+        },
       },
     });
 
