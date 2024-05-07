@@ -33,7 +33,7 @@ export default async function Dashboard4(props: Props) {
           />
         </div>
         <div
-          className="col-span-4 row-span-3 items-center justify-center p-3 "
+          className="col-span-4 row-span-3 m-24 items-center justify-center "
           style={{ backdropFilter: "blur(10px)" }}
         >
           <AppleClockWidget time={now.getTime()} style={nightmode} />
