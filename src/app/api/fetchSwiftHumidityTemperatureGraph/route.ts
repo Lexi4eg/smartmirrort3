@@ -13,7 +13,7 @@ export async function GET(request: Request) {
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
 
-  const humidityAndTemperatureData: HumidityAndTemperatureData | null =
+  const humidityAndTemperatureData: HumidityAndTemperatureData[] | null =
     await prisma.humidityTemperature.findMany({
       select: {
         humidity: true,

@@ -16,8 +16,7 @@ services:
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - pgdata:/var/lib/postgresql/data
-    networks:
-      - app-tier
+
 
   zookeeper:
     image: confluentinc/cp-zookeeper:7.0.1
@@ -27,8 +26,7 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     depends_on:
       - db
-    networks:
-      - app-tier
+
 
   broker:
     image: confluentinc/cp-kafka:7.0.1
@@ -46,14 +44,25 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
-    networks:
-      - app-tier
+
+
+  frontend:
+      container_name: frontend
+      image: frontend
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports:
+        - '3000:3000'
+      environment:
+        - NEXT_PUBLIC_API_URL=http://localhost:4000
+      restart: always
+      depends_on:
+        - db
+
 
 
 
 volumes:
   pgdata: {}
 
-networks:
-  app-tier:
-    driver: bridge
