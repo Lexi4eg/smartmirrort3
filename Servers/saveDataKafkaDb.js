@@ -3,7 +3,7 @@ import prisma from "../prismaClient.js";
 
 const kafka = new Kafka({
   clientId: "my-app",
-  brokers: ["localhost:9092"],
+  brokers: ["broker:9092"],
 });
 
 const consumer = kafka.consumer({ groupId: "mode" });

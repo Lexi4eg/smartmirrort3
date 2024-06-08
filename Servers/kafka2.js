@@ -3,7 +3,7 @@ const { PrismaClient } = require("@prisma/client");
 
 const kafka = new Kafka({
   clientId: "my-app",
-  brokers: ["localhost:9092"],
+  brokers: ["broker:9092"],
 });
 
 const consumer = kafka.consumer({ groupId: "mode" });
@@ -12,7 +12,6 @@ import prisma from "../prismaClient.js";
 
 s;
 const run = async () => {
-
   await consumer.connect();
   await consumer.subscribe({ topic: "temperatureData", fromBeginning: true });
 
@@ -21,13 +20,11 @@ const run = async () => {
       try {
         const res = await prisma.temperature.create({
           data: {
-
             message: message.value.toString(),
           },
         });
         console.log(res);
       } catch (err) {
-
         console.log(err.stack);
       }
     },
