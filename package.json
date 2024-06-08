@@ -10,7 +10,11 @@
     "tauri": "tauri",
     "test": "jest",
     "test:watch": "jest --watch",
-    "server": "node Servers/server.js"
+    "server": "node Servers/server.js",
+    "docker:dev": "npm run dev",
+    "docker:compose:dev": "docker-compose down && docker compose up -d --build",
+    "docker:compose:prod": "docker-compose down && docker compose -f docker-compose.prod.yml up -d --build",
+    "start:migrate:prod": "node server.js"
   },
   "type": "module",
   "dependencies": {
