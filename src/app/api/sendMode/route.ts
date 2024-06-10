@@ -3,7 +3,8 @@ import { NextResponse } from "next/server";
 
 const kafka = new Kafka({
   clientId: "my-app",
-  brokers: ["localhost:9092"],
+  brokers: ["broker:9092"],
+  connectionTimeout: 30000,
 });
 
 const producer: Producer = kafka.producer({

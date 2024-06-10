@@ -1,17 +1,11 @@
 import http from "http";
-const server = http.createServer((req, res) => {
-});
+const server = http.createServer((req, res) => {});
 
 import { Server } from "socket.io";
 
 const io = new Server(server, {
   cors: {
-    origin: [
-      "http://192.168.178.57:3000",
-      "http://localhost:3000",
-
-      "http://172.16.84.116:3000",
-    ],
+    origin: "*",
 
     methods: ["GET", "POST"],
   },

@@ -4,10 +4,11 @@ import io from "socket.io-client";
 const kafka = new Kafka({
   clientId: "my-app",
   brokers: ["broker:9092"],
+  connectionTimeout: 30000,
 });
 
 const consumer = kafka.consumer({ groupId: "mode-humidity" });
-const socket = io("http://localhost:3001");
+const socket = io("http://frontend:3001");
 
 const run = async () => {
   try {

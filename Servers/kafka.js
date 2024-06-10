@@ -1,7 +1,7 @@
 import { Kafka, Partitioners } from "kafkajs";
 const kafka = new Kafka({
   clientId: "my-app",
-  brokers: ["broker:9092"],
+  brokers: [process.env.KAFKA_BROKER],
 });
 
 const producer = kafka.producer({

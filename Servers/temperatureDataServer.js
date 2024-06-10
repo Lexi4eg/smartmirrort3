@@ -3,11 +3,12 @@ import io from "socket.io-client";
 
 const kafka = new Kafka({
   clientId: "my-app",
-  brokers: ["localhost:9092"],
+  brokers: [process.env.KAFKA_BROKER],
+  connectionTimeout: 30000,
 });
 
 const consumer = kafka.consumer({ groupId: "mode-temperature" });
-const socket = io("http://localhost:3001");
+const socket = io("http://frontend:3001");
 
 const run = async () => {
   try {

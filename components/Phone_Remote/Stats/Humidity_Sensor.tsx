@@ -14,7 +14,7 @@ interface HumidityProps {
   initHumidity: number;
 }
 
-const socket = io("http://localhost:3001");
+const socket = io("http://frontend:3001");
 
 export default function Humidity_Sensor(props: HumidityProps) {
   const [humidity, setHumidity] = useState(props.initHumidity);

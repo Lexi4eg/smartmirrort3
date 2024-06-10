@@ -13,7 +13,7 @@ const roboto2 = Roboto({
   subsets: ["latin-ext"],
   style: "normal",
 });
-const socket = io("http://localhost:3001");
+const socket = io("http://frontend:3001");
 
 export default function Humidity_Sensor_Dashboard({ humidity, style }: Props) {
   const [humidityLive, setHumidity] = useState(humidity);

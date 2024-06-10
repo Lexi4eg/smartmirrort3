@@ -15,7 +15,7 @@ interface Props {
   style?: string;
 }
 
-const socket = io("http://localhost:3001");
+const socket = io("http://frontend:3001");
 
 export default function Temperature_Sensor_Dashboard({
   temperature,
