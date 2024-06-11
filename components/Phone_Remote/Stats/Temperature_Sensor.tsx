@@ -15,7 +15,7 @@ interface TemperatureProps {
 
 import { useRouter } from "next/navigation";
 
-const socket = io("http://frontend:3001");
+const socket = io("http://localhost:3001");
 export default function Temperature_Sensor(props: TemperatureProps) {
   const [temperature, setTemperature] = useState(props.initTemperature);
   const router = useRouter();

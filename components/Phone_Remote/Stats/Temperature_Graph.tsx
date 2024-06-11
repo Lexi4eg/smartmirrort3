@@ -20,7 +20,7 @@ interface TemperatureGraphProps {
   temperatureData: TemperatureData[];
 }
 
-const socket = io("http://frotend:3001");
+const socket = io("http://localhost:3001");
 
 export default function Temperature_Graph(props: TemperatureGraphProps) {
   const [temperatureData, setTemperatureData] = useState<TemperatureData[]>(
