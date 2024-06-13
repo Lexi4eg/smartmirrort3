@@ -49,10 +49,10 @@ services:
     networks:
       - app-network
   zookeeper:
-    image: arm64v8/zookeeper:latest
-    container_name: zookeeper
+    image: confluentinc/cp-zookeeper:latest-ubi8
     platform: linux/arm64
 
+    container_name: zookeeper
     ports:
       - "2181:2181"
     expose:
@@ -67,7 +67,7 @@ services:
 
 
   broker:
-    image: bitnami/kafka:latest
+    image: confluentinc/cp-kafka:latest-ubi8
     platform: linux/arm64
 
     container_name: broker
