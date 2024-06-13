@@ -214,7 +214,7 @@
       <workItem from="1714991245764" duration="33000" />
       <workItem from="1714991353914" duration="1040000" />
       <workItem from="1718085731499" duration="1859000" />
-      <workItem from="1718279905675" duration="1439000" />
+      <workItem from="1718279905675" duration="1598000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -512,7 +512,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718280861331</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Docker compose linux update">
+      <option name="closed" value="true" />
+      <created>1718281352825</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1718281352825</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

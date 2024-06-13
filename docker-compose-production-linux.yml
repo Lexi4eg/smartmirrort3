@@ -21,6 +21,16 @@ services:
     networks:
       - app-network
 
+  websocket:
+    container_name: websocket
+    build: ./Servers/Websocket/
+    ports:
+      - "3001:3001"
+    expose:
+      - 3001
+    networks:
+      - app-network
+
   frontend:
     container_name: frontend
     build:
