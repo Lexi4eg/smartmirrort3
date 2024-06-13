@@ -3,9 +3,8 @@ version: '3.9'
 services:
 
   postgres:
-    container_name: postgres
-    platform: linux/arm64
     image: postgres:latest
+    platform: linux/arm64
     restart: always
     environment:
       - POSTGRES_USER=postgres

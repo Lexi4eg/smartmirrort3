@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Fetch Hum Route for IOS Charts">
-      <change afterPath="$PROJECT_DIR$/docker-compose-production-linux.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f1697a51-f18b-4aeb-8835-6006380a8546.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f1697a51-f18b-4aeb-8835-6006380a8546.xml" afterDir="false" />
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Docker compose linux update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-production-linux.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-production-linux.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +214,7 @@
       <workItem from="1714991245764" duration="33000" />
       <workItem from="1714991353914" duration="1040000" />
       <workItem from="1718085731499" duration="1859000" />
-      <workItem from="1718279905675" duration="202000" />
+      <workItem from="1718279905675" duration="454000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -490,7 +488,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714766302946</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Docker compose linux update">
+      <option name="closed" value="true" />
+      <created>1718280123798</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1718280123798</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +536,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="New Loading UI" />
     <MESSAGE value="Small change" />
     <MESSAGE value="New Auth Page" />
     <MESSAGE value="Quick Change" />
@@ -555,7 +560,8 @@
     <MESSAGE value="API Update" />
     <MESSAGE value="Python Server Update" />
     <MESSAGE value="New Fetch Hum Route for IOS Charts" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Fetch Hum Route for IOS Charts" />
+    <MESSAGE value="Docker compose linux update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Docker compose linux update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
