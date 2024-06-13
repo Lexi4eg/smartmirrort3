@@ -56,12 +56,12 @@ services:
 
 
   broker:
-    image: confluentinc/cp-kafka:7.0.1
+    image: bitnami/kafka:latest
+    platform: linux/arm64
     container_name: broker
+    restart: always
     ports:
       - "9092:9092"
-    expose:
-      - 9092
     networks:
       - app-network
     depends_on:
