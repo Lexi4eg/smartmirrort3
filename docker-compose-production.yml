@@ -36,6 +36,18 @@ services:
     env_file: .env
     depends_on:
       - postgres
+      - zookeeper
+      - broker
+      - websocket
+    networks:
+      - app-network
+  websocket:
+    container_name: websocket
+    build: ./Servers/Websocket/
+    ports:
+      - "3001:3001"
+    expose:
+        - 3001
     networks:
       - app-network
   zookeeper:

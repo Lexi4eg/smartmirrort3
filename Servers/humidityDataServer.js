@@ -8,7 +8,7 @@ const kafka = new Kafka({
 });
 
 const consumer = kafka.consumer({ groupId: "mode-humidity" });
-const socket = io("http://frontend:3001");
+const socket = io("http://websocket:3001");
 
 const run = async () => {
   try {

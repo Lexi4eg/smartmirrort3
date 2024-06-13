@@ -7,7 +7,7 @@ const kafka = new Kafka({
   connectionTimeout: 30000,
 });
 
-const socket = io("http://frontend:3001");
+const socket = io("http://websocket:3001");
 
 const run = async (consumerGroupId, topic) => {
   const consumer = kafka.consumer({ groupId: consumerGroupId });
