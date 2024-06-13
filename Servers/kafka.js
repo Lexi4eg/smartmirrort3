@@ -1,12 +1,14 @@
 import { Kafka, Partitioners } from "kafkajs";
 const kafka = new Kafka({
   clientId: "my-app",
-  brokers: [process.env.KAFKA_BROKER],
+  brokers: ["localhost:9092"],
 });
 
 const producer = kafka.producer({
   createPartitioner: Partitioners.DefaultPartitioner,
 });
+
+console.log("Producer created");
 
 const run = async () => {
   await producer.connect();

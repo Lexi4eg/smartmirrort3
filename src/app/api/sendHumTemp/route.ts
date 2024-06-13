@@ -23,17 +23,21 @@ export async function POST(request: Request) {
     },
   });
 
-  await producer.connect();
+  try {
+    await producer.connect();
+    console.log("Sending temperature and Humidity data to Kafka");
+    await producer.send({
+      topic: "temperatureData",
+      messages: [{ value: JSON.stringify(temperature) }],
+    });
 
-  await producer.send({
-    topic: "temperatureData",
-    messages: [{ value: JSON.stringify(temperature) }],
-  });
-
-  await producer.send({
-    topic: "humidityData",
-    messages: [{ value: JSON.stringify(humidity) }],
-  });
+    await producer.send({
+      topic: "humidityData",
+      messages: [{ value: JSON.stringify(humidity) }],
+    });
+  } catch (error) {
+    console.error("Error sending data to Kafka", error);
+  }
 
   await producer.disconnect();
   return new Response("OK", { status: 200 });

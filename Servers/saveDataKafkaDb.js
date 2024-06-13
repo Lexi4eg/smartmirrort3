@@ -17,7 +17,7 @@ const run = async () => {
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
       const value = parseFloat(message.value.toString());
-      console.log(value);
+      console.log("Value from KafkaDB Server " + value);
       try {
         const value = parseFloat(message.value.toString());
         console.log(value);
