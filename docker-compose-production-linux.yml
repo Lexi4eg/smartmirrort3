@@ -72,6 +72,8 @@ services:
     restart: always
     ports:
       - "9092:9092"
+    expose:
+      - 9092
     networks:
       - app-network
     depends_on:
