@@ -10,7 +10,7 @@ const producer: Producer = kafka.producer({
 });
 export async function POST(request: Request) {
   const data = await request.json();
-
+  console.log("send humidity data", data);
   const humidity: number = parseFloat(data.humidity);
 
   await producer.connect();
@@ -20,7 +20,6 @@ export async function POST(request: Request) {
     messages: [{ value: JSON.stringify(humidity) }],
   });
 
-  // Disconnect the producer
   await producer.disconnect();
   return new Response("OK", { status: 200 });
 }
