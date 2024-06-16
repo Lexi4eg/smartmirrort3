@@ -23,6 +23,7 @@ services:
 
   frontend:
     container_name: frontend
+    restart: always
     build:
       context: ./
       target: dev
@@ -42,6 +43,7 @@ services:
     networks:
       - app-network
   websocket:
+    restart: always
     container_name: websocket
     build: ./Servers/Websocket/
     ports:
@@ -51,6 +53,7 @@ services:
     networks:
       - app-network
   zookeeper:
+    restart: always
     image: confluentinc/cp-zookeeper
     platform: linux/arm64
     container_name: zookeeper
@@ -68,6 +71,7 @@ services:
 
 
   broker:
+    restart: always
     image: confluentinc/cp-kafka
     platform: linux/arm64
     container_name: broker
