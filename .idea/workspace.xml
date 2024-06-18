@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Kafka Broker fix">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f1697a51-f18b-4aeb-8835-6006380a8546.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f1697a51-f18b-4aeb-8835-6006380a8546.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f1697a51-f18b-4aeb-8835-6006380a8546/storage_v2/_src_/database/smartmirror.yMaFDg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f1697a51-f18b-4aeb-8835-6006380a8546/storage_v2/_src_/database/smartmirror.yMaFDg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose-production-linux.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-production-linux.yml" afterDir="false" />
     </list>
@@ -79,39 +81,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Docker.docker-compose-mac.yml: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "Docker.docker-compose2.yml: Compose Deployment.executor": "Run",
-    "Node.js.addTemperatureData.js.executor": "Run",
-    "Node.js.kafka.js.executor": "Run",
-    "Node.js.kafka2.js.executor": "Run",
-    "Node.js.queryDB.js.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "javascript.nodejs.core.library.configured.version": "22.2.0",
-    "javascript.nodejs.core.library.typings.version": "20.14.2",
-    "last_opened_file_path": "/Users/felixprattes/Programming/smartmirrort3/src/app/api",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "swagger",
-    "ts.external.directory.path": "/Users/felixprattes/Programming/smartmirrort3/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Docker.docker-compose-mac.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose-production-linux.yml.frontend: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose-production-linux.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose2.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.addTemperatureData.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.kafka.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.kafka2.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.queryDB.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;22.2.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.14.2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/felixprattes/Programming/smartmirrort3/src/app/api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;swagger&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/felixprattes/Programming/smartmirrort3/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": []
+    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: []
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/api" />
@@ -124,20 +128,41 @@
       <recent name="$PROJECT_DIR$/src/server" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose-mac.yml: Compose Deployment">
-    <configuration name="addTemperatureData.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/addTemperatureData.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Docker.docker-compose-production-linux.yml.frontend: Compose Deployment">
     <configuration name="kafka2.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Servers/kafka2.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="queryDB.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/queryDB.js" working-dir="$PROJECT_DIR$">
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="docker-compose-mac.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="sourceFilePath" value="docker-compose-mac.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose-production-linux.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose-production-linux.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose-production-linux.yml.frontend: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="frontend" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose-production-linux.yml" />
         </settings>
       </deployment>
       <method v="2" />
@@ -152,11 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose-production-linux.yml.frontend: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose-production-linux.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose-mac.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Node.js.kafka2.js" />
-        <item itemvalue="Node.js.addTemperatureData.js" />
-        <item itemvalue="Node.js.queryDB.js" />
       </list>
     </recent_temporary>
   </component>
@@ -215,6 +240,8 @@
       <workItem from="1714991353914" duration="1040000" />
       <workItem from="1718085731499" duration="1859000" />
       <workItem from="1718279905675" duration="5093000" />
+      <workItem from="1718364542451" duration="178000" />
+      <workItem from="1718722619723" duration="937000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />

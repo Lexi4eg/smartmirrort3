@@ -1,0 +1,4 @@
+board~=1.0
+requests~=2.32.3
+mock~=5.1.0
+Flask~=3.0.3
