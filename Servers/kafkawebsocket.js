@@ -50,4 +50,4 @@ const run = async (consumerGroupId, topic) => {
 
 run("mode-temperature", "temperatureData").catch(console.error);
 run("mode-humidity", "humidityData").catch(console.error);
-run("mode-mode", "mode").catch(console.error); // Added this line
+run("mode-mode", "mode").catch(console.error);

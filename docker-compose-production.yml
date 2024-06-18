@@ -22,6 +22,7 @@ services:
       - app-network
 
   frontend:
+    restart: always
     container_name: frontend
     build:
       context: ./
@@ -42,6 +43,7 @@ services:
     networks:
       - app-network
   websocket:
+    restart: always
     container_name: websocket
     build: ./Servers/Websocket/
     ports:
@@ -51,6 +53,7 @@ services:
     networks:
       - app-network
   zookeeper:
+    restart: always
     image: confluentinc/cp-zookeeper
     container_name: zookeeper
     ports:
@@ -67,6 +70,7 @@ services:
 
 
   broker:
+    restart: always
     image: confluentinc/cp-kafka
     container_name: broker
     ports:
@@ -82,7 +86,7 @@ services:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:9092,PLAINTEXT_INTERNAL://broker:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:9092,PLAINTEXT_INTERNAL://localhost:29092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
