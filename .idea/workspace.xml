@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="Kafka Broker fix">
-      <change afterPath="$PROJECT_DIR$/SmartMirrorSensor/buttonServer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartMirrorSensor/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/SmartMirrorSensor/main.py" afterDir="false" />
+    <list default="true" id="addfa9f7-d22c-4c97-8651-49b3a0202f5f" name="Changes" comment="New Startup Skript with ASCII code art">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +84,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose-mac.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose-production-linux.yml.frontend: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose-production-linux.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
@@ -126,12 +129,23 @@
       <recent name="$PROJECT_DIR$/src/server" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose-production-linux.yml.frontend: Compose Deployment">
-    <configuration name="kafka2.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Servers/kafka2.js" working-dir="$PROJECT_DIR$">
+  <component name="RunManager" selected="Docker.docker-compose-production-linux.yml: Compose Deployment">
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
         <settings />
       </deployment>
       <method v="2" />
@@ -175,18 +189,18 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose-production-linux.yml.frontend: Compose Deployment" />
         <item itemvalue="Docker.docker-compose-production-linux.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose-production-linux.yml.frontend: Compose Deployment" />
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Docker.docker-compose-mac.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Node.js.kafka2.js" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-19b454f630c8-JavaScript-WS-242.15523.6" />
+        <option value="bundled-js-predefined-d6986cc7102b-19b454f630c8-JavaScript-WS-242.16677.27" />
       </set>
     </attachedChunks>
   </component>
@@ -240,6 +254,10 @@
       <workItem from="1718279905675" duration="5093000" />
       <workItem from="1718364542451" duration="178000" />
       <workItem from="1718722619723" duration="1535000" />
+      <workItem from="1718798426927" duration="101000" />
+      <workItem from="1718798686829" duration="2307000" />
+      <workItem from="1718805299507" duration="53000" />
+      <workItem from="1718805371589" duration="1117000" />
     </task>
     <task id="LOCAL-00001" summary="New and improved clock widget that can now display time at the right format more or less.">
       <option name="closed" value="true" />
@@ -641,7 +659,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="New Auth Page" />
     <MESSAGE value="Quick Change" />
     <MESSAGE value="Working Kafka Save to DB with temperatureLog and ModeChange Working" />
     <MESSAGE value="New Fetch Data from the DB for the ML Model" />
@@ -666,7 +683,8 @@
     <MESSAGE value="New Fetch Hum Route for IOS Charts" />
     <MESSAGE value="Docker compose linux update" />
     <MESSAGE value="Kafka Broker fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kafka Broker fix" />
+    <MESSAGE value="New Startup Skript with ASCII code art" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Startup Skript with ASCII code art" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
