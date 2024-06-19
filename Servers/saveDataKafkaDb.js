@@ -44,7 +44,7 @@ const run = async () => {
           console.log(res);
         }
       } catch (err) {
-        console.log(err.stack);
+        console.log(`Error processing message from topic "${topic}":`, err);
       }
     },
   });

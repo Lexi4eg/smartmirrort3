@@ -16,7 +16,5 @@ export async function GET(request: Request) {
       },
     });
 
-  console.log(temperatureData);
-
   return new Response(JSON.stringify(temperatureData), { status: 200 });
 }

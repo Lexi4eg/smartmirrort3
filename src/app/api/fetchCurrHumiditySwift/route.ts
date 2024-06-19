@@ -15,7 +15,5 @@ export async function GET(request: Request) {
     },
   });
 
-  console.log(humidity);
-
   return new Response(JSON.stringify(humidity), { status: 200 });
 }

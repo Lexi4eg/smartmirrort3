@@ -36,10 +36,14 @@ services:
       - "3000:3000"
     env_file: .env
     depends_on:
-      - postgres
-      - zookeeper
-      - broker
-      - websocket
+      postgres:
+        condition: service_started
+      zookeeper:
+        condition: service_started
+      broker:
+        condition: service_healthy
+      websocket:
+        condition: service_started
     networks:
       - app-network
   websocket:
@@ -90,6 +94,11 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+    healthcheck:
+      test: [ "CMD-SHELL", "nc -z localhost 9092 || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 volumes:
   pgdata: {}
 
