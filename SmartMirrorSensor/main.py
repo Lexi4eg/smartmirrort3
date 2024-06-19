@@ -13,9 +13,11 @@ try:
 
 except ImportError:
     import mock
+
     board = mock.Mock()
     GPIO = mock.Mock()
     adafruit_dht = mock.Mock()
+
 
 class SensorData:
     def __init__(self, temperature: float, humidity: float):
