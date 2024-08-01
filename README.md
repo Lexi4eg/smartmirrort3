@@ -16,7 +16,9 @@ This is the Software part of the Smart Mirror T3 project. The Smart Mirror T3 is
 > - Numerouse clocks 
 > - Dark Mode for better readability
 > - Customizable
-> - Using mikroservices and fully docker container run
+> - Using mikroservices 
+> - Kafka for Real time Events and scalable data Pipes
+> - Full Production Software runs in a dockerized containers
 
 
 ### Tech
