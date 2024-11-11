@@ -17,7 +17,6 @@ const run = async (consumerGroupId, topic) => {
     console.log(
       `Connected to Kafka consumer with group ID "${consumerGroupId}"`,
     );
-
     await consumer.subscribe({ topic, fromBeginning: true });
     console.log(`Subscribed to topic "${topic}"`);
 
@@ -44,7 +43,10 @@ const run = async (consumerGroupId, topic) => {
       },
     });
   } catch (error) {
-    console.error("An error occurred:", error);
+    console.error(
+      `An error occurred while consuming messages for topic "${topic}" with group ID "${consumerGroupId}":`,
+      error,
+    );
   }
 };
 

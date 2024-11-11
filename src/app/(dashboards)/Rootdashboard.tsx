@@ -41,7 +41,7 @@ export default function Rootdashboard({
 
   return (
     <>
-      <div className="max-w-screen flex min-h-screen flex-col items-center  justify-center bg-[#191a1b] bg-cover bg-center  text-white ">
+      <div className="max-w-screen flex min-h-screen flex-col items-center  justify-center bg-black bg-cover bg-center  text-white ">
         {Number(selectedOption) === 1 && (
           <Dashboard4
             session={session}

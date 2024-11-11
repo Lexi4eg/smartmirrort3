@@ -75,7 +75,7 @@ export default async function Dashboard4(props: Props) {
           />
         </div>
         <div
-          className="col-span-3 row-span-3 flex items-center justify-center p-3  "
+          className="col-span-3 row-span-3 flex items-center justify-center p-10  "
           style={{ backdropFilter: "blur(10px)" }}
         >
           <NasaWidget style={nightmode} />
