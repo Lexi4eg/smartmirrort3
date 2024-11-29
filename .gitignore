@@ -44,3 +44,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 /prisma/migrations/
+
+# Python Server
+/Servers/pythonserver/env/*
+/Servers/pythonserver/venv/*
+
+
+
